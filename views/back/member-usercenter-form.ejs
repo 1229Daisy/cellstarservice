@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="<%=locals.url%>">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>肝癌筛查客户信息登记表</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" media="screen and (min-width:600px) and (max-width:1920px)" href="public/css/userformpc.css" />
+    <link rel="stylesheet" media="screen and (min-width:320px) and (max-width:600px)" href="public/css/userformphone.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/public/css/userformpc.css" /> -->
+    <script type="text/javascript" src="public/js/jquery-3.6.0.min.js"></script>
+    <!-- <script type="text/javascript" src="public/js/getidinfo.js"></script> -->
+    <script type="text/javascript" src="public/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="https://bainuo.beijingepidial.com/public/js/My97DatePicker/4.8/WdatePicker.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="title">细胞之星个人中心信息登记表</div>
+            <div id="title-sub1">(填表前请查看重要提示)</div>
+            <div id="title-sub2">以下为客户信息，请认真填写</div>
+        </div>
+        <form class="userform" id="userform" name="userform" method="POST">
+            <input type="hidden" whichOpenid="openid">
+            <input type="hidden" whichid="dbid">
+            <div id="content">
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label for="constractnum">合同编号:</label>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="constractnum" name="constractnum" value="" placeholder="公司服务人员填写" required="required"></input>
+                    </div>
+                </div>
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        </span>客户姓名:</label>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="clientname" name="clientname" value placeholder="请输入" required="required"></input>
+                    </div>
+                </div>
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label>签约时间:</label>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="signingtime" name="signingtime" value="" onClick="WdatePicker()" readonly="readonly"></input>
+                        
+                    </div>
+                </div>
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        </span>储存年限:</label>
+                        <select id="saveyear" style="margin-left: 570PX;">
+                            <option  selected value="1">1年</option>
+                            <option  value="5">5年</option>
+                            <option  value="10">10年</option>
+                            <option  value="20">20年</option>
+                         </select>
+                        <!-- <input type="number" id="sex" name="sex" value placeholder="请输入" required="required"></input> -->
+                    </div>
+                </div>
+
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        </span>储存细胞:</label>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="cell" name="cell" value="" placeholder="请输入" required="required"></input>
+                    </div>
+                </div>
+                
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label>储存状态:</label>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="savestatus" name="savestatus" value="" placeholder="请输入" required="required"></input>
+                    </div>
+                </div>
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label>储存地点:</label>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="location" name="location" value="" placeholder="请输入" required="required"></input>
+                    </div>
+                </div>
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label>剩余年限:</label>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="leftyear" name="leftyear" value="" required="required"></input>
+                    </div>
+                </div>
+                
+                
+                <div style="width: 100%;height: 23px;"></div>
+                <div style="text-align: center;">
+                    <input id="submit" type="button" style="display: block;" value="提交">
+                </div>
+                <div style="width: 100%;height: 100px;"></div>
+        </form>
+        <!-- <script type="text/javascript" src="/public/js/validator_zh_liver.js"></script> -->
+        <script>
+         //计算日期
+		  $("#saveyear").change(function(event) {
+			// alert($("#saveyear option:selected").val())
+			var d1=new Date($('#signingtime').val());  
+         var d2=new Date(d1); 
+         d2.setFullYear(d2.getFullYear()+parseInt($("#saveyear").val())); 
+         d2.setDate(d2.getDate()-parseInt($("#saveyear").val())); 
+		let d3=d2
+		let datetime=d3-d1
+		let days=datetime/(1000 * 3600 * 24)
+		alert(days)
+		$('#leftyear').val(days)
+		  })
+
+       //提交数据
+            $("#submit").click(function() {
+                let oThis=$(this)
+                $(this).attr('disabled', true)
+                $(this).css('background-color', "#e0e0e0")
+                let data = {}
+                data.constractnum = $("constractnum").val()
+                data.username = $("#username").val()
+                data.tel = $("#tel").val()
+                data.status = $("#status option:selected").val()
+                data.mval = $("#mval").val()
+                data.chance = $("#chance").val()
+                data.age = $("#age").val()
+                data.sex = $("#sex option:selected").val()
+                data.created = $("#created").val()
+                data.recdate = $("#recdate").val()
+                console.info(data.created)
+                $.post("admin/liver/addreport", data, function(result) {
+                    if(result=="fail-store-unexist"){
+                        alert("库存不存在此条码")
+                        oThis.attr('disabled', false)
+                        oThis.css('background-color', "#1a88c7")
+                    }else if(result=="fail-report-exist"){
+                        alert("该条码已添加过，请更换条码")
+                        oThis.attr('disabled', false)
+                        oThis.css('background-color', "#1a88c7")
+                    }else{
+                        parent.window.location.reload();
+                    }
+
+                })
+
+            })
+        </script>
+
+</body>
+
+</html>

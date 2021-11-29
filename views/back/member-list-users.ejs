@@ -1,28 +1,30 @@
 ﻿<!DOCTYPE html>
 <html>
 
-<head>
-	<base href="<%=locals.url%>">
-	<meta charset="utf-8">
-	<meta name="renderer" content="webkit|ie-comp|ie-stand">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport"
-		content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-	<meta http-equiv="Cache-Control" content="no-siteapp" />
-	<!-- [if lt IE 9]>
-<script type="text/javascript" src="lib/html5shiv.js"></script>
-<![endif] -->
-	<link rel="stylesheet" type="text/css" href="public/h-ui/css/H-ui.min.css" />
-	<link rel="stylesheet" type="text/css" href="public/h-ui.admin/css/H-ui.admin.css" />
-	<link rel="stylesheet" type="text/css" href="public/js/1.0.8/iconfont.css" />
-	<link rel="stylesheet" type="text/css" href="public/h-ui.admin/skin/default/skin.css" id="skin" />
-	<link rel="stylesheet" type="text/css" href="public/h-ui.admin/css/style.css" />
-	<link rel="stylesheet" type="text/css" href="public/css/hsycmsAlert.css" />
-	<link rel="stylesheet" href="public/css/jquery.pagination.css" />
-	<script type="text/javascript" src="public/js/jquery-3.6.0.min.js"></script>
-
-	<title>epiLiver Users</title>
-</head>
+	<head>
+		<base href="<%=locals.url%>">
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<!-- [if lt IE 9]>
+	<script type="text/javascript" src="lib/html5shiv.js"></script>
+	<![endif] -->
+		<!-- <link rel="stylesheet" type="text/css" href="public/h-ui/css/H-ui.min.css" /> -->
+		<!-- <link rel="stylesheet" type="text/css" href="public/h-ui.admin/css/H-ui.admin.css" /> -->
+		<link rel="stylesheet" type="text/css" href="public/js/1.0.8/iconfont.css" />
+		<!-- <link rel="stylesheet" type="text/css" href="public/h-ui.admin/skin/default/skin.css" id="skin" /> -->
+		<!-- <link rel="stylesheet" type="text/css" href="public/h-ui.admin/css/style.css" /> -->
+		<link rel="stylesheet" type="text/css" href="public/css/hsycmsAlert.css" />
+		<link rel="stylesheet" href="public/css/jquery.pagination.css" />
+		<link rel="stylesheet" type="text/css" href="public/easyui/css/easyui.css" />
+		<link rel="stylesheet" type="text/css" href="public/easyui/css/icon.css" />
+		<script type="text/javascript" src="public/js/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="public/js/clipboard.min.js"></script>
+		<title>Users</title>
+	
+	</head>
 <style>
 	* {
 		margin: 0;
@@ -58,147 +60,25 @@
 </style>
 
 <body>
-	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> Home <span class="c-gray en">&gt;</span> epiAge Users
-		<span class="c-gray en">&gt;</span> epiAge User Management <a class="btn btn-success radius r"
-			style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);"
-			title="Refresh"><i class="Hui-iconfont">&#xe68f;</i></a>
-	</nav>
-	<div class="page-container">
-		
-		<!-- <div style="width: 500px;height: 40px;margin: auto">
-			<span style="color: #00CC99;font-size: 16px;font-weight: 700">barcode:</span>
-			<input type="text" id="txtbarcode" style="width: 300px;height: 36px"/>
-			<input type="button" value="search" id="btnSearch" onclick="seardnakit()" style="border-radius: 10%;background: #00a0e9;height:40px;width: 100px;color: white;font-size: 24px" />
-		</div>
-		<div class="cl pd-5 bg-1 bk-gray mt-20">
-			<span class="l"><a href="javascript:;" onclick="member_add('添加条码','admin/epiage/addsigbarcode','','510')" class="btn btn-primary radius">
-		  <i class="Hui-iconfont">&#xe600;</i>添加一个用户</a></span>
-			<div >
-				<form name="imgform" method="post" action="admin/epiage/uploadcvs" enctype="multipart/form-data">
-					&nbsp;&nbsp;<input type="file" name="file"  name="picpath" id="picpath" style="display:none;" onChange="document.imgform.path.value=this.value">
-					<input name="path"  style="width: 250px;height: 25px;" readonly/>
-					<input type="button"  class="btn btn-primary radius" value="请选择.txt文件" onclick="document.imgform.picpath.click()">
-					<input type="submit"  class="btn btn-primary radius" value="upload"/>
-				<a href="javascript:void(0)" onclick="agebarcode_add('upload cvs file sample','admin/epiage/cvs','900','700')" >[upload cvs sample]</a> 
-				</form>
-			</div>s
-		</div> -->
-		<!-- <div class="text-c"> 日期范围：
-			<input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin"
-				class="input-text Wdate" style="width:120px;">
-			<input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d' })"
-				id="datemax" class="input-text Wdate" style="width:120px;">
-			<input type="text" class="input-text" style="width:250px" placeholder="name/tel/email" id="" name="">
-			<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i>
-				Search</button>
-		</div> -->
-		<!-- <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l">
-				<a href="javascript:;" onclick="datadel()" class="btn btn-danger radius">
-		<i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> -->
-				<!-- <a href="javascript:;" onclick="member_add('添加用户','admin/epiage/userdata','','510')"
-					class="btn btn-primary radius">
-					<i class="Hui-iconfont">&#xe600;</i> 添加用户
-				</a> -->
-				<div class="cl pd-5 bg-1 bk-gray mt-20">
-					<table class="table table-border table-bordered table-hover table-bg table-sort">
-						<thead>
-							<tr class="text-c">
-								<th width="100">电话号码</th>
-								<th width="100">姓名</th>
-								<th width="100">操作</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td style="text-align: center;">
-									<input type="text" id="txtphone" value=""/>   
-								</td>
-								
-								<td style="text-align: center;">
-									<input type="text" id="txtname" value=""/>
-								</td>
-							
-							   
-								<td style="text-align: center;">
-									<input type="button" value="查询" id="btnSearch" style="border-radius: 10%;background: #00a0e9;height:35px;width: 100px;color: white;font-size: 24px" />
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</span>
-		<span class="r">共有数据：<strong>
-				<%=count%>
-			</strong> 条</span>
-	</div>
-	<html>
-  <title>Welcome</title>
-    <body>
-
-      <!-- <video controls>
-        <source src="video/dnasample" type="video/mp4"/>
-       
-        Your browser does not support the <code>video</code> element.
-    </video> -->
-  </body>
-</html>
-	<div class="mt-20">
-		<table class="table table-border table-bordered table-hover table-bg table-sort">
-			<thead>
-				<tr class="text-c">
-					<th width="25"><input type="checkbox" name="" value=""></th>
-					<th width="20">编号</th>
-					<th width="100">用户名</th>
-					<th width="100">手机号</th>
-					<th width="100">密码</th>
-					<th width="100">操作</th>
-				</tr>
-			</thead>
-			<tbody id="tbody">
-				<% data.forEach(function(item,index){%>
-					<tr class="text-c">
-
-						<td><input type="checkbox" value="<%=item._id%>" name=""></td>
-						<td>
-							<%=index+1%>
-						</td>
-						<td>
-							<input type="text" name="name" value="<%=item.username%>">
-						</td>
-						<td>
-							<input type="text" name="phone" value="<%=item.phone %>">
-							<input type="hidden" name="id" value="<%=item._id%>">
-						</td>
-						<td>
-							<%=item.password%>
-						</td>
-						<!-- <td>
-							<a id="detail" style="text-decoration:underline"
-								onClick="article_edit('Detail information','admin/detailEpiage?id=<%=item.id%>','10002')"
-								title="Detail">Detail</a>
-						</td> -->
-						<!-- <td>
-							<a id="report_parameter" style="text-decoration:underline"
-								onClick="article_edit('Report Parameter','admin/epiage/report?id=<%=item.id%>','10002')"
-								title="Report Parameter">编辑报告</a>
-						</td> -->
-						<td>
-							<button id="delete" type="button" onclick="confirm(this)">Delete</button>
-						</td>
-					</tr>
-					<% }) %>
-			</tbody>
-		</table>
-
-
-	</div>
-
-	<div class="box">
-		<div id="pagination3" class="page fl"></div>
-		<div class="info fl">
-			<p>当前页数：<span id="current3">1</span></p>
-		</div>
-	</div>
+	<div id="tb" style=" height: auto;background-color: #e5efff;padding: 30px 30px;">
+        <!-- <input  id="txtphone" placeholder="电话号码:" value="" style="width: 180px;height: 30px;border:1px solid #95b8e7;border-radius: 5px;padding-left:5px;"/> 
+        <input  id="txtname" placeholder="姓名:" value="" style="width: 180px;height: 30px;border:1px solid #95b8e7;border-radius: 5px;padding-left:5px;margin-right: 50px;"/>
+        <span  iconCls="icon-search" style="float: right;" class="easyui-linkbutton" plain="false" onclick="search()">Search</span> -->
+        
+		<!-- 签约时间:<input style="border: 1px solid #e0e0e0;" type="date" id="signingtime" name="signingtime" value=""  ></input>
+                    
+        储存年限:<select id="saveyear" style="margin-left: 570PX;">
+                        <option  selected value=""></option>
+						<option  value="1">1年</option>
+                        <option  value="5">5年</option>
+                        <option  value="10">10年</option>
+                        <option  value="20">20年</option>
+                     </select>
+                     
+         剩余年限: <input style="border: 1px solid #e0e0e0;" type="text" id="leftyear" name="leftyear" value=""></input>
+		 <button id="xx">按钮</button> -->
+    </div>
+    <table id="userbox"></table>
 	<!--普通弹窗-->
 	<div class="hsycms-model-mask" id="mask-alert"></div>
 	<div class="hsycms-model hsycms-model-alert" id="alert">
@@ -233,195 +113,69 @@
 	<!-- <script type="text/javascript" src="public/js/datatables/1.10.0/jquery.dataTables.min.js"></script> -->
 	<script type="text/javascript" src="public/js/laypage/1.2/laypage.js"></script>
 	<script type="text/javascript" src="public/js/hsycmsAlert.js"></script>
+	<script type="text/javascript" src="public/easyui/js/jquery.min.js" ></script>
+    <script type="text/javascript" src="public/easyui/js/jquery.easyui.min.js" ></script>
+    <script type="text/javascript" src="public/easyui/js/easyui-lang-zh_CN.js" ></script>
 	<script type="text/javascript">
-		// $.post("admin/getTotalPage",functon(totalsize){
+		$(function(){
+         //easyui数据表格
+            $('#userbox').datagrid({
+            url:"admin/user/search",
+            width:$('#body').width,
+            title:'Home&gt;用户管理',
+            iconCls:"icon-search",
+            fitColumns:true,
+            nowrap:true,
+            rownumbers: true,
+            pagination:true,
+            pageSize:30,
+            pageList:[30,40,50,60,70],    
+            toolbar:"#tb",
+            onLoadSuccess:function(data){
+            $("a[name='opera']").linkbutton({text:'删除',plain:false});
+            },
+            columns:[[
+            { field:'ck',checkbox:true,align: 'center',width:100,},
+            { field:'username',title:"用户名" ,align: 'center',width:100,},
+            { field:'phone',title:"手机号" ,align: 'center',width:100,},
+            { field:'password',title:"密码" ,align: 'center',width:100,},
+            { field:'delete',title:"删除" ,align: 'center',width:60,
+            formatter: function(value, row, index) {
+                    return `<a href="javascript:;" name="opera" class="easyui-linkbutton" sampleid="${row.sampleid}" obid="${row._id}" onclick="confirm(this)"></a>`
+                              
+                },
+        },
+            
+            ]],
+            
+         })
+     })
+           //查询
+     function search(){
+          console.info($("#txtphone").val())
+            $('#userbox').datagrid("load",{
+                tel :$("#txtphone").val(),
+                username:$("#txtname").val(),
+               
+          })
+          }
 
-		// })
-		window.isPage = true
-        window.totalPage = 0
-        window.count = 0
-		$(function () {
-			window.totalPage = Math.ceil(parseFloat('<%=count/50%>'))
-			$("#btnSearch").click(function() {
-                let data = {}
-				data.tel = $("#txtphone").val()
-				data.username = $("#txtname").val()
-				data.current = 1
-				console.info(data)
-                    $.post("admin/user/search", data, function(userbox) {
-                        window.totalPage = Math.ceil(parseFloat(userbox.count / 50))
-                        window.count = userbox.count
-                        window.isPage = true
-						$("strong").text(userbox.count)
-						let jsondata = userbox.users
-                        let html = []
-                        html.push('<tbody id="tbody">')
-                        for (let i = 0; i < jsondata.length; i++) {
-                            html.push('<tr class="text-c">')
-                            html.push('<td><input type="checkbox" value=' + jsondata[i]._id + ' name=""></td>')
-                            html.push('<td>' + (i + 1) + '</td>')
-                            html.push('<td>' + jsondata[i].username + '</td>')
-                            html.push('<td>' + (jsondata[i].phone?jsondata[i].phone:"") + '</td>')
-                            html.push('<td>' + jsondata[i].password + '</td>')
-                            html.push('<td>')
-                            html.push('<button id="delete" type="button" onclick="confirm(this)">删除</button>')
-                            html.push('</td>')
-                            html.push('</tr>')
-                        }
-                        html.push('</tbody>')
-                        $("#tbody").replaceWith(html.join(""))
-                    })
- 
-            })
-			setInterval(function(){
-				window.count = window.count == 0 ? '<%=count%>' : window.count
-                // console.info(window.count + "-----" + window.totalPage + "----" + window.isPage)
-				if (window.isPage) {
-					window.isPage = false
-				$("#pagination3").pagination({
-					currentPage: 1, // 当前页数
-                    totalPage: window.totalPage, // 总页数
-                    isShow: true, // 是否显示首尾页
-                    count: window.count, // 显示个数
-                    homePageText: "首页", // 首页文本
-                    endPageText: "尾页", // 尾页文本
-                    prevPageText: "上一页", // 上一页文本
-                    nextPageText: "下一页", // 下一页文本
-				callback: function (current) {
-					$("#current3").text(current)
-					var vdata = {}
-					vdata.current = current
-					let data = {}
-					data.tel = $("#txtphone").val()
-					data.username = $("#txtname").val()
-					data.current = current
-					// 数据库返回json数组 然后拼接成HTML 替换上面的html
-					$.post(data?"admin/user/search":"admin/user/pagination", data?data:vdata, function (userbox) {
-						let jsondata = userbox.users
-						let html = []
-						html.push('<tbody id="tbody">')
-						for (let i = 0; i < jsondata.length; i++) {
-							html.push('<tr class="text-c">')
-							html.push('<td><input type="checkbox" value=' + jsondata[i]._id + ' name=""></td>')
-							html.push('<td>' + ((current * 50 - 50) + (i + 1)) + '</td>')
-							html.push('<td>')
-							html.push('<input type="text"name="username" value=' + jsondata[i].name + '>')
-							html.push('</td>')
-							html.push('<td>')
-							html.push('<input type="text"name="phone" value=' + jsondata[i].phone + '>')
-							html.push('<input type="hidden" name="id" value=' + jsondata[i]._id + '>')
-							html.push('</td>')
-							html.push('<td>')
-							html.push('<input type="text"name="password" value=' + jsondata[i].password + '>')
-							html.push('</td>')
-							// html.push('<td>')
-							// html.push('<a name="detail" style="text-decoration:underline"  url="admin/detailEpiage?id=' + jsondata[i]._id + '"   title="Detail">Detail</a>')
-							// html.push('</td>')
-							// html.push('<td>')
-							// html.push('<a name="report_parameter" style="text-decoration:underline" url="admin/epiage/report?id=' + jsondata[i]._id + '" title="Report Parameter">Report Parameter</a>')
-							// html.push('</td>')
-							html.push('<td>')
-							html.push('<button id="delete" type="button" onclick="confirm(this)">Delete</button>')
-							html.push('</td>')
-							html.push('</tr>')
-						}
-						html.push('</tbody>')
-						$("#tbody").replaceWith(html.join(""))
-
-					})
-				}
-			})
-				}
-			},1000)
-			
-		})
-
-		$(function () {
-			//在网页创建出来的标签都要用on来进行操作
-			$("body").on("click", "a[name=detail]", function () {
-				article_edit("Detail information", $(this).attr("url"), "10002")
-			})
-			$("body").on("click", "a[name=report_parameter]", function () {
-				article_edit("Report Parameter", $(this).attr("url"), "10002")
-			})
-
-			//后台输入样本号
-			$("input[name=sampleid]").blur(function () {
-				if ($(this).val() != "") {//jquery方法和js方法不同，获取不到值就当做空字符串而不是undefined
-					console.info($(this).val() + "ooooooooooooo")
-					var vdata = {}
-					vdata.id = $(this).next().val()
-					vdata.sampleid = $(this).val()
-					$.post("admin/epiage/updateform", vdata, function (data) {
-						if (data == "error") {
-							hsycms.alert("alert", vdata.sampleid + "样本ID重复，请重新输入！", function () {
-								hsycms.close('alert');
-							})
-						}
-					})
-				} else {
-					hsycms.alert("alert", vdata.sampleid + "已成功保存", function () {
-						hsycms.close('alert');
-
-					})
-				}
-			})
-			//保存后台输入实际年龄，生物学年龄
-			$("input[name=chroage],input[name=epiage],input[name=accuracy]").blur(function () {
-				if ($(this).val() != "") {
-					//获取后台输入epiage的日期时间
-					var myDate = new Date;
-					var year = myDate.getFullYear(); //获取当前年
-					var mon = myDate.getMonth() + 1; //获取当前月
-					var date = myDate.getDate(); //获取当前日
-					var h = myDate.getHours();//获取当前小时数(0-23)
-					var m = myDate.getMinutes();//获取当前分钟数(0-59)
-					var s = myDate.getSeconds();//获取当前秒
-					// $("#time").html(year + "年" + mon + "月" + date + "日");
-					let inputEpiDate = year + "/" + mon + "/" + date + " " + h + ":" + m + ":" + s
-					console.info(inputEpiDate)
-					var vdata = {}
-					let objtr = $(this).parent().parent();
-					vdata.chroage = objtr.find("input[name=chroage]").val();
-					vdata.epiage = objtr.find("input[name=epiage]").val();
-					vdata.id = objtr.find("input[name=id]").val();
-					vdata.accuracy = objtr.find("input[name=accuracy]").val();
-					vdata.inputEpiDate = inputEpiDate
-					console.info(vdata.accuracy)
-
-					$.post("admin/epiage/update", vdata, function (data) {
-						if (data == "error") {
-							hsycms.alert("alert", vdata.chroage + "请输入数字！", function () {
-								hsycms.close('alert');
-							})
-						}
-					})
-				} else {
-					hsycms.alert("alert", vdata.chroage + "已成功保存", function () {
-						hsycms.close('alert');
-					})
-				}
-			})
-			//后台输入生物学年龄
-			$("input[name=epiage]").blur(function () {
-				if ($(this).val() != "") {
-					var vdata = {}
-					vdata.epiage = $(this).val()
-					console.info(vdata.epiage)
-					$.post("admin/epiage/updateform", vdata, function (data) {
-						if (data == "error") {
-							hsycms.alert("alert", vdata.epiage + "请输入数字！", function () {
-								hsycms.close('alert');
-							})
-						}
-					})
-				} else {
-					hsycms.alert("alert", vdata.chroage + "已成功保存", function () {
-						hsycms.close('alert');
-					})
-				}
-			})
-		})
+		  //计算日期
+		  $("#saveyear").change(function(event) {
+			// alert($("#saveyear option:selected").val())
+			var d1=new Date($('#signingtime').val());  
+         var d2=new Date(d1); 
+         d2.setFullYear(d2.getFullYear()+parseInt($("#saveyear").val())); 
+         d2.setDate(d2.getDate()-parseInt($("#saveyear").val())); 
+		let d3=d2
+		let datetime=d3-d1
+		let days=datetime/(1000 * 3600 * 24)
+		alert(days)
+		let leftyear=$('#leftyear').val(days)
+		  })
+		  
+		
+         
 
 		//询问弹窗
 		function confirm(obj) {
@@ -431,12 +185,11 @@
 					hsycms.success('success', '点击了确定');
 					var vdata = {}
 					//获取该条数据的数据库id
-					vdata.id = $(obj).parent().parent().find("input[name=id]").val()
+					vdata.id = $(obj).attr("obid")
 					console.info(vdata.id)
-					$.post("admin/epiage/deleteuser", vdata, function (data) {
+					$.post("admin/users/deleteone", vdata, function (data) {
 						if (data == "success") {
-							// location.replace(location.href)
-							window.location.reload()
+							$("#userbox").datagrid('reload');
 						}
 					})
 				},
