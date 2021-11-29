@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>肝癌报告查询</title>
+    <link rel="stylesheet" type="text/css" href="public/css/reserve.css" />
+    <script type="text/javascript" src="public/js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div style="background:url('/public/img/01.jpg') no-repeat;width:100%;height:700px">
+            <div id="title">
+                <div style="font-size: 77px; ">肝癌检测预约</div>
+                <div style="font-size: 34px;padding-top: 23px;">方便 &nbsp;快捷&nbsp; 安全</div>
+            </div>
+        </div>
+        <div id="content" style=" padding: 50px;">
+            <div style="height: 23px;width: 100%;"></div>
+            <div id="search_outer">
+                <input id="search_liver" type="button" value="现在预约">
+            </div>
+            <p  style="color:#9c9c9c;font-size: 23px;text-align: center;">
+                我司客服会在24小时内联系您确定具体时间与地点
+            </p>
+        </div>
+
+        <script>
+            $("input[id=search_liver]").click(function(){
+                window.location = "<%=locals.url%>/indexLiver"
+            })
+        </script>
+</body>
+
+</html>

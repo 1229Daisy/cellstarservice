@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="<%=locals.url%>">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>生物学年龄检测客户信息登记表</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" media="screen and (min-width:600px) and (max-width:1920px)"
+        href="public/css/userformpc.css" />
+    <link rel="stylesheet" media="screen and (min-width:320px) and (max-width:600px)"
+        href="public/css/userformphone.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="public/css/userformpc.css" /> -->
+    <script type="text/javascript" src="public/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="public/js/getidinfo.js"></script>
+    <script type="text/javascript" src="public/js/jquery.validate.min.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="title">生物学年龄检测客户信息登记表</div>
+            <div id="title-sub1">(填表前请查看重要提示)</div>
+            <div id="title-sub2">以下为客户信息，请认真填写</div>
+        </div>
+        <form class="userform" id="userform" name="userform" method="POST" action="<%=locals.url%>/saveformEpiage">
+            <input type="hidden" whichOpenid="openid">
+            <input type="hidden" whichid="dbid">
+            <div id="content">
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label for="sampleid">样本编码:</label>
+                        <input type="text" id="sampleid" name="sampleid" value="" placeholder="公司服务人员填写"></input>
+                    </div>
+                </div>
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label><span style="color:red;">* </span>姓名:</label>
+                        <input type="text" id="username" name="username" value placeholder="请输入" required="required"></input>
+                    </div>
+                </div>
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label><span style="color:red;">* </span>邮寄地址:</label>
+                        <input type="text" id="address" name="address" value="" placeholder="请输入"
+                            required="required" style=" background-color: white;"></input>
+                    </div>
+                </div>
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label><span style="color:red;">* </span>手机号码:</label>
+                        <input type="tel" id="tel" name="tel" value="" placeholder="请输入" required="required" style=" background-color: white;"></input>
+                    </div>
+                </div>
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label>邮箱:</label>
+                        <input type="email" id="email" name="email" value="" placeholder="请输入" style=" background-color: white;"></input>
+                    </div>
+                </div>
+                <p class="grey-line"></p>
+                <div>
+                    <label>备注:</label>
+                    <div style="width: 100%;height: 12px;"></div>
+                    <textarea style="width: 100%;height: 45px;" type="text" id="note" name="note" value=""
+                        placeholder="请输入"></textarea>
+                </div>
+                <p>本表填写信息真实有效，<span style="color: red;">*号为必填项，</span>经核实准确无误后方可提交！</p>
+                <div>重要提示</div>
+                <p>请您完整填写以上内容并确保信息真实有效，方便我们建立您的信息档案，（如不慎填写错误请与客服联系！）</p>
+            </div>
+            <div style="width: 100%;height: 23px;"></div>
+            <div style="text-align: center;">
+                <input id="submit" type="submit" style="display: block;" value="提交">
+            </div>
+            <div style="width: 100%;height: 100px;"></div>
+        </form>
+        <script type="text/javascript" src="public/js/validator_zh_epiage.js"></script>
+        <script>
+           
+            var FormData=new FormData()
+           $("input[type=file]").change(function(){
+            var fd=FormData.append("attrName",this.files[0])
+            // console.log(this.files[0])
+               $.post("/upload",fd,function(data){
+                console.log(data)
+               })
+
+           })
+        </script>
+</body>
+
+</html>

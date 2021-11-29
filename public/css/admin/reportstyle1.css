@@ -1,0 +1,192 @@
+body {
+    font: 1rem 100% Arial, sans-serif;
+}
+/* page one start------- */
+#logo-outer {
+    width: 100%;
+    height: 6.1rem;
+}
+
+#logo {
+    width: 20%;
+    height: 6.1re;
+    float: left;
+    margin-right: 1.4375rem;
+}
+
+#address {
+    width: 50%;
+    height: 6.1re;
+    float: left;
+    font-size: 1rem;
+}
+
+#address div {
+ width: 50%;
+
+}
+#title{
+    width: 100%;height: 2.5rem;
+    background: #0564A6;float: right;
+    line-height: 2.5rem;
+    font-size: 1.6rem;
+    color: white;text-indent: 1em
+}
+.block{
+    width: 100%;
+    height: 6rem;
+}
+#page1butimg{
+    width: 100%;
+}
+#page1butimg img{
+    width: 80%;height:auto;align-self: left;
+}
+.pagebuttom{
+    width: 100%;height: 1.25rem;margin: 0 auto;background: #F7F7F7
+}
+#info-container{
+    width: 100%;
+    height: 6rem;
+    border-top:1px saddlebrown solid;
+    border-bottom: 1px saddlebrown solid;
+     margin: 0 auto;height: 19rem;
+     font-size: 1.4rem;
+     font-weight: 600;
+}
+#container1{
+overflow: hidden;
+width: 49%;
+float: left;
+height: 19rem;
+}
+#container2{
+    overflow: hidden;
+    width: 49%;
+    float: left;
+    height: 19rem;
+}
+.wrap {
+
+    height: 3.75rem;
+    line-height: 3.75rem;
+    width: 100%
+}
+
+.wrap_grey {
+
+    height: 3.75rem;
+    line-height: 3.75rem;
+    width: 100%;
+    background: #E7EAF1;
+}
+.whitebar{
+    border: none;width: 60%;height:3.125rem;
+}
+.greybar{
+    border: 0;width: 60%;height: 3.125rem;background:#E7EAF1;
+}
+/* page one start------- */
+/* page2 ---------start */
+.detectname{
+    width: 100%;margin: 0 auto;height: 2.625rem;
+    line-height: 2.625rem;background: #DFF1FB;font-size: 1.5rem;
+    font-weight: 600;text-indent: 0.5em;color: #2C7FB8
+}
+.detectname input{
+    height: 2.0625rem;width: 60%; background: #DFF1FB;border:none
+}
+#youresult{
+    width: 100%;height: 2.5rem;line-height: 2.5rem;color: #2178B4;margin: 0 auto;font-size: 1.5rem;font-weight: 600
+}
+.result-block{
+    width: 100%;height: 1rem;background: #DBDDDC;margin: 0 auto
+}
+#biomark-outer{
+    width: 100%;height: 2.5rem; color: #625A58;font-weight: 600;text-align: center;margin: 0 auto
+}
+#biomark-outer div{
+    width: 16%;float: left;border: 1px solid white;height: 2.4375rem
+}
+#dnarate-outer{
+    width: 100%;height: 2.625rem; color: #625A58;font-weight: 600;background: #DFF1FB;margin: 0 auto
+}
+#dnarate-outer div{
+    width: 16%;text-align: center;color: #625A58;float: left;height: 2.5rem;line-height: 2.5rem;font-size: 1.5rem;
+}
+.methylation_para {
+    width: 15%;
+    float: left;
+    height: 2.5rem;
+    line-height: 2.5rem;
+}
+.methylation_para_input {
+    width: 80%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border: 0;
+    background: #DFF1FB;
+    font-size: 1.4rem;
+    text-align: center;
+
+}
+/* result rating part */
+#rating-container{
+    width: 90%;height: 23rem; margin: 0 auto;background: #F5F5F5; border-radius: 1.25rem;
+}
+.range1tu0 {
+    width: 40%;
+    height: 5rem;
+    background: url("<%=locals.url%>/public/img/imgepiliver/53.png") no-repeat;
+    background-size: 18rem 5.2rem;
+    color: white;
+    position: relative;
+}
+.range1tu1 {
+        width: 38%;
+        height: 5rem;
+        background: url("<%=locals.url%>/public/img/imgepiliver/53.png") no-repeat;
+        background-size: 15rem 5.2rem;
+        color: white;
+        position: relative;
+    }
+
+    .range1tu2 {
+        width: 38%;
+        height: 5.89rem;
+        background: url("<%=locals.url%>/public/img/imgepiliver/53.png") no-repeat;
+        background-size: 15rem 5.2rem;
+        color: white;
+        position: relative;
+    }
+
+    .range1tu3 {
+        width: 38%;
+        height: 5.89rem;
+        background: url("<%=locals.url%>/public/img/imgepiliver/53.png") no-repeat;
+        background-size: 15rem 5.2rem;
+        color: white;
+        position: relative;
+    }
+
+    .range1tu4 {
+        width: 38%;
+        height: 5.89rem;
+        background: url("<%=locals.url%>/public/img/imgepiliver/53.png") no-repeat;
+        background-size: 15rem 5.2rem;
+        color: white;
+        position: relative;
+    }
+
+    .range1tu5 {
+        width: 38%;
+        height: 5.89rem;
+        background: url("<%=locals.url%>/public/img/imgepiliver/53.png") no-repeat;
+        background-size: 15rem 5.2rem;
+        color: white;
+        position: relative;
+    }
+
+
+
+

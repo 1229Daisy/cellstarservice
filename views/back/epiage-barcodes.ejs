@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <base href="<%=locals.url%>">
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" type="text/css" href="public/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="public/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="public/h-ui.admin/css/style.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="public/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="public/h-ui.admin/skin/default/skin.css" />
+<link rel="stylesheet" type="text/css" href="public/css/hsycmsAlert.css" />
+
+<script type="text/javascript" src="public/js/hsycmsAlert.js"></script>
+<script type="text/javascript" src="public/js/jquery-3.6.0.min.js"></script>
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>用户管理</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i>首页 <span class="c-gray en">&gt;</span> 用户中心 <span class="c-gray en">&gt;</span> 用户管理 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" >
+  <i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="pd-20">
+  <!-- <div class="text-c"> 日期范围：
+    <input type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}'})" id="datemin" class="input-text Wdate" style="width:120px;">
+    -
+    <input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d'})" id="datemax" class="input-text Wdate" style="width:120px;">
+    <input type="text" class="input-text" style="width:250px" placeholder="输入会员名称、电话、邮箱" id="" name=""><button type="submit" class="btn btn-success" id="" name=""><i class="icon-search"></i> 搜用户</button>
+
+  </div> -->
+  <div style="width: 500px;height: 40px;margin: auto">
+		<span style="color: #00CC99;font-size: 16px;font-weight: 700">barcode:</span>
+		<input type="text" id="txtbarcode" style="width: 300px;height: 36px"/>
+	    <input type="button" value="search" id="btnSearch" onclick="seardnakit()" style="border-radius: 10%;background: #00a0e9;height:40px;width: 100px;color: white;font-size: 24px" />
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20">
+		<span class="l"><a href="javascript:;" onclick="agebarcode_add('add epiage kit','admin/epiage/addsingle','','510')" class="btn btn-primary radius">
+      <i class="Hui-iconfont">&#xe600;</i>Add a new barcode to inventory</a></span>
+		<div >
+			<form name="imgform" method="post" action="admin/epiage/uploadcvs" enctype="multipart/form-data">
+				&nbsp;&nbsp;<input type="file" name="file"  name="picpath" id="picpath" style="display:none;" onChange="document.imgform.path.value=this.value">
+				<input name="path"  style="width: 250px;height: 25px;" readonly/>
+				<input type="button"  class="btn btn-primary radius" value="请选择.txt文件" onclick="document.imgform.picpath.click()">
+				<input type="submit"  class="btn btn-primary radius" value="upload"/>
+				<!-- <a href="javascript:void(0)" onclick="agebarcode_add('upload cvs file sample','admin/epiage/cvs','900','700')" >[upload cvs sample]</a> -->
+			</form>
+		</div>
+	</div>
+
+  <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l">
+    <!-- <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius">
+<i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> -->
+    <a href="javascript:;" onclick="addBarcode()"
+      class="btn btn-primary radius">
+      <i class="Hui-iconfont">&#xe600;</i> 添加用户
+    </a>
+  </span>
+<span class="r">共有数据：<strong>
+    <%=count%>
+  </strong> 条</span>
+</div>
+  
+  <table class="table table-border table-bordered table-hover table-bg table-sort">
+    <thead>
+      <tr class="text-c">
+        <th width="25"><input type="checkbox" name="" value=""></th>
+        <th width="40">ID</th>
+        <th width="100">用户名</th>
+        <th width="100">条码</th>
+        <th width="100">创建时间</th>
+        <th width="100">操作</th>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+      <% data.forEach(function(item,index){%>
+        <td><input type="checkbox" value="<%=item._id%>" name=""></td>
+        <td>
+          <%=index+1%>
+        </td>
+        <td>
+          <%=item.name%>
+        </td>
+        <td>
+          
+          <input type="text" name="barcode" value="<%=item.barcode%>">
+          <input type="hidden" name="id" value="<%=item._id%>">
+        </td>
+        <td>
+          <%=item.createtime%>
+        </td>
+        <td>
+          <button id="delete" type="button" onclick="confirm(this)">Delete</button>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <div id="pageNav" class="pageNav"></div>
+  <div class="box">
+		<div id="pagination3" class="page fl"></div>
+		<div class="info fl">
+			<p>当前页数：<span id="current3">1</span></p>
+		</div>
+	</div>
+</div>
+<!--普通弹窗-->
+<div class="hsycms-model-mask" id="mask-alert"></div>
+<div class="hsycms-model hsycms-model-alert" id="alert">
+  <div class="hscysm-model-title">Notification</div>
+  <div class="hsycms-model-text">You have add: </div>
+  <div class="hsycms-model-btn">
+    <button type="button ok">OK</button>
+  </div>
+</div>
+
+<!--询问弹窗-->
+<div class="hsycms-model-mask" id="mask-confirm"></div>
+<div class="hsycms-model hsycms-model-confirm" id="confirm">
+  <div class="hscysm-model-title">Notification</div>
+  <div class="hsycms-model-text">Are you sure you want to delete ？</div>
+  <div class="hsycms-model-btn">
+    <button type="button" class="cancel">Cancel</button>
+    <button type="button" class="ok">OK</button>
+  </div>
+</div>
+</div>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="public/js/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="public/js/2.4/layer.js"></script>
+<script type="text/javascript" src="public/h-ui/js/H-ui.min.js"></script> 
+<script type="text/javascript" src="public/js/H-ui.min.js"></script>
+<link rel="stylesheet" href="public/css/jquery.pagination.css" />
+<script src="public/js/jquery.pagination.min.js"></script>
+
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<!-- <script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script> 
+<script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script> -->
+
+<!-- <script type="text/javascript" src="public/js/datatables/1.10.0/jquery.dataTables.min.js"></script>  -->
+<script type="text/javascript" src="public/js/laypage/1.2/laypage.js"></script> 
+<script type="text/javascript" src="public/js/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript">
+$(function () {
+			$("#pagination3").pagination({
+				currentPage: 1,// 当前页数
+				totalPage: Math.ceil(parseFloat('<%=count/50%>')),// 总页数
+				isShow: true,// 是否显示首尾页
+				count: '<%=count%>',// 显示个数
+				homePageText: "首页",// 首页文本
+				endPageText: "尾页",// 尾页文本
+				prevPageText: "上一页",// 上一页文本
+				nextPageText: "下一页",// 下一页文本
+				callback: function (current) {
+					$("#current3").text(current)
+					var vdata = {}
+					vdata.current = current
+					// 数据库返回json数组 然后拼接成HTML 替换上面的html
+					$.post("admin/epiage/paginationLib", vdata, function (data) {
+						let jsondata = data
+						let html = []
+						html.push('<tbody id="tbody">')
+						for (let i = 0; i < jsondata.length; i++) {
+							html.push('<tr class="text-c">')
+							html.push('<td><input type="checkbox" value=' + jsondata[i]._id + ' name=""></td>')
+							html.push('<td>' + parseInt(50 * parseInt(current - 1) + i) + '</td>')
+							html.push('<td>' + jsondata[i].name + '</td>')
+              html.push('<td>' + jsondata[i].barcode + '</td>')
+              html.push('<input type="text"name="barcode" value=' + jsondata[i].barcode + '>')
+              html.push('<input type="hidden" name="id" value=' + jsondata[i]._id + '>')
+              html.push('<td>' + jsondata[i].createtime + '</td>')
+              html.push('<td>')
+							html.push('<button id="delete" type="button" onclick="confirm(this)">Delete</button>')
+							html.push('</td>')
+							html.push('</tr>')
+						}
+						html.push('</tbody>')
+						$("#tbody").replaceWith(html.join(""))
+
+					})
+				}
+			})
+		})
+
+//询问弹窗
+function confirm(obj) {
+console.info("delete")
+hsycms.confirm('confirm', 'Are you sure to delete?',
+  function (res) {
+    hsycms.success('success', '点击了确定');
+    var vdata = {}
+    //获取该条数据的数据库id
+    vdata.id = $(obj).parent().parent().find("input[name=id]").val()
+    $.post("admin/epiage/deletelab", vdata, function (data) {
+      if (data == "success") {
+        // location.replace(location.href)
+        window.location.reload()
+      }
+    })
+  },
+  function (res) {
+    hsycms.error('error', '点击了取消');
+  },
+)
+}
+	//操作成功调用 
+  function success() {
+			hsycms.success('success', '操作成功', function () { console.log('操作成功关闭后'); }, 1800)
+		}
+
+		//操作失败调用
+		function error() {
+			hsycms.error('error', '操作失败', function () { console.log('操作失败关闭后'); }, 1800)
+		}
+/*用户-添加*/
+function member_add(title, url, w, h) {
+			layer_show(title, url, w, h);
+		}
+    function addBarcode(){
+      var vdata={}
+
+      $.post("admin/epiage/addsigbarcode", vdata, function (data) {
+      if (data == "success") {
+        // location.replace(location.href)
+        window.location.reload()
+      }
+    })
+  }
+// window.onload = (function(){
+//     // optional set
+//     pageNav.pre="&lt;上一页";
+//     pageNav.next="下一页&gt;";
+//     // p,当前页码,pn,总页面
+//     pageNav.fn = function(p,pn){$("#pageinfo").text("当前页:"+p+" 总页: "+pn);};
+//     //重写分页状态,跳到第三页,总页33页
+//     pageNav.go(1,13);
+// });
+// $('.table-sort').dataTable({
+// 	"lengthMenu":false,//显示数量选择 
+// 	"bFilter": false,//过滤功能
+// 	"bPaginate": false,//翻页信息
+// 	"bInfo": false,//数量信息
+// 	"aaSorting": [[ 1, "desc" ]],//默认第几个排序
+// 	"bStateSave": true,//状态保存
+// 	"aoColumnDefs": [
+// 	  //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+// 	  {"orderable":false,"aTargets":[0,8,9]}// 制定列不参与排序
+// 	]
+// });
+</script>
+<script>
+  	/*
+	点击搜索，查询barcode 返回List<>
+	* */
+ 
+	function seardnakit() {
+		// if($("#txtbarcode").val()==null){
+		// 	window.location.href=""
+		// }
+
+		var url="/admin/dnakit/getbybarcode?barcode="+$("#txtbarcode").val();
+		$.ajax({
+			type: 'POST',
+			url: url,
+			datatype:JSON,
+			success:function (data) {
+				var dnakit = JSON.parse(data);
+				var html=[];
+				for (var i = 0; i < dnakit.length; i++) {
+					html.push("<tr name='item' class='text-c' data-id=\""+dnakit[i].id+"\">");
+					html.push("<td>"+dnakit[i].id+"</td>");
+					html.push("<td><input readonly name='name' style='cursor:pointer;border: none' value='"+dnakit[i].name+"'> "+"</td>");
+					html.push("<td><input readonly name='barcode' style='cursor:pointer;width: 160px;border: none' value='"+dnakit[i].barcode+"'>"+"</td>");
+					html.push("<td><input readonly name='createtime' style='cursor:pointer;border: none' value='"+new Date(dnakit[i].createtime).toLocaleString()+"' pattern='yyyy-MM-dd hh:mm:ss'> "+"</td>");
+					html.push("<td class='td-manage'><a title='删除' href='javascript:;'onclick=\"+member_del(this,"+dnakit[i].id+")\"+ class='ml-5' style='text-decoration:none'><i class='Hui-iconfont'>&#xe6e2;</i></a>"+"</td>");
+					html.push("</tr>");
+				}
+
+				$("#tody").html(html.join(""));
+			}
+
+		})
+	}
+</script>
+</body>
+</html>

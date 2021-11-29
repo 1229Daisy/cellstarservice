@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="<%=locals.url%>">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>肝癌筛查客户信息登记表</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" media="screen and (min-width:600px) and (max-width:1920px)" href="public/css/userformpc.css" />
+    <link rel="stylesheet" media="screen and (min-width:320px) and (max-width:600px)" href="public/css/userformphone.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/public/css/userformpc.css" /> -->
+    <script type="text/javascript" src="public/js/jquery-3.6.0.min.js"></script>
+    <!-- <script type="text/javascript" src="public/js/getidinfo.js"></script> -->
+    <script type="text/javascript" src="public/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="https://bainuo.beijingepidial.com/public/js/My97DatePicker/4.8/WdatePicker.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div id="title">泛癌筛查客户信息登记表</div>
+            <div id="title-sub1">(填表前请查看重要提示)</div>
+            <div id="title-sub2">以下为客户信息，请认真填写</div>
+        </div>
+        <form class="userform" id="userform" name="userform" method="POST">
+            <input type="hidden" whichOpenid="openid">
+            <input type="hidden" whichid="dbid">
+            <div id="content">
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label for="sampleid">样本编码:</label>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="sampleid" name="sampleid" value="" placeholder="公司服务人员填写"></input>
+                    </div>
+                </div>
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label><span style="color:red;">* </span>姓名:</label>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="username" name="username" value placeholder="请输入" required="required"></input>
+                    </div>
+                </div>
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label><span style="color:red;">* </span>年龄:</label>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="age" name="age" value placeholder="请输入" required="required"></input>
+                    </div>
+                    
+                </div>
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label><span style="color:red;">* </span>性别:</label>
+                        <select id="sex" style="margin-left: 570PX;">
+                            <option  selected value="0">男</option>
+                            <option  value="1">女</option>
+                         </select>
+                        <!-- <input type="number" id="sex" name="sex" value placeholder="请输入" required="required"></input> -->
+                    </div>
+                </div>
+
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label><span style="color:red;">* </span>手机号码:</label>
+                        <input style="border: 1px solid #e0e0e0;" type="tel" id="tel" name="tel" value="" placeholder="请输入" required="required"></input>
+                    </div>
+                </div>
+                <p class="grey-line"></p>
+                <div class="wrap">
+                    <label style="margin-right: 100px;">条码状态:</label>
+                    <select id="status">
+						<option   value="NO_STATUS">请选择状态</option>
+						<option  value="POST_FROM_LAB">已从实验室发出</option>
+						<option  value="PARCEL_RECEIVED">实验室已收到样本</option>
+						<option  value="REGISTERED_IN_LIMS">样本已注册到实验室系统</option>
+						<option  value="WAITING_DNA_PREP">等候DNA提取</option>
+						<option  value="SEQUENCING">测序检测中</option>
+						<option selected value="Completed">检测完成</option>
+						</select>
+                </div>
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label>M值:</label>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="mval" name="mval" value=""></input>
+                    </div>
+                </div>
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label>概率:</label>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="chance" name="chance" value=""></input>
+                    </div>
+                </div>
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label>采集日期:</label>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="created" name="created" value="" onClick="WdatePicker()" readonly="readonly"></input>
+                        
+                    </div>
+                </div>
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
+                        <label>样本接收日期:</label>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="recdate" name="recdate" value="" onClick="WdatePicker()" readonly="readonly"></input>
+
+                    </div>
+                </div>
+                <div style="width: 100%;height: 23px;"></div>
+                <div style="text-align: center;">
+                    <input id="submit" type="button" style="display: block;" value="提交">
+                </div>
+                <div style="width: 100%;height: 100px;"></div>
+        </form>
+        <!-- <script type="text/javascript" src="/public/js/validator_zh_liver.js"></script> -->
+        <script>
+            //泛癌添加报告页面点击提交
+            $("#submit").click(function() {
+                let oThis=$(this)
+                $(this).attr('disabled', true)
+                $(this).css('background-color', "#e0e0e0")
+                let data = {}
+                data.sampleid = $("#sampleid").val()
+                data.username = $("#username").val()
+                data.tel = $("#tel").val()
+                data.status = $("#status option:selected").val()
+                data.mval = $("#mval").val()
+                data.chance = $("#chance").val()
+                data.age = $("#age").val()
+                data.sex = $("#sex option:selected").val()
+                data.created = $("#created").val()
+                data.recdate = $("#recdate").val()
+                console.info(data.created)
+                $.post("admin/generic/addreport", data, function(result) {
+                    if(result=="fail-store-unexist"){
+                        alert("库存不存在此条码")
+                        oThis.attr('disabled', false)
+                        oThis.css('background-color', "#1a88c7")
+                    }else if(result=="fail-report-exist"){
+                        alert("该条码已添加过，请更换条码")
+                        oThis.attr('disabled', false)
+                        oThis.css('background-color', "#1a88c7")
+                    }else{
+                        parent.window.location.reload();
+                    }
+
+                })
+
+            })
+        </script>
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<html>
+<head>
+<base href="<%=locals.url%>">
+<meta charset="UTF-8">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="public/js/jquery-2.1.0.min.js"></script> 
+</head>
+<body>
+<div style="width:100%;">
+	<div style="height:20px"></div>
+	<div style="width:60%;height:auto;margin:0 auto;border:1px solid gray;text-align:center" >
+		<div style="align-items:center">
+			<table  cellspacing="0" style="width: 60%;margin:auto;">
+				<tr>
+				 <td style='font-family:Serif;width:100px;'>条数：</td>
+				 <td><input id="size"  value="5" style="font-size:8px;width:60px;font-family:Serif"/></td>
+				 <td style="text-align:center;" ><input id="build" type="button" value="生成条码"  onclick="build()"/></td>
+				 <td><input id="btnsave" style="display: none;"type="button" onclick="save()" value="保存到库存"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div style="height:20px"></div>
+	<div  style="width:100%;align-items:center">
+		<table  cellpadding="4" cellspacing="0" style="width: 60%;margin:auto">
+			<tbody id="codeBox"></tbody>
+		</table>
+	</div>
+</div>
+</body>
+<script>
+ let box=[]
+ function build(){
+	box.length = 0;
+	let trbox=[];
+	let param={};
+	param.size=document.getElementById('size').value;
+	$.post("admin/epiage/add/batch/barcode/data",param,function(data){
+		for(let i=0;i<data.length;i++){
+			let barcode={}
+			barcode.name = "DNA Methylation Kit"
+			barcode.createtime = new Date().toLocaleDateString();
+			barcode.barcode = data[i]
+			barcode.status = "NO_STATUS"
+			box.push(barcode)
+			trbox.push("<tr>")
+			trbox.push("<td name='barcode' style='text-align:center;border:1px dotted grey;font-family:Serif'>"+data[i]+"</td>")
+			trbox.push("</tr>")
+		}
+		trbox.push("<tr>")
+		trbox.push("<td name='address' style='text-align:center;border:1px dotted grey;font-family:Serif'>邮寄地址：<input style='width:100%' id='post'></td>")
+		trbox.push("</tr>")
+		document.getElementById('codeBox').innerHTML=trbox.join("");
+		$("#btnsave").show()
+	})
+ }
+ function save(){
+	$("#mask").css("height", $(document).height());
+    $("#mask").css("width", $(document).width());
+	$("#mask").show();
+	for(let i=0;i<box.length;i++){box[i].post=$("#post").val()}
+	let parm={}
+	parm.barcodes=box
+	console.info(parm.barcodes)
+	$.post("admin/epiage/save/batch/barcode",parm,function(status){
+		if(status=="success"){
+			$("#mask").hide();
+            parent.window.location.reload()
+		}
+	})
+	
+ }
+</script>
+<div id="mask" style="display: none; "><div id="over" style=" position: absolute;top: 0;left: 0; width: 100%;height: 100%; background-color: #f5f5f5;opacity:0.5;z-index: 1000;"></div><div id="layout" style="position: absolute;top: 40%; left: 40%;width: 20%; height: 20%;  z-index: 1001;text-align:center;"><img src="public/img/loading.gif" /></div></div>
+
+</html>

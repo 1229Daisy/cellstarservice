@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>肝癌预约知情同意书</title>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+  <link rel="stylesheet" media="screen and (min-width:600px) and (max-width:1920px)"
+    href="public/css/consentform-pc.css" />
+  <link rel="stylesheet" media="screen and (min-width:320px) and (max-width:600px)"
+    href="public/css/consentform-phone.css" />
+  <script type="text/javascript" src="public/js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <div id="container">
+
+    <form action="/index" method="post">
+      <h2 style="text-align: center;">肝癌预约知情同意书</h2>
+      <div style="width: 100%;height: 12px;"></div>
+      <h4>尊敬的客户：</h4>
+      <p>您好！非常感谢您选择深圳百诺医学检验实验室（以下简称“百诺医学”）的产品。此肝癌早期筛查产品基于DNA甲基化高通量分子
+        诊断技术，通过检查受检者特定DNA甲基化分子标签，实现肝癌的超早期筛查，从而判断受检查者是否为患肝癌个体。
+      </p>
+      <h4>在筛查开始之前，请您详细阅读并知晓以下内容：</h4>
+      <p>1.需采集的样本为10ml的人体外周血，请在有相应资质的正规医疗机构由合格的医务人员采集样本。</p>
+      <p>2.因采样不当，导致采血管样本泄露，运输延误等不可抗力因素导致送检样本不合格，可能影响本次筛查结果或者导致筛查无法进行，您需要进行重新采样。</p>
+      <p>3.上述服务为我司提供的科研服务，现阶段该筛查结果扔不能作为肝癌的最终诊断，需与其他检查结果相互印证以作最终诊断。</p>
+      <p>4.您的个人资料和筛查结果均属于保密信息，不会被公开及用于其他目的，不会提供给任何第三方个人或机构。百诺医学遵守国家相关法规，
+        始终保护您的个人隐私。此外，您有权利在不告知我们原因的前提下随时退出本次筛查。
+      </p>
+      <h4>如您以详细阅读以上告知内容，并以知晓筛查的指导价值，愿意承担可能因筛查带来的相关身心风险，请签字同意做此项筛查。</h4>
+      <div id="sign-name">
+        <span>受检者或授权家属确认签字:</span>
+        <input type="text" id="signname" name="signname" autocomplete="off" required="required" value=""></input>
+      </div>
+      <div style="width: 100%;height: 10px;"></div>
+      <div id="sign-date">
+        <span>日期：</span>
+        <input type="text" id="signdate" name="signdate" autocomplete="off" value=""></input>
+      </div>
+      <div style="width: 100%;height: 30px;"></div>
+      <div style="text-align: center;">
+        <input id="button" type="button" value="提交">
+      </div>
+      <div style="width: 100%;height: 100px;"></div>
+    </form>
+    <script>
+        console.info(window.location.href)
+        $("#signname").blur(function () {
+          var myDate = new Date();
+          var year = myDate.getFullYear();
+          var month = myDate.getMonth() + 1;
+          var day = myDate.getDate();
+          var currentTime = year + "-" + month + "-" + day
+          $("input[id=signdate]").attr("value", currentTime);
+        })
+        $("#button").click(function () {
+          userDataLiver = {};
+          userDataLiver.signname = $("#signname").val()
+          userDataLiver.signdate = $("#signdate").val()
+          userDataLiver.htmlpage = $("html").html();
+          $.post("/users", userDataLiver, function (data) {
+            if (data == "success") {
+              window.location.href = "<%=locals.url%>/userDataLiver"
+            }
+          })
+
+        })
+    </script>
+</body>
+
+</html>

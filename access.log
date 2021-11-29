@@ -1,0 +1,2445 @@
+backend app.js:/admin/liver/check/review
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/manager
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/check/comfirm
+{ username: 'admin', password: 'admin123456' }
+2021-11-24$$$$
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/liver/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/liver/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/upload/batch/excel/result
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/manager
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/manager
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/upload/batch/excel/result
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/manager
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/upload/batch/excel/result
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/liver/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/lab/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/lab/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{ pdf: { '$exists': 'true' } }
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{ pdf: { '$exists': 'false' } }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{ pdf: { '$exists': 'true' } }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{ pdf: { '$exists': 'false' } }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{ pdf: { '$exists': 'true' } }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/epiage/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/update
+{ username: 'admin', password: 'admin123456' }
+{ date: '2021-11-14',
+  chroage: '34',
+  id: '619b346525527d13489ba5e3',
+  epiage: '45',
+  accuracy: '89',
+  recdate: '2021-11-21' }
+{ n: 1, nModified: 0, ok: 1 }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/epiage/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/eipage/detailEpiage
+{ username: 'admin', password: 'admin123456' }
+{ _id: 619b346525527d13489ba5e1,
+  username: 'ss',
+  tel: '13345567789',
+  sampleid: '21LVA7771',
+  created: '2021-11-14',
+  sex: '0',
+  age: '',
+  __v: 0 }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/liver/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/epiage/users
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiageuser/search
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiageuser/search
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/epiage/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiageuser/search
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiageuser/search
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/lib/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/lab/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiageuser/search
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/lib/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/lab/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+backend app.js:/admin/epiage/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiageuser/search
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiageuser/search
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/lib/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/lab/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiageuser/search
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiageuser/search
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/update
+{ username: 'admin', password: 'admin123456' }
+{ date: '2021-11-14',
+  chroage: '34',
+  id: '619b346525527d13489ba5e3',
+  epiage: '45',
+  accuracy: '89',
+  recdate: '2021-11-21' }
+{ n: 1, nModified: 0, ok: 1 }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/lib/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/lab/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+backend app.js:/admin/epiage/lib/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/lab/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+backend app.js:/admin/epiage/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiageuser/search
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ sampleid: '21LV65AD4',
+  status: '',
+  pdf: '',
+  sms: '',
+  accuracyval_lt: '',
+  accuracyval_gt: '',
+  page: '1',
+  rows: '30' }
+{ sampleid: { '$in': [ /21LV65AD4/i ] } }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiageuser/search
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/epiage/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/update
+{ username: 'admin', password: 'admin123456' }
+{ date: '2021-11-14',
+  chroage: '34',
+  id: '619b346525527d13489ba5e3',
+  epiage: '33',
+  accuracy: '89',
+  recdate: '2021-11-21' }
+{ n: 0, nModified: 0, ok: 1 }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiageuser/search
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiageuser/search
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/favicon.ico
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/update
+{ username: 'admin', password: 'admin123456' }
+{ date: '2021-11-14',
+  chroage: '34',
+  id: '619b346525527d13489ba5e3',
+  epiage: '66',
+  accuracy: '89',
+  recdate: '2021-11-21' }
+{ n: 0, nModified: 0, ok: 1 }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiageuser/search
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/epiage/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/update
+{ username: 'admin', password: 'admin123456' }
+{ date: '2021-11-14',
+  chroage: '34',
+  id: '619b346525527d13489ba5e3',
+  epiage: '88',
+  accuracy: '89',
+  recdate: '2021-11-21',
+  sampleid: '21LVA7771' }
+{ n: 1, nModified: 1, ok: 1 }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiageuser/search
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/update
+{ username: 'admin', password: 'admin123456' }
+{ date: '2021-11-14',
+  chroage: '34',
+  id: '619b346525527d13489ba5e3',
+  epiage: '77',
+  accuracy: '89',
+  recdate: '2021-11-21',
+  sampleid: '21LVA7771' }
+{ n: 1, nModified: 1, ok: 1 }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiageuser/search
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/liver/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liveruser/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/userdetail
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liveruser/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/liveruser/search
+{ username: 'admin', password: 'admin123456' }
+{ tel: '',
+  sampleid: '21LVFCCC1',
+  username: '',
+  datemin: '',
+  datemax: '',
+  page: '1',
+  rows: '30' }
+{ sampleid: { '$regex': /21LVFCCC1/ } }
+backend app.js:/admin/liver/lab/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/lab/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liveruser/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/epiage/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/report
+{ username: 'admin', password: 'admin123456' }
+[]
+************
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/report
+{ username: 'admin', password: 'admin123456' }
+[]
+************
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/report
+{ username: 'admin', password: 'admin123456' }
+[]
+************
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/eipage/detailEpiage
+{ username: 'admin', password: 'admin123456' }
+{ _id: 619b346525527d13489ba5e1,
+  username: 'ss',
+  tel: '13345567789',
+  sampleid: '21LVA7771',
+  created: '2021-11-14',
+  sex: '0',
+  age: '77',
+  __v: 0 }
+backend app.js:/admin/eipage/detailEpiage
+{ username: 'admin', password: 'admin123456' }
+{ _id: 619b343325527d13489ba5cb,
+  username: 'cc',
+  tel: '15767088850',
+  sampleid: '21LV24961',
+  created: '2021-11-14',
+  sex: '1',
+  age: '23',
+  __v: 0 }
+backend app.js:/admin/eipage/detailEpiage
+{ username: 'admin', password: 'admin123456' }
+{ _id: 6197326ef5fb462a10562934,
+  username: 'lixiaoxiao',
+  tel: '13659781345',
+  sampleid: '21LV0B5AB',
+  created: '',
+  sex: '0',
+  age: '13',
+  __v: 0 }
+backend app.js:/admin/eipage/detailEpiage
+{ username: 'admin', password: 'admin123456' }
+{ _id: 619350a608bcee2a90235453,
+  username: 'lixiaoxiao',
+  tel: '15767088850',
+  sampleid: '21LVC7955',
+  created: '2021-11-15',
+  sex: '1',
+  age: '23',
+  __v: 0 }
+backend app.js:/admin/eipage/detailEpiage
+{ username: 'admin', password: 'admin123456' }
+{ _id: 617b58b999eede2c54e76449,
+  username: 'lili',
+  tel: '18500038759',
+  sampleid: '21AG02100',
+  created: '2021-10-21',
+  sex: '0',
+  __v: 0 }
+backend app.js:/admin/eipage/detailEpiage
+{ username: 'admin', password: 'admin123456' }
+{ _id: 6164e56c26ef5668ca5a4085,
+  idCard: '21020419600401098X',
+  sex: '0',
+  tel: '15542618606',
+  sampleid: '21AG01016',
+  username: '梁晓平',
+  created: '2021/10/12',
+  checktime: '2021/10/12',
+  __v: 0 }
+backend app.js:/admin/epiage/add/user/report
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/add/user/report
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/epiage/report
+undefined
+[]
+************
+backend app.js:/admin/epiage/report
+undefined
+[]
+************
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/epiage/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/eipage/detailEpiage
+{ username: 'admin', password: 'admin123456' }
+{ _id: 619b343325527d13489ba5cb,
+  username: 'cc',
+  tel: '15767088850',
+  sampleid: '21LV24961',
+  created: '2021-11-14',
+  sex: '1',
+  age: '23',
+  __v: 0 }
+backend app.js:/admin/eipage/detailEpiage
+{ username: 'admin', password: 'admin123456' }
+{ _id: 619b343325527d13489ba5cb,
+  username: 'cc',
+  tel: '15767088850',
+  sampleid: '21LV24961',
+  created: '2021-11-14',
+  sex: '1',
+  age: '23',
+  __v: 0 }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/eipage/detailEpiage
+{ username: 'admin', password: 'admin123456' }
+{ _id: 619b343325527d13489ba5cb,
+  username: 'cc',
+  tel: '15767088850',
+  sampleid: '21LV24961',
+  created: '2021-11-14',
+  sex: '1',
+  age: '23',
+  __v: 0 }
+backend app.js:/admin/epiage/update
+{ username: 'admin', password: 'admin123456' }
+{ date: '2021-11-14',
+  chroage: '45',
+  id: '619b343325527d13489ba5cd',
+  epiage: '23',
+  accuracy: '99',
+  recdate: '2021-11-21',
+  sampleid: '21LV24961' }
+{ n: 1, nModified: 0, ok: 1 }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/users
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiageuser/search
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/eipage/upload/batch/excel/result
+{ username: 'admin', password: 'admin123456' }
+TypeError: Cannot read property 'username' of null
+    at D:\usr\local\workspace\bainuominipro\app.js:1732:54
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+epiage barcode:21LVA7771 report transaction rollback……
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/epiage/check/review
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/epiage/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/eipage/upload/batch/excel/result
+{ username: 'admin', password: 'admin123456' }
+TypeError: Cannot read property 'username' of null
+    at D:\usr\local\workspace\bainuominipro\app.js:1732:54
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+epiage barcode:21LVA7771 report transaction rollback……
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/eipage/upload/batch/excel/result
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/epiage/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/eipage/upload/batch/excel/result
+{ username: 'admin', password: 'admin123456' }
+TypeError: Cannot read property 'username' of null
+    at D:\usr\local\workspace\bainuominipro\app.js:1732:54
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+epiage barcode:21LVA7771 report transaction rollback……
+TypeError: Cannot read property 'username' of null
+    at D:\usr\local\workspace\bainuominipro\app.js:1732:54
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+epiage barcode:21LV24961 report transaction rollback……
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/liver/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/epiage/check/review
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/manager
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/public/img/favicon.ico
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/eipage/upload/batch/excel/result
+{ username: 'admin', password: 'admin123456' }
+TypeError: Cannot read property 'username' of null
+    at D:\usr\local\workspace\bainuominipro\app.js:1732:54
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+epiage barcode:21LVA7771 report transaction rollback……
+TypeError: Cannot read property 'username' of null
+    at D:\usr\local\workspace\bainuominipro\app.js:1732:54
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+epiage barcode:21LV24961 report transaction rollback……
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/eipage/upload/batch/excel/result
+{ username: 'admin', password: 'admin123456' }
+TypeError: Cannot read property 'username' of null
+    at D:\usr\local\workspace\bainuominipro\app.js:1732:54
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+epiage barcode:21LVA7771 report transaction rollback……
+TypeError: Cannot read property 'username' of null
+    at D:\usr\local\workspace\bainuominipro\app.js:1732:54
+    at process._tickCallback (internal/process/next_tick.js:68:7)
+epiage barcode:21LV24961 report transaction rollback……
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/epiage/review/delete
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/manager
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/eipage/upload/batch/excel/result
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/eipage/upload/batch/excel/result
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/epiage/check/review/update
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/epiage/check/review/update
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/manager
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/review/update
+{ username: 'admin', password: 'admin123456' }
+{ n: 1, nModified: 1, ok: 1 }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/epiage/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/report
+{ username: 'admin', password: 'admin123456' }
+[]
+************
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/epiage/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/liver/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/upload/batch/excel/result
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/manager
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/upload/batch/excel/result
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/eipage/upload/batch/excel/result
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/epiage/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/upload/batch/excel/result
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/manager
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/upload/batch/excel/result
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/epiage/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/liver/check/review
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/review/delete
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/upload/batch/excel/result
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/admin/liver/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/report/search
+{ username: 'admin', password: 'admin123456' }
+{ page: '1', rows: '30' }
+{}
+backend app.js:/admin/epiage/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/epiage/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+undefined
+请重新登录
+backend app.js:/admin/loginview
+undefined
+backend app.js:/admin/login
+undefined
+admin
+admin123456
+---------------------
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/barcodes
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/report/search
+{ username: 'admin', password: 'admin123456' }
+{}
+backend app.js:/admin/liver/check/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/liver/check/datagrid/review
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/manager
+{ username: 'admin', password: 'admin123456' }
+backend app.js:/admin/welcome
+{ username: 'admin', password: 'admin123456' }
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+backend app.js:/bainuo/mini/login
+undefined
+backend app.js:/client/generic/barcodes
+undefined
+15767088850
+backend app.js:/bainuo/mini/login
+undefined
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!
+Connected to mongodb Database
+Connected to the MySQL server.
+Server listening on port 443!

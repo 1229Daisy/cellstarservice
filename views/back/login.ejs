@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <head>
+    <base href="<%=locals.url%>">
+    <title>hkgepitherapeutics system</title>
+    <link rel="shortcut icon" href="public/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="public/css/login-demo.css" />
+    <link rel="stylesheet" type="text/css" href="public/css/login-style.css" />
+    <link rel="stylesheet" type="text/css" href="public/css/login-animate-custom.css" />
+</head>
+<body>
+<div class="container">
+    <!-- Codrops top bar -->
+    <header>
+        <h1><span>百诺后台管理</span></h1>
+    </header>
+    <section>
+        <div id="container_demo" >
+            <a class="hiddenanchor" id="toregister"></a>
+            <a class="hiddenanchor" id="tologin"></a>
+            <div id="wrapper">
+                <div id="login" class="animate form">
+                    <form  action="/admin/login" method="post" autocomplete="on">
+                        <h1>登陆</h1>
+                        <p>
+                            <label for="username" class="uname" data-icon="u" > username </label>
+                            <input id="username" name="username" required="required"  value="admin" type="text" placeholder="username"/>
+                        </p>
+                        <p>
+                            <label for="password" class="youpasswd" data-icon="p">password </label>
+                            <input id="password" name="password" required="required" value="admin123456" type="password" placeholder="eg. X8df!90EO" />
+                        </p>
+                        <p class="login button">
+                            <input type="submit" value="Login" />
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>

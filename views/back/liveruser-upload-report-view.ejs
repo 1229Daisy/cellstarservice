@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="<%=locals.url%>">
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!-- [if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<![endif] -->
+    <!-- <link rel="stylesheet" type="text/css" href="public/h-ui/css/H-ui.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="public/h-ui.admin/css/H-ui.admin.css" /> -->
+    <link rel="stylesheet" type="text/css" href="public/js/1.0.8/iconfont.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="public/h-ui.admin/skin/default/skin.css" id="skin" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="public/h-ui.admin/css/style.css" /> -->
+    <link rel="stylesheet" type="text/css" href="public/css/hsycmsAlert.css" />
+    <link rel="stylesheet" href="public/css/jquery.pagination.css" />
+    <link rel="stylesheet" type="text/css" href="public/easyui/css/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="public/easyui/css/icon.css" />
+    <script type="text/javascript" src="public/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="public/js/clipboard.min.js"></script>
+    <title>核验单</title>
+
+</head>
+
+<body>
+    <div id="tb" style="padding:20px; height: auto;background-color: #e5efff;">
+        <a href="javascript:;"class="easyui-linkbutton" id="btnbatchBuild" iconCls="icon-add">批量生成报告</a>
+     
+    </div>
+    <table id="liverbatch"></table>
+
+    
+       <div id="mask" style="display: none; "><div id="over" style=" position: absolute;top: 0;left: 0; width: 100%;height: 100%; background-color: #f5f5f5;opacity:0.5;z-index: 1000;"></div><div id="layout" style="position: absolute;top: 40%; left: 40%;width: 20%; height: 20%;  z-index: 1001;text-align:center;"><img src="public/img/loading.gif" /></div></div>
+       <div class="hsycms-model-mask" id="mask-confirm"></div>
+        <div class="hsycms-model hsycms-model-confirm" id="confirm">
+            <div class="hscysm-model-title">提示</div>
+            <div class="hsycms-model-text">你确定要删除该条数据吗？</div>
+            <div class="hsycms-model-btn">
+                <button type="button" class="cancel">取消</button>
+                <button type="button" class="ok">确定</button>
+            </div>
+        </div>
+          <!--请在下方写此页面业务相关的脚本-->
+    <script type="text/javascript" src="public/js/My97DatePicker/4.8/WdatePicker.js"></script>
+    <script type="text/javascript" src="public/js/datatables/1.10.0/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="public/js/laypage/1.2/laypage.js"></script>
+    <script type="text/javascript" src="public/js/hsycmsAlert.js"></script>
+    <script type="text/javascript" src="public/easyui/js/jquery.min.js" ></script>
+    <script type="text/javascript" src="public/easyui/js/jquery.easyui.min.js" ></script>
+    <script type="text/javascript" src="public/easyui/js/easyui-lang-zh_CN.js" ></script>
+    </div> 
+    <script>
+        $(function(){
+            //定义下拉框的内容和值
+             window.jsonContent=[]
+                jsonContent.push({
+		        	value: '0',
+		            text: '男'
+		        })
+                jsonContent.push({
+                    value: '1',
+		            text: '女'
+		                    })
+         //easyui数据表格
+            $('#liverbatch').datagrid({
+            url:"admin/liver/check/datagrid/review",
+            width:1150,
+            // title:'核验单页面',
+            // iconCls:"icon-search",
+            fitColumns:true,
+            nowrap:true,
+            rownumbers: true,
+            // pagination:true,
+            // pageSize:30,
+            // pageList:[30,40,50,60,70],    
+            toolbar:"#tb",
+            onClickCell: onClickCell,//单击单元格事件
+            onAfterEdit:onAfterEdit,
+            endEditing:endEditing,
+           
+            // onClickRow: function (rowIndex, rowData) {
+            //     $("#liverbox").datagrid('selectRow', rowIndex);
+            //     $("#liverbox").datagrid('beginEdit', rowIndex);//设置可编辑状态
+            // },
+            columns:[[
+            { field:'ck',checkbox:true,align: 'center',width:100,},
+            { field:'sampleid',title:"  样本号  " ,align: 'center',width:120,},
+            { field:'username',title:"用户名",align: 'center',width:80, editor:'textbox',
+            // formatter: function(value, row, index) {
+            //     if(row.isNewData=="oldData"){
+            //      return `<span id='username' style='color:red'>${row.username}</span>`
+            //     }else{
+            //         return `<span id='username'>${row.username}</span>`
+            //     }                             
+            //     },
+            },
+            { field:'sex',title:"性别",align: 'center',width:80, editor:'textbox',
+            formatter: function(value, row, index) {
+
+                    if(row.isNewData=="oldData"){
+                     return `<span id='sex' style='color:red'>${row.sex}</span>`
+                    }else{
+                        return `<span id='sex'>${row.sex}</span>`
+                    }                           
+                },
+                 
+                    editor: {
+                                type: 'combobox',
+                                options: {
+                                    data: jsonContent,
+                                    valueField: "text",
+                                    textField: "text",
+                                    editable: false
+                                }
+                            }
+                    },
+            { field:'age',title:"年龄",align: 'center',width:60,editor:'textbox',hidden:true,
+            formatter: function(value, row, index) {
+                    return `<span id="age">${row.age}</span>`
+                              
+                },
+            },
+            { field:'tel',title:"绑定手机号",align: 'center',width:140,
+            formatter: function(value, row, index) {
+                if(row.isNewData=="oldData"){
+                 return `<span id='tel' style='color:red'>${row.tel}</span>`
+                }else{
+                    return `<span id='tel'>${row.tel}</span>`
+                }
+                              
+                },
+            },
+            { field:'testStatus',title:"条码状态",align: 'center',width:100,
+            formatter: function(value, row, index) {
+                    return `${row.testStatus=='Completed'?"检测完成":"未检测"}`
+                              
+                },
+            },
+            { field:'mval',title:"M值",align: 'center',width:100,editor:'textbox'},//editor:'text' 
+            { field:'probability',title:"概率" ,align: 'center',width:100,editor:'textbox'},
+            { field:'collectionDate',title:"采集日期",align: 'center',width:130,},
+            { field:'reciveDate',title:"接收日期",align: 'center',width:130, },
+            { field:'isNewData',title:"数据情况",align: 'center',width:90,
+            formatter: function(value, row, index) {
+                    return `${row.isNewData=="oldData"?"<span style='color:red'>原数据</span>":"新数据"}`
+                              
+                },
+            },
+            { field:'dataStatus',title:"数据状态",align: 'center',width:100, 
+            formatter: function(value, row, index) {
+                    let str=""
+                    if(row.dataStatus=="InvaldData"){
+                        str="<span name='invalid'>无效条码</span>"
+                    }else if(row.dataStatus=="DiffData"){
+                        str="重复数据"
+                    }else if(row.dataStatus=="Success"){
+                        str="有效数据"
+                    }else if(row.dataStatus=="Updata"){
+                        str="数据更新"
+                    }else{
+                        str="插入失败"
+                    }
+                    return str
+                              
+                },
+            },
+            { field:'uploadDate',title:"上传时间",align: 'center',width:130, },
+            { field:'inventoryStatus',title:"库存状态",align: 'center',width:90,
+            formatter: function(value, row, index) {
+                    return `${row.inventoryStatus=="empty"?"无存库":"有库存"}`
+                              
+                },
+            },
+            { field:'operate',title:"操作" ,align: 'center',width:100,
+            formatter: function(value, row, index) {
+                    return `<button id="delete" type="button" itemId="${row._id}" sampleid="${row.sampleid}"  onclick="buildPDF(this)">${row.dataStatus=="InvaldData"||row.dataStatus=="rollBack"?"":"生成报告"}</button>`
+                              
+                },
+        },
+           { field:'delete',title:"删除" ,align: 'center',width:100,
+            formatter: function(value, row, index) {
+                    return `<button name="deletedata" type="button" obid="${row._id}" onclick="confirm(this)">删除</button>`
+                              
+                },
+        },
+            ]],
+            
+         })
+     })
+        $("#ckselectall").change(function() { 
+            $("input[type=checkbox]").prop("checked",this.checked)
+        });
+       //编辑单元格
+        window.editIndex = undefined;
+         function endEditing() {//该方法用于关闭上一个焦点的editing状态 
+                   		
+                if (editIndex == undefined) {  
+                    return true  
+                    
+                }  
+                if ($('#liverbatch').datagrid('validateRow', editIndex)) {  
+                    $('#liverbatch').datagrid('endEdit', editIndex);  
+                    editIndex = undefined;  
+                    return true;  
+                } else {  
+                    return false;  
+                }  
+            }  
+        //点击单元格事件：  
+            function onClickCell(rowIndex,field,value) {
+                if (endEditing()) {
+                    if(field=="username"){ //判断是否为选中的单元格
+                        $(this).datagrid('beginEdit', rowIndex);//使行进入可编辑状态  
+                        var ed = $(this).datagrid('getEditor', {rowIndex:rowIndex,field:'username'}); 
+                        // console.info(ed)
+                    }
+                    if(field=="sex"){ //判断是否为选中的单元格
+                        $(this).datagrid('beginEdit', rowIndex);//使行进入可编辑状态  
+                        var ed = $(this).datagrid('getEditor', {rowIndex:rowIndex,field:'sex'}); 
+                    }
+                    if(field=="probability"){ //判断是否为选中的单元格
+                        $(this).datagrid('beginEdit', rowIndex);//使行进入可编辑状态  
+                        var ed = $(this).datagrid('getEditor', {rowIndex:rowIndex,field:'probability'}); 
+                    }
+                    if(field=="mval"){ //判断是否为选中的单元格 
+                        $(this).datagrid('beginEdit', rowIndex);//使行进入可编辑状态 
+                        var ed = $(this).datagrid('getEditor', {rowIndex:rowIndex,field:'mval'}); 
+                    } 
+                         
+                    editIndex = rowIndex;  
+                   
+                }  
+                // $(this).datagrid('onClickRow')  
+            } 
+        //编辑完m值，概率值之后执行的方法  
+            function onAfterEdit(rowIndex, row, changes) { 
+               
+                var updated = $('#liverbatch').datagrid('getChanges', 'updated'); 
+                if (updated.length < 1) {  
+                    editRow = false;  
+                    $('#liverbatch').datagrid('unselectAll');  
+                    return;  
+                } else {  
+                    // 传值 
+                   data_update(rowIndex, row, changes);
+       
+                }   
+            }
+        //保存后台输入的M值，概率值
+         function data_update(rowIndex, row, changes) {  
+        //  console.info(row.mval+"--"+changes.mval); 
+            let mval=row.mval;// 当前行中修改的数据值
+            let probability=row.probability;
+            let id=row._id
+            let sex=row.sex
+            let username=row.username
+
+            console.info(sex+"********")
+            $.ajax({  
+                    type : "post",  
+                    async : false,  
+                    url : "admin/liver/check/review/update",  
+                    data : {  
+                        "mval" : mval,  //将数据ajax到后台
+                        "probability" : probability,  
+                         "id":id,
+                         "sex":sex,
+                         "username":username,
+
+                    },  
+                    success : function(data) {  
+                        if(data=='success'){  
+                            // alert("保存成功");  
+                            $("#liverbatch").datagrid('reload');  
+                        } 
+                         
+                    }  
+                })
+                // $('#liverbox').datagrid('endEdit', rowIndex);
+        }
+        //批量生成报告
+        $("#btnbatchBuild").click(function(){
+                        $("#mask").css("height", $(document).height());
+                        $("#mask").css("width", $(document).width());
+                        $("#mask").show();
+                        let parm={}
+                        // parm.ids_inlib=[]
+                        // parm.ids_notinlib=[]
+                        parm.ids=[]
+
+                        parm.pdfbuildate=new Date().toLocaleDateString().replaceAll('/', '-')
+                        // parm.sampleids=[]
+                        let checkbox = $('#liverbatch').datagrid('getChecked');//获取check中的那一行的所有字段值
+                        // console.info(checkbox)
+                        $.each(checkbox, function(index, item){
+                            // if(item.inventoryStatus=="empty"){
+                            //     parm.ids_notinlib.push(item._id);
+                            // }else{
+                            //     parm.ids_inlib.push(item._id);
+                            // }
+                            parm.ids.push(item._id);
+                        }); 
+
+                        if(parm.ids.length){
+    
+                            $.post("admin/liver/review/batch/build/pdf",parm,function(status){
+                                console.info(status)
+                                if(status=="success"){
+                                    $("#mask").hide();
+                                    window.location.reload()
+                                }else{
+                                    alert("生成失败")
+                                }
+                            })
+                        }
+                       
+                    })
+        //生成单个报告
+        function buildPDF(obj){
+            $("#mask").css("height", $(document).height());
+                $("#mask").css("width", $(document).width());
+                $("#mask").show();
+                var parm = {}
+                //获取该条数据的数据库id
+                parm.id= $(obj).attr("itemId")
+                parm.sampleid = $(obj).attr("sampleid")
+                parm.username=$(obj).parent().parent().parent().find("#username").text()
+                parm.tel=$(obj).parent().parent().parent().find("#tel").text()
+                parm.sex=$(obj).parent().parent().parent().find("#sex").text()=='男'?'0':'1'
+                parm.age=$(obj).parent().parent().parent().find("#age").text()
+                parm.pdfbuildate=new Date().toLocaleDateString().replaceAll('/', '-')
+                console.info(parm)
+                $.post("admin/liver/review/check/comfirm", parm, function(data) {
+                    if (data == "success") {
+                        $("#mask").hide();
+                        location.replace(location.href)
+                    }
+                })
+        }
+    //删除一条数据
+   function confirm(obj) {
+            hsycms.confirm('confirm', '确定要删除吗?',
+                function(res) {
+                    hsycms.success('success', '点击了确定');
+                    var data = {}
+                        //获取该条数据的数据库id
+                    data.id = $(obj).attr("obid")
+                    console.info(data.id + "后台获取的数据库id")
+                    $.post("admin/liver/review/delete", data, function(data) {
+                        if (data == "success") {
+                            // location.replace(location.href)
+                            $("#liverbatch").datagrid('reload');
+                        }
+                    })
+                },
+                function(res) {
+                    hsycms.error('error', '点击了取消');
+                },
+            )
+        }
+    </script>
+    <div id="mask" style="display: none; "><div id="over" style=" position: absolute;top: 0;left: 0; width: 100%;height: 100%; background-color: #f5f5f5;opacity:0.5;z-index: 1000;"></div><div id="layout" style="position: absolute;top: 40%; left: 40%;width: 20%; height: 20%;  z-index: 1001;text-align:center;"><img src="public/img/loading.gif" /></div></div>
+
+</body>
+
+</html>

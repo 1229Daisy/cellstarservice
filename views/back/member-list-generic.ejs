@@ -1,0 +1,792 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="<%=locals.url%>">
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!-- [if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<![endif] -->
+    <!-- <link rel="stylesheet" type="text/css" href="public/h-ui/css/H-ui.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="public/h-ui.admin/css/H-ui.admin.css" /> -->
+    <link rel="stylesheet" type="text/css" href="public/js/1.0.8/iconfont.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="public/h-ui.admin/skin/default/skin.css" id="skin" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="public/h-ui.admin/css/style.css" /> -->
+    <link rel="stylesheet" type="text/css" href="public/css/hsycmsAlert.css" />
+   
+    <link rel="stylesheet" type="text/css" href="public/easyui/css/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="public/easyui/css/icon.css" />
+    <link rel="stylesheet" href="public/css/jquery.pagination.css" />
+    <script type="text/javascript" src="public/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="public/js/clipboard.min.js"></script>
+
+    <title>epiGeneric Users</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: "微软雅黑";
+        background: #eee;
+    }
+    
+    .box {
+        width: 800px;
+        margin: 50px auto 0;
+        height: 34px;
+    }
+    
+    .page {
+        width: 600px;
+    }
+    
+    .info {
+        width: 200px;
+        height: 34px;
+        line-height: 34px;
+    }
+    
+    .fl {
+        float: left;
+    }
+</style>
+
+<body>
+    
+    <!-- <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> Home <span class="c-gray en">&gt;</span>泛癌早筛管理
+        <span class="c-gray en">&gt;</span> 泛癌早筛<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="Refresh"><i class="Hui-iconfont">&#xe68f;</i></a></nav> -->
+        <!-- <div id="tb" style="padding:3px">
+            <span>Item ID:</span>
+            <input id="itemid" style="line-height:26px;border:1px solid #ccc">
+            <span>Product ID:</span>
+            <input id="productid" style="line-height:26px;border:1px solid #ccc">
+            <a href="#" class="easyui-linkbutton" plain="true" onclick="doSearch()">Search</a>
+        </div> -->
+      
+<div id="tb" style="padding-bottom: 20px;">
+    <div style="margin-bottom: 10px;padding: 20px;background-color: #e5efff;">
+        <a href="javascript:;"class="easyui-linkbutton"  iconCls="icon-add"onclick="member_add('添加报告','admin/generic/add/user/report','','510')">
+					 添加报告
+				</a>
+                <button class="easyui-linkbutton" id="batchsendmsg"  >批量发送短信</button>
+                <span   style="border:1px solid #95b8e7;padding: 4px 10px;border-radius: 5px;margin-left: 10px;">
+                    批量更改条码状态：
+                    <select id="status_batchalter" style="height:26px;border:1px solid white;border-radius: 5px">
+                        <option  value="NO_STATUS">请选择状态</option>
+                        <option  value="POST_FROM_LAB">样本已发出</option>
+                        <option  value="PARCEL_RECEIVED">样本已收到</option>
+                        <option  value="REGISTERED_IN_LIMS">样本已注册</option>
+                        <option  value="WAITING_DNA_PREP">DNA待提取</option>
+                        <option  value="SEQUENCING">测序检测中</option>
+                        <option  value="Completed">检测已完成</option>
+                        </select>
+				
+                </span>
+                
+                <div style="float: right;">
+                          
+                    <form name="imgform" method="post" action="admin/generic/upload/batch/excel/result" enctype="multipart/form-data">
+                        &nbsp;&nbsp;<input type="file" name="file" name="picpath" id="picpath" style="display:none;" onChange="document.imgform.path.value=this.value">
+                        <input name="path" style="width: 250px;height: 28px;border:1px solid #95b8e7;border-radius: 5px;" readonly/>
+                        <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" value="请选择.Execel文件批量上传报告" onclick="document.imgform.picpath.click()">
+                        <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" id='upload' value="上传" />
+                        <!-- <a href="javascript:void(0)" onclick="agebarcode_add('upload cvs file sample','admin/epiage/cvs','900','700')" >[upload cvs sample]</a> -->
+                        <a href="javascript:;"class="easyui-linkbutton" onclick="member_add('核验单页面','admin/generic/check/review','','510')" class="btn btn-primary radius">核验单</a>
+                    </form>
+                    <!-- <div style="float: left;margin-left: 10px;">    <a href="javascript:;" onclick="member_add('核验单页面','admin/liver/check/review','','510')" class="btn btn-primary radius">核验单</a></div> -->
+                </div>
+    </div>
+    
+    <div style="padding: 0 20px;padding-top: 10px;">
+        <textarea id="txtsampleid" placeholder="请输入样本号" cols="15" rows="2" onkeypress="return limitTextAreaRows(this)" style="resize: none;border:1px solid #95b8e7;border-radius: 5px;width:10%;float: left;"></textarea>
+    
+    <!-- <script>
+       function limitTextAreaRows(t) {
+           var cr = t.value.match(/\n/g);
+           if (cr && (cr.length > 9)) {
+               alert("最多10个样本号");
+               t.value = t.value.replace(/\n$/, "").replace(/\r$/, "");
+               t.focus();
+               return false;
+           }
+       }
+   </script> -->
+  <select id="status_singalsearch" style="height:30px;border:1px solid #ccc;border-radius: 5px;margin-left: 80px;">
+       <option  value="" >条码状态</option>
+       <option  value="NO_STATUS">请选择状态</option>
+       <option  value="POST_FROM_LAB">样本已发出</option>
+       <option  value="PARCEL_RECEIVED">样本已收到</option>
+       <option  value="REGISTERED_IN_LIMS">样本已注册</option>
+       <option  value="WAITING_DNA_PREP">DNA待提取</option>
+       <option  value="SEQUENCING">测序检测中</option>
+       <option  value="Completed">检测已完成</option>
+       </select>
+   <select id="report_status" style="height:30px;border:1px solid #ccc;border-radius: 5px;">
+    <option  selected value="">报告状态</option>
+    <option  style="color: red;" value="undone">报告未生成</option>
+    <option  style="color: green;" value="done">报告已生成</option>
+    </select>
+    <select id="sms_status" style="height:30px;border:1px solid #ccc;border-radius: 5px;margin-right: 80px;">
+        <option  selected value="">短信状态</option>
+        <option  style="color: red;"  value="0">短信未发送</option>
+        <option  style="color: green;" value="1">短信已发送</option>
+        </select>
+        <input type="text" id="mlval" style="width: 60px;height:30px;text-align: center;border:1px solid #ccc;border-radius: 5px;" value="" />
+        <span style="font-size: 12px;font-weight: bold;">≤M值≤</span>
+        <input type="text" id="mrval" style="width: 60px;height:30px;text-align: center;border:1px solid #ccc;border-radius: 5px;margin-right: 80px;" value="" />
+
+        <input type="text" id="clval" style="width: 60px;height: 30px;text-align: center;border:1px solid #ccc;border-radius: 5px" value="" />
+        <span style="font-size: 12px;font-weight: bold;">≤概率≤</span>
+        <input type="text" id="crval" style="width: 60px;height: 30px;text-align: center;border:1px solid #ccc;border-radius: 5px" value="" />
+        <span style="float: right;" iconCls="icon-search" class="easyui-linkbutton" plain="false" onclick="search()">Search</span>
+    </div>
+    
+    </div>
+
+      <table id="genericbox"></table>
+    
+        <!--普通弹窗-->
+        <div class="hsycms-model-mask" id="mask-alert"></div>
+        <div class="hsycms-model hsycms-model-alert" id="alert">
+            <div class="hscysm-model-title">提示</div>
+            <div class="hsycms-model-text">You have add: </div>
+            <div class="hsycms-model-btn">
+                <button type="button ok">OK</button>
+            </div>
+        </div>
+
+        <!--询问弹窗-->
+        <div class="hsycms-model-mask" id="mask-confirm"></div>
+        <div class="hsycms-model hsycms-model-confirm" id="confirm">
+            <div class="hscysm-model-title">提示</div>
+            <div class="hsycms-model-text">你确定要删除该条数据吗？</div>
+            <div class="hsycms-model-btn">
+                <button type="button" class="cancel">取消</button>
+                <button type="button" class="ok">确定</button>
+            </div>
+        </div>
+    </div>
+    <!--_footer 作为公共模版分离出去-->
+    <script type="text/javascript" src="public/js/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="public/js/2.4/layer.js"></script>
+    <script type="text/javascript" src="public/h-ui/js/H-ui.min.js"></script>
+    <script type="text/javascript" src="public/h-ui.admin/js/H-ui.admin.js"></script>
+    <script src="public/js/jquery.pagination.min.js"></script>
+    <!--/_footer 作为公共模版分离出去-->
+
+    <!--请在下方写此页面业务相关的脚本-->
+    <script type="text/javascript" src="public/js/My97DatePicker/4.8/WdatePicker.js"></script>
+    <script type="text/javascript" src="public/js/datatables/1.10.0/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="public/js/laypage/1.2/laypage.js"></script>
+    <script type="text/javascript" src="public/js/hsycmsAlert.js"></script>
+    <script type="text/javascript" src="public/easyui/js/jquery.min.js" ></script>
+    <script type="text/javascript" src="public/easyui/js/jquery.easyui.min.js" ></script>
+    <script type="text/javascript" src="public/easyui/js/easyui-lang-zh_CN.js" ></script>
+    <script type="text/javascript">
+  
+     $(function(){
+          
+         //easyui数据表格
+            $('#genericbox').datagrid({
+            url:"admin/generic/report/search",
+            width:1400,//$('#body').width,
+            title:'Home&gt;泛癌早筛管理&gt;泛癌早筛',
+            iconCls:"icon-search",
+            fitColumns:true,
+            nowrap:true,
+            rownumbers: true,
+            pagination:true,
+            pageSize:30,
+            pageList:[30,40,50,60,70],    
+            toolbar:"#tb",
+            onClickCell: onClickCell,//单击单元格事件
+            onAfterEdit:onAfterEdit,
+            endEditing:endEditing,
+            // onClickRow: function (rowIndex, rowData) {
+            //     $("#genericbox").datagrid('selectRow', rowIndex);
+            //     $("#genericbox").datagrid('beginEdit', rowIndex);//设置可编辑状态
+            // },
+            columns:[[
+            { field:'ck',checkbox:true,align: 'center',width:100,},
+            { field:'type',title:"样本类型" ,align: 'center',width:100,
+            formatter: function(value, row, index) {
+                    return `<div style="margin:10px 0>
+                        <select id="sample_type">
+							<option value="Plasma">外周血</option>
+                        </div>`
+                }
+        },
+            { field:'sampleid',title:"  样本号  " ,align: 'center',sortable:true,width:100,fixed:true,},
+            { field:'status',title:"  条码状态  ", align: 'center',sortable:true,width:100,fixed:true,
+
+            formatter: function(value, row, index) {
+        // for (var i = 0; i < jsonContent.length; i++) {
+        //     if (jsonContent[i].value == value) {
+        //         return jsonContent[i].text;
+        //     }
+        // }
+        //   },
+        //     editor: {
+        //                 type: 'combobox',
+        //                 options: {
+        //                     data: jsonContent,
+        //                     valueField: "value",
+        //                     textField: "text",
+        //                     editable: false
+        //                 }
+        return `<div style="margin:10px 0">
+                        <select  sid="${row._id}" id="sample_status" onchange=editstatus(this.vlue,'${row.status}') >
+                                <option  id=${row._id} value="NO_STATUS" ${row.status=="NO_STATUS"?"selected":" "}>请选择状态</option>
+                                <option  id=${row._id} value="POST_FROM_LAB" ${row.status=="POST_FROM_LAB"?"selected":" "}>样本已发出</option>
+                                <option  id=${row._id} value="PARCEL_RECEIVED" ${row.status=="PARCEL_RECEIVED"?"selected":" "}>样本已收到</option>
+                                <option  id=${row._id} value="REGISTERED_IN_LIMS" ${row.status=="REGISTERED_IN_LIMS"?"selected":" "}>样本已注册</option>
+                                <option  id=${row._id} value="WAITING_DNA_PREP" ${row.status=="WAITING_DNA_PREP"?"selected":" "}>DNA待提取</option>
+                                <option  id=${row._id} value="SEQUENCING" ${row.status=="SEQUENCING"?"selected":" "}>测序检测中</option>
+                                <option  id=${row._id} value="Completed" ${row.status=="Completed"?"selected":" "}>检测已完成</option>
+						    </select>
+                        </div>`
+                    }
+
+                
+        },
+            { field:'tel',title:"绑定手机号",align: 'center',width:100,fixed:true, },
+            { field:'mval',title:"M值",align: 'center',width:100,editor:'textbox'},//editor:'text' 
+            { field:'chance',title:"概率值" ,align: 'center',width:100,editor:'textbox'},
+            { field:'date',title:"采集日期",align: 'center',width:120,editor: {type: 'datebox',options: {editable: false}}},//editor={type:'datebox',options:{required:true,editable:false}},
+            { field:'recdate',title:"接收日期" ,align: 'center',width:120,editor: {type: 'datebox',options: {editable: false}}},
+            { field:'operate',title:"用户表" ,align: 'center',width:100,
+            formatter: function(value, row, index) {
+                    return `<a id="detail" style="text-decoration:underline" onClick="article_edit('Detail information','admin/generic/userdetail?sampleid=${row.sampleid}','10002')" title="Detail">用户详情</a>`
+                }
+        },
+            { field:'_id',title:"报告预览" ,align: 'center',width:100,
+            formatter: function(value, row, index) {
+                    return `<a id="report_parameter" style="text-decoration:underline;" onClick="article_edit('Report Parameter','admin/generic/report?id=${row._id}','10002')" title="Report Parameter">报告预览</a>`
+                }
+        },
+            { field:'copypdf',title:"报告链接" ,align: 'center',width:100,
+            formatter: function(value,row,index){
+                // if (row.pdf){
+                //     return `<div name="copypdflink" style="color:green;text-decoration: underline;cursor: pointer;">复制链接</div><input type="hidden" value="https://bainuo.beijingepidial.com/public/pdffile/${row.sampleid}.pdf">`
+                // } else {
+                //     return "";
+                // }
+                return `${row.pdf?`<div name="copypdflink" style="color:green;text-decoration: underline;cursor: pointer;">复制链接</div><input type="hidden" value="https://bainuo.beijingepidial.com/public/pdffile/${row.sampleid}.pdf">`:'<div name="copypdflink"></div>'}`
+           }
+        },
+            { field:'pdf',title:"报告状态" ,align: 'center',width:100,
+            formatter: function(value,row,index){
+                // if (row.pdf){
+                //     return '<span style="color:green;"name="result">已生成</span>';
+                // } else {
+                //     return '<span style="color:red;" name="result">未生成</span>';
+                // }
+                return `${row.pdf?'<span style="color:green;"name="result">已生成</span>':'<span style="color:red;" name="result">未生成</span>'}`;
+           }
+        },
+            { field:'issms',title:"短信状态" ,align: 'center',width:100,
+            formatter: function(value, row, index) {
+                                    // if(row.issms ==1 ) {
+                                    //     return '<span style="color:green;" name="txtsmstouser">已发送</span>';
+                                    // }else{
+                                    //     return '<span style="color:red;" name="txtsmstouser">未发送</span>';
+                                    // }
+                                    return `${row.issms ==1?'<span style="color:green;" name="txtsmstouser">已发送</span>':'<span style="color:red;" name="txtsmstouser">未发送</span>'}`
+                                }
+        },
+            { field:'sendsms',title:"发送短信",align: 'center',width:100,
+            formatter: function(value, row, index) {
+                    return `<button name="btnsmstouser" style="visibility:${row.pdf?'visible':'hidden'}" type="button" sampleid="${row.sampleid}"  tel="${row.tel}" onclick="smstouser(this)">发送短信</button>`
+                }
+        },
+            { field:'buildpdf',title:"生成报告",align: 'center', width:100,
+            formatter: function(value, row, index) {
+                    return `<button onclick="buildPDF(this)" style="visibility:${row.status=='Completed'?'visible':'hidden'}" type="button" name="btnbuildpdf" oid="${row._id}" sampleid="${row.sampleid}">生成报告</button>`
+                }
+        },
+            { field:'delete',title:"删除" ,align: 'center',width:100,
+            formatter: function(value, row, index) {
+                    return `<button id="delete" type="button" sampleid="${row.sampleid}" onclick="confirm(this)">删除</button>`
+                }
+        },
+            
+            ]],
+            
+         })
+     })
+   //取消页面编辑
+    window.editIndex = undefined;
+         function endEditing() {//该方法用于关闭上一个焦点的editing状态 	
+                if (editIndex == undefined) {  
+                    return true  
+                }  
+                if ($('#genericbox').datagrid('validateRow', editIndex)) {  
+                    $('#genericbox').datagrid('endEdit', editIndex);  
+                    editIndex = undefined;  
+                    return true;  
+                } else {  
+                    return false;  
+                }  
+            } 
+        $("#tb").click(function(){
+                endEditing() 
+        }) 
+
+        //点击单元格事件：  
+            function onClickCell(rowIndex,field,value) {
+                if (endEditing()) {
+                    if(field=="chance"){ //判断是否为选中的单元格
+                        $(this).datagrid('beginEdit', rowIndex);//使行进入可编辑状态  
+                        var ed = $(this).datagrid('getEditor', {rowIndex:rowIndex,field:'chance'}); 
+                        // var ed = $('#genericbox').datagrid('getEditors', rowIndex)[0];
+                        // $(ed.target).focus(); //获取焦点
+                    }
+                    if(field=="mval"){ //判断是否为选中的单元格 
+                        $(this).datagrid('beginEdit', rowIndex);//使行进入可编辑状态 
+                        var ed = $(this).datagrid('getEditor', {rowIndex:rowIndex,field:'mval'}); 
+                        // console.info(ed) 
+                        // var ed = $('#genericbox').datagrid('getEditors', rowIndex)[0];
+                        // $(ed.target).focus(); //获取焦点
+                    } 
+                    if(field=="date"){ //判断是否为选中的单元格 
+                        // console.info('$$$$')
+                        $(this).datagrid('beginEdit', rowIndex);//使行进入可编辑状态 
+                    } 
+                    if(field=="recdate"){ //判断是否为选中的单元格 
+                        // console.info('$$$$')
+                        $(this).datagrid('beginEdit', rowIndex);//使行进入可编辑状态 
+                    } 
+                         
+                    editIndex = rowIndex;  
+                   
+                }  
+                // $(this).datagrid('onClickRow')  
+            } 
+        //编辑完m值，概率值之后执行的方法  
+            function onAfterEdit(rowIndex, row, changes) { 
+               
+                var updated = $('#genericbox').datagrid('getChanges', 'updated');  
+                if (updated.length < 1) {  
+                    editRow = false;  
+                    $('#genericbox').datagrid('unselectAll');  
+                    return;  
+                } else {  
+                    // 传值 
+                    mvalchan_update(rowIndex, row, changes);
+       
+                }   
+            }
+        //保存后台输入的M值，概率值
+         function mvalchan_update(rowIndex, row, changes) {  
+        //  console.info(row.mval+"--"+changes.mval); 
+            var mval=row.mval;// 当前行中修改的数据值
+            var chance=row.chance;
+            var id=row._id
+            var date=row.date
+            var recdate=row.recdate  
+            // console.info(mval+"********"+chance)
+            $.ajax({  
+                    type : "post",  
+                    async : false,  
+                    url : "admin/generic/update",  
+                    data : {  
+                        "mval" : mval,  //将数据ajax到后台
+                        "chance" : chance,  
+                        "id":id,
+                        "date":date,
+                        "recdate":recdate,
+                    },  
+                    success : function(data) {  
+                        if(data=='success'){  
+                            // alert("保存成功");  
+                            $(this).datagrid('reload');  
+                        } 
+                         
+                    }  
+                })
+                // $('#genericbox').datagrid('endEdit', rowIndex);
+        }
+                  
+      //查询功能
+      function search(){
+            $('#genericbox').datagrid("load",{
+               sampleid :$("#txtsampleid").val(),
+               status : $("#status_singalsearch option:selected").val(),
+               pdf : $("#report_status option:selected").val(),
+               sms : $("#sms_status option:selected").val(), 
+               mlval : $("#mlval").val(),
+               mrval : $("#mrval").val(),
+               clval : $("#clval").val(),
+               crval : $("#crval").val(),
+          })
+          }
+     
+        //更改单个条码状态 
+        function editstatus(){
+            $("body").on("change", "select[id=sample_status]", function(event) {
+                var vdata = {}
+                var _oThis = $(event.currentTarget);
+                vdata.status = _oThis.find("option:selected").val();
+                vdata.id = _oThis.find("option:selected").attr("id")
+                console.info(vdata.status)
+                $.post("admin/generic/updatestatus", vdata, function(result) {
+                    if (result == "success") {
+                        // console.info(_oThis.parent().parent().parent().parent())
+                        _oThis.parent().parent().parent().parent().find("[name=btnbuildpdf]").css("visibility", vdata.status == "Completed" ? "visible" : "hidden")
+                    }
+                })
+            })
+
+       
+     }
+     //复制pdf报告链接地址
+     $("body").on("click", "[name=copypdflink]", function(event) {
+                        var _oThis = $(event.currentTarget).next();
+                        var $temp = $("<input>");
+                        $("body").append($temp);
+                        $temp.val(_oThis.val()).select();
+                        document.execCommand("copy");
+                        $temp.remove();
+                        alert("已复制报告链接到粘贴板")
+                    })
+    //生成报告
+    function buildPDF(obj) {
+        showLoading()
+        let data = {}
+        data.id = $(obj).attr("oid")
+        data.sampleid = $(obj).attr("sampleid")
+        $.post("admin/generic/build/generic/pdf", data, function(status) {
+            if (status == "success") {
+                $(obj).parent().parent().parent().find("span[name=result]").css("color","green").text("已生成")
+                $(obj).parent().parent().parent().find("div[name='copypdflink']").html("<div  style='color:green;text-decoration: underline;cursor: pointer;'>复制链接</div> <input type='hidden' value='https://bainuo.beijingepidial.com/public/pdffile/" + data.sampleid + ".pdf'>")
+                completeLoading()
+                $("#genericbox").datagrid('reload');
+            }
+        })
+    }
+    //发送短信
+    function smstouser(obj){
+                            $(obj).hide()
+                            var tel=$(obj).attr("tel")
+                            var sampleid=$(obj).attr("sampleid")
+                            if(!$(obj).attr("tel")){
+                                hsycms.alert("alert","用户手机号未填写", function() {
+                                    hsycms.close('alert');
+                                })
+                            }else{
+                                var param={}
+                                param.tel=tel
+                                param.sampleid=sampleid
+                               $.post("admin/generic/client/sms",param,function(data){
+                                    if(data.status=="success"){
+                                        $(obj).show()
+                                        $(obj).parent().parent().parent().find("span[name=txtsmstouser]").css("color","green").text("已发送")
+                                        hsycms.alert("alert","发送成功", function() {
+                                            hsycms.close('alert');
+                                        })
+                                    }else{
+                                        $(obj).parent().parent().parent().find("span[name=txtsmstouser]").css("color","red").text("未发送")
+                                        hsycms.alert("alert","发送短信失败,相同号码发送频率过于频繁,建议请3-5分钟后再发送", function() {
+                                            hsycms.close('alert');
+                                        })
+                                    }
+                               })
+                            }   
+                        }
+            //批量发送短信
+                        $("#batchsendmsg").click(function() { 
+                        $("#mask").css("height", $("body").height());
+                        $("#mask").css("width", $("body").width());
+                        $("#mask").show();
+                        let parm={}
+                        parm.ids=[]
+                        let checkbox = $('#genericbox').datagrid('getChecked');//获取check中的那一行的所有字段值
+                        // console.info(checkbox)
+                        $.each(checkbox, function(index, item){
+                            parm.ids.push(item._id);
+                        }); 
+
+                        if(parm.ids.length){
+                            console.info(parm)
+                            $.post("admin/generic/batch/send/msg",parm,function(status){
+                                if(status=="success"){
+                                    $("#mask").hide();
+                                    window.location.reload()
+                                }else{
+                                    alert("生成失败")
+                                }
+                            })
+                        }
+                    });
+            //用户详情及报告预览
+            $(function() {
+            $("body").on("click", "a[name=detail]", function() {
+                article_edit("Detail information", $(this).attr("url"), "10002")
+            })
+            $("body").on("click", "a[name=report_parameter]", function() {
+                article_edit("Report Parameter", $(this).attr("url"), "10002")
+            })
+            $("input[name=sampleid]").blur(function() {
+                if ($('input[name=sampleid]').val() != "") { //jquery方法和js方法不同，获取不到值当做空字符串而不是undefined
+                    var vdata = {}
+                    vdata.id = $(this).next().val()
+                    vdata.sampleid = $(this).val()
+                    $.post("admin/generic/updateform", vdata, function(data) {
+                        if (data == "error") {
+                            hsycms.alert("alert", vdata.sampleid + "样本ID重复!请重新输入", function() {
+                                hsycms.close('alert');
+                            })
+                        }
+                    })
+                } else {
+                    hsycms.alert("alert", vdata.sampleid + "已保存", function() {
+                        hsycms.close('alert');
+
+                    })
+                }
+            })
+        })
+        //批量更改条码状态
+        $("#status_batchalter").change(function(event) {
+                        $("#mask").css("height", $(document).height());
+                        $("#mask").css("width", $(document).width());
+                        $("#mask").show();
+                        let data = {}
+                        data.idbox = []
+                        data.status = $(event.currentTarget).val() //获取选中的值
+                        var checkbox = $('#genericbox').datagrid('getChecked');//获取check中的那一行的所有字段值
+                        // console.info(checkbox)
+                        $.each(checkbox, function(index, item){
+                            data.idbox.push(item._id);
+                        }); 
+                        console.info(data)
+                        $.post("admin/generic/changestatus", data, function(result) {
+                            if (result == "success") {
+                                $.each($('input:checkbox:checked'), function(index, obj) {
+                                    $(obj).parent().parent().parent().find("select").find("option[value='" + data.status + "']").attr("selected", true);
+                                })
+                                $("#mask").hide();
+                            }
+
+                        })
+                    });
+    //批量返回报告状态
+        $("#report_status").change(function(event) {
+            $("#mask").css("height", $(document).height());
+            $("#mask").css("width", $(document).width());
+            $("#mask").show();
+            let report_status = $(event.currentTarget).val() //获取选中的值
+            console.info(report_status)
+            $('#genericbox').datagrid("load",{
+               pdf : report_status,
+          })
+        });
+     //批量返回短信状态
+     $("#sms_status").change(function(event) {
+         $("#mask").css("height", $(document).height());
+         $("#mask").css("width", $(document).width());
+         $("#mask").show();
+         let sms_status = $(event.currentTarget).val() //获取选中的值
+         console.info(sms_status)
+         $('#genericbox').datagrid("load",{
+            sms : sms_status,
+       })
+     });
+        
+
+     
+        //上传文件
+        $(function(){
+                            $("#upload").click(function () {
+                                if($('#picpath').val()){
+                                    $("#mask").css("height", $(document).height());
+                                    $("#mask").css("width", $(document).width());
+                                    $("#mask").show();
+                                    let files = $('#picpath').prop('files');
+                                    let data = new FormData();
+                                    data.append('file', files[0])
+                                    $.ajax({
+                                    type: 'POST',
+                                    url: "admin/generic/upload/batch/excel/result",
+                                    data: data,
+                                    cache: false,
+                                    processData: false,
+                                    contentType: false,
+                                    complete: function (ret) {
+                                        $("#mask").hide();
+                                        window.location.reload()
+                                    }
+                                });
+                                }
+                            })
+                           })
+        //在页面未加载完毕之前显示的loading Html自定义内容
+                   var _LoadingHtml = '<div id="loadingDiv" style="display: none; "><div id="over" style=" position: absolute;top: 0;left: 0; width: 100%;height: 100%; background-color: #f5f5f5;opacity:0.5;z-index: 1000;"></div><div id="layout" style="position: absolute;top: 40%; left: 40%;width: 20%; height: 20%;  z-index: 1001;text-align:center;"><img src="public/img/loading.gif" /></div></div>';
+                    //呈现loading效果
+                    document.write(_LoadingHtml);
+
+                    //移除loading效果
+                    function completeLoading() {
+                        document.getElementById("loadingDiv").style.display = "none";
+                    }
+                    //展示loading效果
+                    function showLoading() {
+                        document.getElementById("loadingDiv").style.display = "block";
+
+                    }
+</script>
+<script type="text/javascript">
+        //询问弹窗
+        function confirm(obj) {
+            hsycms.confirm('confirm', '确定要删除吗?',
+                function(res) {
+                    hsycms.success('success', '点击了确定');
+                    var vdata = {}
+                        //获取该条数据的数据库id
+                    vdata.sampleid = $(obj).attr("sampleid")
+                    console.info(vdata.sampleid + "后台获取的数据库id")
+                    $.post("admin/generic/delreport", vdata, function(data) {
+                        if (data == "success") {
+                            // location.replace(location.href)
+                            $("#genericbox").datagrid('reload');
+                        }
+                    })
+                },
+                function(res) {
+                    hsycms.error('error', '点击了取消');
+                },
+            )
+        }
+        //操作成功调用 
+        function success() {
+            hsycms.success('success', '操作成功', function() {
+                console.log('操作成功关闭后');
+            }, 1800)
+        }
+
+        //操作失败调用
+        function error() {
+            hsycms.error('error', '操作失败', function() {
+                console.log('操作失败关闭后');
+            }, 1800)
+        }
+
+        //显示loading
+        // function loading() {
+        // 	hsycms.loading('loading', '正在加载');
+        // 	//2秒后隐藏
+        // 	setTimeout(res => {
+        // 		hsycms.hideLoading('loading');
+        // 	}, 2000)
+        // }
+
+        // $('.table-sort').dataTable({
+        // 	"aaSorting": [[1, "desc"]],//默认第几个排序
+        // 	"bStateSave": true,//状态保存
+        // 	"pading": false,
+        // 	"aoColumnDefs": [
+        // 		//{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+        // 		{ "orderable": false, "aTargets": [0, 8] }// 不参与排序的列
+        // 	]
+        // });
+        /*用户-添加*/
+        function member_add(title, url, w, h) {
+            layer_show(title, url,900, 500);
+        }
+        /*用户-查看*/
+        function member_show(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+        /*资讯-编辑*/
+        function article_edit(title, url, id, w, h) {
+            var index = layer.open({
+                type: 2,
+                title: title,
+                content: url
+            });
+            layer.full(index);
+        }
+        /*用户-停用*/
+        function member_stop(obj, id) {
+            layer.confirm('确认要停用吗？', function(index) {
+                $.ajax({
+                    type: 'POST',
+                    url: '',
+                    dataType: 'json',
+                    success: function(data) {
+                        $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_start(this,id)" href="javascript:;" title="启用"><i class="Hui-iconfont">&#xe6e1;</i></a>');
+                        $(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已停用</span>');
+                        $(obj).remove();
+                        layer.msg('已停用!', {
+                            icon: 5,
+                            time: 1000
+                        });
+                    },
+                    error: function(data) {
+                        console.log(data.msg);
+                    },
+                });
+            });
+        }
+
+        /*用户-启用*/
+        function member_start(obj, id) {
+            layer.confirm('确认要启用吗？', function(index) {
+                $.ajax({
+                    type: 'POST',
+                    url: '',
+                    dataType: 'json',
+                    success: function(data) {
+                        $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_stop(this,id)" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a>');
+                        $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已启用</span>');
+                        $(obj).remove();
+                        layer.msg('已启用!', {
+                            icon: 6,
+                            time: 1000
+                        });
+                    },
+                    error: function(data) {
+                        console.log(data.msg);
+                    },
+                });
+            });
+        }
+        /*用户-编辑*/
+        function member_edit(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+        /*密码-修改*/
+        function change_password(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+        /*用户-删除*/
+        function member_del(obj, id) {
+            layer.confirm('确认要删除吗？', function(index) {
+                $.ajax({
+                    type: 'POST',
+                    url: '',
+                    dataType: 'json',
+                    success: function(data) {
+                        $(obj).parents("tr").remove();
+                        layer.msg('已删除!', {
+                            icon: 1,
+                            time: 1000
+                        });
+                    },
+                    error: function(data) {
+                        console.log(data.msg);
+                    },
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

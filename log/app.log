@@ -1,0 +1,148 @@
+[2021-10-25T09:25:00.584] [ERROR] normal - { Error: ER_NO_SUCH_TABLE: Table 'hdreportdb.report' doesn't exist
+    at Query.Sequence._packetToError (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onread (net.js:635:20)
+    --------------------
+    at Protocol._enqueue (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\Connection.js:198:25)
+    at app.get (D:\usr\local\workspace\bainuominipro\app.js:1659:20)
+    at Layer.handle [as handle_request] (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\layer.js:95:5)
+    at D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:275:10)
+    at D:\usr\local\workspace\bainuominipro\app.js:298:28
+    at Layer.handle [as handle_request] (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:317:13)
+    at D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:275:10)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'hdreportdb.report\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql: 'select * from  report' }
+[2021-10-25T09:27:00.587] [ERROR] normal - { Error: ER_NO_SUCH_TABLE: Table 'hdreportdb.report' doesn't exist
+    at Query.Sequence._packetToError (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onread (net.js:635:20)
+    --------------------
+    at Protocol._enqueue (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\Connection.js:198:25)
+    at app.get (D:\usr\local\workspace\bainuominipro\app.js:1659:20)
+    at Layer.handle [as handle_request] (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\layer.js:95:5)
+    at D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:275:10)
+    at D:\usr\local\workspace\bainuominipro\app.js:298:28
+    at Layer.handle [as handle_request] (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:317:13)
+    at D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:275:10)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'hdreportdb.report\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql: 'select * from  report' }
+[2021-11-17T11:43:23.052] [ERROR] normal - { Error: ER_NO_SUCH_TABLE: Table 'hdreportdb.report' doesn't exist
+    at Query.Sequence._packetToError (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onread (net.js:635:20)
+    --------------------
+    at Protocol._enqueue (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\Connection.js:198:25)
+    at app.get (D:\usr\local\workspace\bainuominipro\app.js:3040:20)
+    at Layer.handle [as handle_request] (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\layer.js:95:5)
+    at D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:275:10)
+    at D:\usr\local\workspace\bainuominipro\app.js:371:28
+    at Layer.handle [as handle_request] (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:317:13)
+    at D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:275:10)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'hdreportdb.report\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql: 'select * from  report' }
+[2021-11-17T11:45:23.007] [ERROR] normal - { Error: ER_NO_SUCH_TABLE: Table 'hdreportdb.report' doesn't exist
+    at Query.Sequence._packetToError (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Query.ErrorPacket (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\sequences\Query.js:79:18)
+    at Protocol._parsePacket (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (events.js:182:13)
+    at addChunk (_stream_readable.js:283:12)
+    at readableAddChunk (_stream_readable.js:264:11)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onread (net.js:635:20)
+    --------------------
+    at Protocol._enqueue (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Connection.query (D:\usr\local\workspace\bainuominipro\node_modules\mysql\lib\Connection.js:198:25)
+    at app.get (D:\usr\local\workspace\bainuominipro\app.js:3040:20)
+    at Layer.handle [as handle_request] (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\route.js:112:3)
+    at Layer.handle [as handle_request] (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\layer.js:95:5)
+    at D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:275:10)
+    at D:\usr\local\workspace\bainuominipro\app.js:371:28
+    at Layer.handle [as handle_request] (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:317:13)
+    at D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\usr\local\workspace\bainuominipro\node_modules\express\lib\router\index.js:275:10)
+  code: 'ER_NO_SUCH_TABLE',
+  errno: 1146,
+  sqlMessage: 'Table \'hdreportdb.report\' doesn\'t exist',
+  sqlState: '42S02',
+  index: 0,
+  sql: 'select * from  report' }

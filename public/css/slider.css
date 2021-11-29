@@ -1,0 +1,27 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.scroll-bar{
+	height: 36px;
+	position: relative;
+	margin-top: 10px;
+}
+.entire-bar{
+	width:100%;
+	height: 4px;
+	top: 12px;
+	left: 0;
+	position: absolute;
+	background: #dedede;
+}
+
+.action-block{
+	top: 4px;
+	width: 34px;
+	height: 50px;
+	cursor: pointer;
+	position: absolute;
+	background: #fff;
+}

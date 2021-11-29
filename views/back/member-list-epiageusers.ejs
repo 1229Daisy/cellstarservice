@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="<%=locals.url%>">
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <!-- [if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<![endif] -->
+    <!-- <link rel="stylesheet" type="text/css" href="public/h-ui/css/H-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="public/h-ui.admin/css/H-ui.admin.css" /> -->
+    <link rel="stylesheet" type="text/css" href="public/js/1.0.8/iconfont.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="public/h-ui.admin/skin/default/skin.css" id="skin" />
+    <link rel="stylesheet" type="text/css" href="public/h-ui.admin/css/style.css" /> -->
+    <link rel="stylesheet" type="text/css" href="public/easyui/css/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="public/easyui/css/icon.css" />
+    <link rel="stylesheet" type="text/css" href="public/css/hsycmsAlert.css" />
+    <!-- <link rel="stylesheet" href="public/css/jquery.pagination.css" /> -->
+    <script type="text/javascript" src="public/js/jquery-3.6.0.min.js"></script>
+
+    <title>epiLiver Users</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        font-family: "微软雅黑";
+        background: #eee;
+    }
+    
+    .box {
+        width: 800px;
+        margin: 50px auto 0;
+        height: 34px;
+    }
+    
+    .page {
+        width: 600px;
+    }
+    
+    .info {
+        width: 200px;
+        height: 34px;
+        line-height: 34px;
+    }
+    
+    .fl {
+        float: left;
+    }
+</style>
+
+<body>
+    <div id="tb" style=" height: auto;background-color: #e5efff;padding: 30px 30px;">
+        <input  id="txtphone" placeholder="电话号码:" value="" style="width: 180px;height: 30px;border:1px solid #95b8e7;border-radius: 5px;padding-left:5px;"/> 
+        <input  id="txtsampleid" placeholder="条码:" value="" style="width: 180px;height: 30px;border:1px solid #95b8e7;border-radius: 5px;padding-left:5px;"/>
+        <input  id="txtname" placeholder="姓名:" value="" style="width: 180px;height: 30px;border:1px solid #95b8e7;border-radius: 5px;padding-left:5px;margin-right: 50px;"/>
+        客户注册日期从： <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate" style="width:120px;height: 30px;border:1px solid #95b8e7;border-radius: 5px;">
+        至<input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d' })" id="datemax" class="input-text Wdate" style="width:120px;height: 30px;border:1px solid #95b8e7;border-radius: 5px;">
+        <span  iconCls="icon-search" style="float: right;" class="easyui-linkbutton" plain="false" onclick="search()">Search</span>
+        
+        
+    </div>
+    <table id="ageuserbox"></table>
+    
+    <!--普通弹窗-->
+    <div class="hsycms-model-mask" id="mask-alert"></div>
+    <div class="hsycms-model hsycms-model-alert" id="alert">
+        <div class="hscysm-model-title">Notification</div>
+        <div class="hsycms-model-text">You have add: </div>
+        <div class="hsycms-model-btn">
+            <button type="button ok">OK</button>
+        </div>
+    </div>
+
+    <!--询问弹窗-->
+    <div class="hsycms-model-mask" id="mask-confirm"></div>
+    <div class="hsycms-model hsycms-model-confirm" id="confirm">
+        <div class="hscysm-model-title">提示</div>
+        <div class="hsycms-model-text">确定要删除吗？</div>
+        <div class="hsycms-model-btn">
+            <button type="button" class="cancel">Cancel</button>
+            <button type="button" class="ok">OK</button>
+        </div>
+    </div>
+    </div>
+    <!--_footer 作为公共模版分离出去-->
+    <script type="text/javascript" src="public/js/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="public/js/2.4/layer.js"></script>
+    <script type="text/javascript" src="public/h-ui/js/H-ui.min.js"></script>
+    <script type="text/javascript" src="public/h-ui.admin/js/H-ui.admin.js"></script>
+    <script src="public/js/jquery.pagination.min.js"></script>
+    <!--/_footer 作为公共模版分离出去-->
+
+    <!--请在下方写此页面业务相关的脚本-->
+    <script type="text/javascript" src="https://bainuo.beijingepidial.com/public/js/My97DatePicker/4.8/WdatePicker.js"></script>
+    <script type="text/javascript" src="public/js/datatables/1.10.0/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="public/js/laypage/1.2/laypage.js"></script>
+    <script type="text/javascript" src="public/js/hsycmsAlert.js"></script>
+    <script type="text/javascript" src="public/easyui/js/jquery.min.js" ></script>
+    <script type="text/javascript" src="public/easyui/js/jquery.easyui.min.js" ></script>
+    <script type="text/javascript" src="public/easyui/js/easyui-lang-zh_CN.js" ></script>
+    
+    <script type="text/javascript">
+        $(function(){
+         //easyui数据表格
+            $('#ageuserbox').datagrid({
+            url:"admin/epiageuser/search",
+            width:$('#body').width,
+            title:'Home&gt;生物学年龄用户&gt;用户管理',
+            iconCls:"icon-search",
+            fitColumns:true,
+            nowrap:true,
+            rownumbers: true,
+            pagination:true,
+            pageSize:30,
+            pageList:[30,40,50,60,70],    
+            toolbar:"#tb",
+            onLoadSuccess:function(data){
+            $("a[name='opera']").linkbutton({text:'删除',plain:false});
+            },
+            columns:[[
+            { field:'ck',checkbox:true,align: 'center',width:100,},
+            { field:'username',title:"用户名" ,align: 'center',width:100,},
+            { field:'tel',title:"手机号" ,align: 'center',width:100,},
+            { field:'idCard',title:"身份证" ,align: 'center',width:140,},
+            { field:'sex',title:"性别" ,align: 'center',width:100,
+            formatter: function(value, row, index) {
+                return `${row.sex==0?"男":"女"}`
+            }
+            },
+            { field:'age',title:"生物学年龄" ,align: 'center',width:100,},
+            { field:'sampleid',title:"绑定条码" ,align: 'center',width:100,},
+            { field:'checktime',title:"上次查询时间" ,align: 'center',width:100,},
+            { field:'created',title:"客户注册日期" ,align: 'center',width:100,},
+            { field:'delete',title:"删除" ,align: 'center',width:60,
+            formatter: function(value, row, index) {
+                    return `<a href="javascript:;" name="opera" class="easyui-linkbutton" sampleid="${row.sampleid}" obid="${row._id}" onclick="confirm(this)"></a>`
+                              
+                },
+        },
+            
+            ]],
+            
+         })
+     })
+     //查询
+     function search(){
+          console.info($("#txtphone").val())
+            $('#ageuserbox').datagrid("load",{
+                tel :$("#txtphone").val(),
+                sampleid:$("#txtsampleid").val(),
+                username:$("#txtname").val(),
+                datemin : $("#datemin").val(),
+                datemax : $("#datemax").val()
+               
+          })
+          }
+        //询问弹窗
+        function confirm(obj) {
+
+            hsycms.confirm('confirm', 'Are you sure to delete?',
+                function(res) {
+                    hsycms.success('success', '点击了确定');
+                    var vdata = {}
+                        //获取该条数据的数据库id
+                        /*  vdata.id = $(obj).parent().parent().find("input[name=id]").val()
+                         console.info(vdata.id)
+                         $.post("admin/epiage/deleteuser", vdata, function(data) {
+                             if (data == "success") {
+                                 // location.replace(location.href)
+                                 window.location.reload()
+                             }
+                         }) */
+                    vdata.id = $(obj).attr("obid")
+                    $.post("admin/epiage/deleteuser", vdata, function(data) {
+                        if (data == "success") {
+                            // location.replace(location.href)
+                            $("#ageuserbox").datagrid('reload');
+                        }
+                    })
+                },
+                function(res) {
+                    hsycms.error('error', '点击了取消');
+                },
+            )
+        }
+        //操作成功调用 
+        function success() {
+            hsycms.success('success', '操作成功', function() {
+                console.log('操作成功关闭后');
+            }, 1800)
+        }
+
+        //操作失败调用
+        function error() {
+            hsycms.error('error', '操作失败', function() {
+                console.log('操作失败关闭后');
+            }, 1800)
+        }
+
+        //显示loading
+        // function loading() {
+        // 	hsycms.loading('loading', '正在加载');
+        // 	//2秒后隐藏
+        // 	setTimeout(res => {
+        // 		hsycms.hideLoading('loading');
+        // 	}, 2000)
+        // }
+
+        // $('.table-sort').dataTable({
+        // 	"aaSorting": [[1, "desc"]],//默认第几个排序
+        // 	"bStateSave": true,//状态保存
+        // 	"pading": false,
+        // 	"aoColumnDefs": [
+        // 		//{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+        // 		{ "orderable": false, "aTargets": [0, 8] }// 不参与排序的列
+        // 	]
+        // });
+        /*用户-添加*/
+        function member_add(title, url, w, h) {
+            layer_show(title, url, w, h);
+        }
+        /*用户-查看*/
+        function member_show(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+        /*资讯-编辑*/
+        function article_edit(title, url, id, w, h) {
+            var index = layer.open({
+                type: 2,
+                title: title,
+                content: url
+            });
+            layer.full(index);
+        }
+        /*用户-停用*/
+        function member_stop(obj, id) {
+            layer.confirm('确认要停用吗？', function(index) {
+                $.ajax({
+                    type: 'POST',
+                    url: '',
+                    dataType: 'json',
+                    success: function(data) {
+                        $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_start(this,id)" href="javascript:;" title="启用"><i class="Hui-iconfont">&#xe6e1;</i></a>');
+                        $(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已停用</span>');
+                        $(obj).remove();
+                        layer.msg('已停用!', {
+                            icon: 5,
+                            time: 1000
+                        });
+                    },
+                    error: function(data) {
+                        console.log(data.msg);
+                    },
+                });
+            });
+        }
+
+        /*用户-启用*/
+        function member_start(obj, id) {
+            layer.confirm('确认要启用吗？', function(index) {
+                $.ajax({
+                    type: 'POST',
+                    url: '',
+                    dataType: 'json',
+                    success: function(data) {
+                        $(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_stop(this,id)" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a>');
+                        $(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已启用</span>');
+                        $(obj).remove();
+                        layer.msg('已启用!', {
+                            icon: 6,
+                            time: 1000
+                        });
+                    },
+                    error: function(data) {
+                        console.log(data.msg);
+                    },
+                });
+            });
+        }
+        /*用户-编辑*/
+        function member_edit(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+        /*密码-修改*/
+        function change_password(title, url, id, w, h) {
+            layer_show(title, url, w, h);
+        }
+        /*用户-删除*/
+        function member_del(obj, id) {
+            let delusername = $("input[name=name]").val()
+            layer.confirm('确认要删除 ' + delusername + '吗？', function(index) {
+                $.ajax({
+                    type: 'POST',
+                    url: '',
+                    dataType: 'json',
+                    success: function(data) {
+                        $(obj).parents("tr").remove();
+                        layer.msg('已删除!', {
+                            icon: 1,
+                            time: 1000
+                        });
+                    },
+                    error: function(data) {
+                        console.log(data.msg);
+                    },
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

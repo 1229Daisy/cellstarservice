@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>生物学年龄检测预约知情同意书</title>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
+  <link rel="stylesheet" media="screen and (min-width:600px) and (max-width:1920px)"
+    href="public/css/consentform-pc.css" />
+  <link rel="stylesheet" media="screen and (min-width:320px) and (max-width:600px)"
+    href="public/css/consentform-phone.css" />
+  <script type="text/javascript" src="public/js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <div id="container">
+
+    <form action="/index" method="post">
+      <h2 style="text-align: center;">生物学年龄检测预约知情同意书</h2>
+      <div style="width: 100%;height: 12px;"></div>
+      <h4>尊敬的客户：</h4>
+      <p>您好！非常感谢您选择深圳百诺医学检验实验室（以下简称“百诺医学”）的产品。此生物学年龄检测服务是基于对您 DNA 中 DNA 甲基化评估的表观遗传年龄确定。</p>
+      <h4>在检测开始之前，请您详细阅读并知晓以下内容：</h4>
+      <p>1.该生物学年龄检测服务需采集的样本为2ml的人体口腔内唾液，请您按照说明指引采集样本。</p>
+      <p>2.生物学年龄检测(Epiage)并非旨在提供健康信息或医疗数据，也不旨在用于筛查、诊断、治疗、预防或评估任何疾病或病症的风险。</p>
+      <p>3.我们不收集基因数据。</p>
+      <p>4.该测试适用于 18 岁或以上的个人。</p>
+      <p>5.您的个人资料和筛查结果均属于保密信息，不会被公开及用于其他目的，不会提供给任何第三方个人或机构。百诺医学遵守国家相关法规，
+        始终保护您的个人隐私。此外，您有权利在不告知我们原因的前提下随时退出本次筛查。
+      </p>
+      <h4>如您以详细阅读以上告知内容，并以知晓该检测的指导价值，愿意承担可能因检测带来的相关身心风险，请签字同意做此项检测。</h4>
+      <div id="sign-name">
+        <span>受检者或授权家属确认签字:</span>
+        <input type="text" id="signname" name="signname" autocomplete="off" required="required" value=""></input>
+      </div>
+      <div style="width: 100%;height: 10px;"></div>
+      <div id="sign-date">
+        <span>日期：</span>
+        <input type="text" id="signdate" name="signdate" autocomplete="off" value=""></input>
+      </div>
+      <div style="width: 100%;height: 30px;"></div>
+      <div style="text-align: center;">
+        <input id="button" type="button" value="提交">
+      </div>
+      <div style="width: 100%;height: 100px;"></div>
+    </form>
+    <script>
+        console.info(window.location.href)
+        $("#signname").blur(function () {
+          var myDate = new Date();
+          var year = myDate.getFullYear();
+          var month = myDate.getMonth() + 1;
+          var day = myDate.getDate();
+          var currentTime = year + "-" + month + "-" + day
+          $("input[id=signdate]").attr("value", currentTime);
+        })
+        $("#button").click(function () {
+          userDataEpiage = {};
+          userDataEpiage.signname = $("#signname").val()
+          userDataEpiage.signdate = $("#signdate").val()
+          userDataEpiage.htmlpage = $("html").html();
+          $.post("/users", userDataEpiage, function (data) {
+            console.info("pppp")
+            if (data == "success") {
+              window.location.href = "<%=locals.url%>/userDataEpiage"
+            }
+          })
+
+        })
+    </script>
+</body>
+
+</html>
