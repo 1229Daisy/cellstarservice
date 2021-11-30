@@ -132,14 +132,19 @@
             pageList:[30,40,50,60,70],    
             toolbar:"#tb",
             onLoadSuccess:function(data){
-            $("a[name='opera']").linkbutton({text:'删除',plain:false});
+            $("a[name='upload']").linkbutton({text:'上传报告',plain:false});
             },
             columns:[[
             { field:'ck',checkbox:true,align: 'center',width:100,},
-            { field:'username',title:"用户名" ,align: 'center',width:100,},
+            { field:'clientname',title:"用户名" ,align: 'center',width:100,},
             { field:'phone',title:"手机号" ,align: 'center',width:100,},
             { field:'password',title:"密码" ,align: 'center',width:100,},
-            { field:'delete',title:"删除" ,align: 'center',width:60,
+			{ field:'client',title:"个人中心" ,align: 'center',width:100,
+            formatter: function(value, row, index) {
+                    return `<a id="detail" style="text-decoration:underline" onClick="member_add('Detail information','/admin/add/client/message','10002')" title="Detail">个人中心</a>`
+                }
+        },
+			{ field:'upload',title:"上传报告" ,align: 'center',width:60,
             formatter: function(value, row, index) {
                     return `<a href="javascript:;" name="opera" class="easyui-linkbutton" sampleid="${row.sampleid}" obid="${row._id}" onclick="confirm(this)"></a>`
                               

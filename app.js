@@ -27,7 +27,6 @@ const os = require('os')
 let platform = os.platform()
 const { Console } = require('console');
 const { parse } = require('path');
-
 let accessKeyId = ""
 let secretAccessKey = ""
 const appid = "" //开发者的appid
@@ -101,11 +100,10 @@ mongoose.connect("mongodb://localhost:27017/cellstar", { useNewUrlParser: true, 
 
 //3.根据规则创建集合实例User表
 let User = mongoose.model('User', new mongoose.Schema({
-    username: { type: String, trim: true },
+    clientname:{ type: String, trim: true },
     phone: { type: String, trim: true },
     password: { type: String, trim: true },
     constractnum:{ type: String, trim: true },
-    clientname:{ type: String, trim: true },
     signingtime:{ type: String, trim: true },
     saveyear: { type: String, trim: true },
     cell:{ type: String, trim: true },
@@ -121,7 +119,6 @@ let Reserve = mongoose.model('Reserve', new mongoose.Schema({
     reservedate: { type: String, trim: true },
     item: { type: String, trim: true },
     usedate:{ type: String, trim: true },
-    clientname:{ type: String, trim: true },
     
 }))
 Reserve.createCollection()
@@ -204,7 +201,59 @@ app.use(function(req, res, next) {
     }
 
 });
+//返回更新信息页面数据
+app.post("/admin/user/search", (req, res) => {
+    let page = parseInt(req.body.page)-1;//page当前页
+    let row = parseInt(req.body.rows);//页面最多几条
+    let sql={}
+    if (req.body.phone) {
+        if (!sql.hasOwnProperty("phone")) {sql.phone = {} }
+        sql.phone.$regex = new RegExp(req.body.phone)
+    }
+    
+    if (req.body.clientname) {
+        if (!sql.hasOwnProperty("clientname")) {sql.clientname = {} }
+        sql.clientname.$regex = new RegExp(req.body.clientname)
+    }
+    console.info(sql)
 
+    User.countDocuments(sql, (err, total) => {
+        User.find(sql,(err, rows) => {
+            if (err) console.info(err)
+            let data = {}
+                data.total = total
+                data.rows = rows 
+                res.json(data)
+           
+            
+        }).sort({ "_id": -1 }).skip(row * page).limit(row)
+    })
+    
+})
+//返回预约信息页面数据
+app.post("/admin/reserve/message", (req, res) => {
+    let page = parseInt(req.body.page)-1;//page当前页
+    let row = parseInt(req.body.rows);//页面最多几条
+    
+
+    Reserve.countDocuments({}, (err, total) => {
+        Reserve.find({},(err, rows) => {
+            if (err) console.info(err)
+            let data = {}
+                data.total = total
+                data.rows = rows 
+                res.json(data)
+           
+            
+        }).sort({ "_id": -1 }).skip(row * page).limit(row)
+    })
+    
+})
+
+    //添加个人中心信息app.all接受get跟post请求
+    app.all('/admin/add/client/message', (req, res) => {
+        res.render('back/member-usercenter-form')
+    })
 
 //小程序用户注册信息并返回状态
 app.post("/admin/minicellstar/adduser", function(req, res) {
@@ -366,7 +415,7 @@ app.get("/admin/article", (req, res) => res.render('back/article-list'))
 
 
 
-    //生物学年龄左边栏点击去数据库EpiageUser查询所有用户并展现到页面
+//返回更新信息页面
 app.get("/admin/user/users", (req, res) => {
     //查询Epiage数据库数据,显示所有barcode
     let vdata = {}
@@ -375,7 +424,15 @@ app.get("/admin/user/users", (req, res) => {
     }).sort({ "_id": -1 }).skip(0).limit(50)
 
 })
+//返回预约信息页面
+app.get("/admin/user/reserve", (req, res) => {
+    //查询Epiage数据库数据,显示所有barcode
+    let vdata = {}
+    Reserve.find(vdata, function(err, result) {
+        res.render('back/member-list-reserve') //把数据传递给客户端页面
+    })
 
+})
 
 module.exports = app;
 
