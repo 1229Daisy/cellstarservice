@@ -130,7 +130,7 @@
             { field:'password',title:"密码" ,align: 'center',width:100,},
 			{ field:'client',title:"个人中心" ,align: 'center',width:100,
             formatter: function(value, row, index) {
-                    return `<a href="javascript:; id="detail" style="text-decoration:underline" onClick="member_add('Detail information','/admin/add/client/message','800')" title="Detail">添加信息</a>`
+                    return `<a href="javascript:; id="detail" style="text-decoration:underline" onClick="member_add('Detail information','/admin/add/client/message?id=${row._id}','800')" title="Detail">添加信息</a>`
                 }
         },
 			{ field:'upload',title:"上传报告" ,align: 'center',width:100,

@@ -31,28 +31,28 @@
                 <div class="pwrap">
                     <div class="wrap">
                         <label for="constractnum">合同编号:</label>
-                        <input style="border: 1px solid #e0e0e0;" type="text" id="constractnum" name="constractnum" value="" placeholder="公司服务人员填写" required="required"></input>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="constractnum" name="constractnum" value="<%=usercenter.constractnum?usercenter.constractnum:''%>" placeholder="公司服务人员填写" required="required"></input>
                     </div>
                 </div>
                 <p class="grey-line"></p>
                 <div class="pwrap">
                     <div class="wrap">
                         </span>客户姓名:</label>
-                        <input style="border: 1px solid #e0e0e0;" type="text" id="clientname" name="clientname" value placeholder="请输入" required="required"></input>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="clientname" name="clientname" value="<%=usercenter.clientname?usercenter.clientname:''%>" value placeholder="请输入" required="required"></input>
                     </div>
                 </div>
                 <p class="grey-line"></p>
                 <div class="pwrap">
                     <div class="wrap">
                         <label>手机号码:</label>
-                        <input style="border: 1px solid #e0e0e0;" type="text" id="phone" name="phone" value placeholder="请输入" required="required"></input>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="phone" name="phone" value="<%=usercenter.phone?usercenter.phone:''%>" value placeholder="请输入" required="required"></input>
                     </div>
                 </div>
                 <p class="grey-line"></p>
                 <div class="pwrap">
                     <div class="wrap">
                         <label>签约时间:</label>
-                        <input style="border: 1px solid #e0e0e0;" type="text" id="signingtime" name="signingtime" value="" onClick="WdatePicker()" readonly="readonly"></input>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="signingtime" name="signingtime" value="<%=usercenter.signingtime?usercenter.signingtime:''%>" onClick="WdatePicker()" readonly="readonly"></input>
                         
                     </div>
                 </div>
@@ -61,11 +61,11 @@
                     <div class="wrap">
                         <label>储存年限:</label>
                         <select id="saveyear" style="margin-left: 500PX; height: auto;width: 80px;">
-                            <option  selected value="">请选择</option>
-						      <option  value="1">1年</option>
-                            <option  value="5">5年</option>
-                            <option  value="10">10年</option>
-                            <option  value="20">20年</option>
+                            <option   <%=usercenter.saveyear?'selected':''%> >请选择</option>
+						    <option  <%=usercenter.saveyear=='1'?'selected':''%>>1年</option>
+                            <option   <%=usercenter.saveyear=='5'?'selected':''%>>5年</option>
+                            <option   <%=usercenter.saveyear=='10'?'selected':''%>>10年</option>
+                            <option   <%=usercenter.saveyear=='20'?'selected':''%>>20年</option>
                          </select>
                         <!-- <input type="number" id="sex" name="sex" value placeholder="请输入" required="required"></input> -->
                     </div>
@@ -75,7 +75,7 @@
                 <div class="pwrap">
                     <div class="wrap">
                         </span>储存细胞:</label>
-                        <input style="border: 1px solid #e0e0e0;" type="text" id="cell" name="cell" value="" placeholder="请输入" required="required"></input>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="cell" name="cell" value="<%=usercenter.cell?usercenter.cell:''%>" placeholder="请输入" required="required"></input>
                     </div>
                 </div>
                 
@@ -83,21 +83,21 @@
                 <div class="pwrap">
                     <div class="wrap">
                         <label>储存状态:</label>
-                        <input style="border: 1px solid #e0e0e0;" type="text" id="savestatus" name="savestatus" value="" placeholder="请输入" required="required"></input>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="savestatus" name="savestatus" value="<%=usercenter.savestatus?usercenter.savestatus:''%>" placeholder="请输入" required="required"></input>
                     </div>
                 </div>
                 <p class="grey-line"></p>
                 <div class="pwrap">
                     <div class="wrap">
                         <label>储存地点:</label>
-                        <input style="border: 1px solid #e0e0e0;" type="text" id="location" name="location" value="" placeholder="请输入" required="required"></input>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="location" name="location" value="<%=usercenter.location?usercenter.location:''%>" placeholder="请输入" required="required"></input>
                     </div>
                 </div>
                 <p class="grey-line"></p>
                 <div class="pwrap">
                     <div class="wrap">
                         <label>剩余年限:</label>
-                        <input style="border: 1px solid #e0e0e0;" type="text" id="leftyear" name="leftyear" value="" required="required"></input>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="leftyear" name="leftyear" value="<%=usercenter.leftyear?usercenter.leftyear:''%>" required="required"></input>
                     </div>
                 </div>
                 
@@ -113,12 +113,14 @@
          //计算日期
 		  $("#saveyear").change(function(event) {
 			// alert($("#saveyear option:selected").val())
-			var d1=new Date($('#signingtime').val());  
-         var d2=new Date(d1); 
-         d2.setFullYear(d2.getFullYear()+parseInt($("#saveyear").val())); 
-         d2.setDate(d2.getDate()-parseInt($("#saveyear").val())); 
-		let d3=d2
-		let datetime=d3-d1
+
+		var startday=new Date($('#signingtime').val());  
+         var end=new Date(startday);// 
+         end.setFullYear(end.getFullYear()+parseInt($("#saveyear").val())); 
+         end.setDate(end.getDate()-parseInt($("#saveyear").val())); 
+        //  alert(d2)
+		let endday=end
+		let datetime=endday.getTime()-startday.getTime();
 		let days=datetime/(1000 * 3600 * 24)
 		alert(days)
 		$('#leftyear').val(days)
