@@ -65,18 +65,6 @@
         <input  id="txtname" placeholder="姓名:" value="" style="width: 180px;height: 30px;border:1px solid #95b8e7;border-radius: 5px;padding-left:5px;margin-right: 50px;"/>
         <span  iconCls="icon-search"  class="easyui-linkbutton" plain="false" onclick="search()">Search</span>
         
-		<!-- 签约时间:<input style="border: 1px solid #e0e0e0;" type="date" id="signingtime" name="signingtime" value=""  ></input>
-                    
-        储存年限:<select id="saveyear" style="margin-left: 570PX;">
-                        <option  selected value=""></option>
-						<option  value="1">1年</option>
-                        <option  value="5">5年</option>
-                        <option  value="10">10年</option>
-                        <option  value="20">20年</option>
-                     </select>
-                     
-         剩余年限: <input style="border: 1px solid #e0e0e0;" type="text" id="leftyear" name="leftyear" value=""></input>
-		 <button id="xx">按钮</button> -->
     </div>
     <table id="userbox"></table>
 	<!--普通弹窗-->
@@ -145,18 +133,31 @@
                     return `<a href="javascript:; id="detail" style="text-decoration:underline" onClick="member_add('Detail information','/admin/add/client/message','800')" title="Detail">添加信息</a>`
                 }
         },
-			{ field:'upload',title:"上传报告" ,align: 'center',width:60,
+			{ field:'upload',title:"上传报告" ,align: 'center',width:100,
             formatter: function(value, row, index) {
                     return `<a href="javascript:;" name='upload' class="easyui-linkbutton"  onclick="member_add('上传报告','/admin/upload/client/report','','510')">上传报告</a>`
                               
                 },
+        },
+		{ field:'validity',title:" 状态  ", align: 'center',width:100,
+
+            formatter: function(value, row, index) {
+        return `<div style="margin:10px 0;">
+                        <select style="height:30px;border:1px solid #95b8e7;border-radius: 5px;" sid="${row._id}" id="sample_status" onchange=editstatus(this.vlue,'${row.validity}') >
+                                <option  id=${row._id} value="VALID" ${row.validity=="VALID"?"selected":" "}>生效</option>
+                                <option  id=${row._id} value="INVALID" ${row.validity=="INVALID"?"selected":" "}>失效</option>
+						    </select>
+                        </div>`
+                    }
+
+                
         },
             
             ]],
             
          })
      })
-           //查询
+    //查询
      function search(){
 
             $('#userbox').datagrid("load",{
@@ -166,19 +167,19 @@
           })
           }
 
-		  //计算日期
-		  $("#saveyear").change(function(event) {
-			// alert($("#saveyear option:selected").val())
-			var d1=new Date($('#signingtime').val());  
-         var d2=new Date(d1); 
-         d2.setFullYear(d2.getFullYear()+parseInt($("#saveyear").val())); 
-         d2.setDate(d2.getDate()-parseInt($("#saveyear").val())); 
-		let d3=d2
-		let datetime=d3-d1
-		let days=datetime/(1000 * 3600 * 24)
-		alert(days)
-		let leftyear=$('#leftyear').val(days)
-		  })
+	//更改单个条码状态 
+	function editstatus(){
+            $("body").on("change", "select[id=sample_status]", function(event) {
+                var vdata = {}
+                var _oThis = $(event.currentTarget);
+                vdata.validity = _oThis.find("option:selected").val();
+                vdata.id = _oThis.find("option:selected").attr("id")
+                console.info(vdata.validity)
+                $.post("/admin/user/updatestatus", vdata, function(result) {
+                    
+                })
+            }) 
+     }
 		  
 		
          

@@ -44,6 +44,13 @@
                 <p class="grey-line"></p>
                 <div class="pwrap">
                     <div class="wrap">
+                        <label>手机号码:</label>
+                        <input style="border: 1px solid #e0e0e0;" type="text" id="phone" name="phone" value placeholder="请输入" required="required"></input>
+                    </div>
+                </div>
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <div class="wrap">
                         <label>签约时间:</label>
                         <input style="border: 1px solid #e0e0e0;" type="text" id="signingtime" name="signingtime" value="" onClick="WdatePicker()" readonly="readonly"></input>
                         
@@ -124,26 +131,18 @@
                 $(this).css('background-color', "#e0e0e0")
                 let data = {}
                 data.constractnum = $("constractnum").val()
-                data.username = $("#username").val()
-                data.tel = $("#tel").val()
-                data.status = $("#status option:selected").val()
-                data.mval = $("#mval").val()
-                data.chance = $("#chance").val()
-                data.age = $("#age").val()
-                data.sex = $("#sex option:selected").val()
-                data.created = $("#created").val()
-                data.recdate = $("#recdate").val()
-                console.info(data.created)
-                $.post("admin/liver/addreport", data, function(result) {
-                    if(result=="fail-store-unexist"){
-                        alert("库存不存在此条码")
-                        oThis.attr('disabled', false)
-                        oThis.css('background-color', "#1a88c7")
-                    }else if(result=="fail-report-exist"){
-                        alert("该条码已添加过，请更换条码")
-                        oThis.attr('disabled', false)
-                        oThis.css('background-color', "#1a88c7")
-                    }else{
+                data.clientname = $("#clientname").val()
+                data.phone = $("#phone").val()
+                data.signingtime = $("#signingtime").val()
+                data.saveyear = $("#saveyear option:selected").val()
+                data.cell = $("#cell").val()
+                data.savestatus = $("#savestatus").val()
+                data.location = $("#location").val()
+                data.leftyear = $("#leftyear").val()
+                console.info(data)
+                $.post("admin/user/center/update", data, function(result) {
+                    if(result=="success"){
+                        alert("信息添加成功")
                         parent.window.location.reload();
                     }
 

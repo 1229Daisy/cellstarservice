@@ -27,11 +27,10 @@ const os = require('os')
 let platform = os.platform()
 const { Console } = require('console');
 const { parse } = require('path');
-
-let accessKeyId = "LTAI5tCfY3LXs6TPg8H3eUVx"
-let secretAccessKey = "YmRSa7qAaSphVglMlfcDGsmlaX9pO9"
-const appid = "wxbf96208a281796fd" //开发者的appid
-const appsecret = "a9c951c0557ada4ef5ca91b7a04a821f"//开发者的appsecret 登入小程序公共平台内查看
+let accessKeyId = ""
+let secretAccessKey = ""
+const appid = "" //开发者的appid
+const appsecret = ""//开发者的appsecret 登入小程序公共平台内查看
 
 
 let smsClient = new SMSClient({
@@ -257,7 +256,34 @@ app.post("/admin/reserve/message", (req, res) => {
     })
     
 })
-
+//更新页面修改下拉框状态操作
+app.post("/admin/user/updatestatus", (req, res) => {
+    let id = req.body.id
+    let validity = req.body.validity
+    console.info(req.body)
+        //查询数据库数据
+    User.updateOne({ "_id": id }, { $set: { validity: validity } }, function(err, result) {
+        if (err) console.info(err)
+        res.send("success")
+    })
+})
+//个人中心信息表单的保存与更新
+app.post("/admin/user/center/update", function(req, res) {
+    // console.info(req.body)
+    (async()   =>   {
+    let usercenter={}
+    usercenter.constractnum= req.body.constractnum
+    usercenter.clientname= req.body.clientname
+    usercenter.signingtime= req.body.signingtime
+    usercenter.saveyear= req.body.saveyear
+    usercenter.cell= req.body.cell
+    usercenter.savestatus= req.body.savestatus
+    usercenter.location= req.body.location
+    usercenter.leftyear= req.body.leftyear
+    await User.updateOne({ phone: req.body.phone }, { $set: usercenter})
+    await res.send("success")
+    })() 
+});
     //添加个人中心信息app.all接受get跟post请求
     app.all('/admin/add/client/message', (req, res) => {
         res.render('back/member-usercenter-form')

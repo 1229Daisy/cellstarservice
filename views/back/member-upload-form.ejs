@@ -41,6 +41,7 @@
                         <input style="border: 1px solid #e0e0e0;" type="text" id="clientname" name="clientname" value placeholder="请输入" required="required"></input>
                     </div>
                 </div>
+                
                 <p class="grey-line"></p>
                 <div class="pwrap">
                     <div class="wrap">
@@ -55,7 +56,7 @@
                         <label>储存年限:</label>
                         <select id="saveyear" style="margin-left: 500PX; height: auto;width: 80px;">
                             <option  selected value="">请选择</option>
-						      <option  value="1">1年</option>
+						    <option  value="1">1年</option>
                             <option  value="5">5年</option>
                             <option  value="10">10年</option>
                             <option  value="20">20年</option>
@@ -93,7 +94,7 @@
                         <input style="border: 1px solid #e0e0e0;" type="text" id="leftyear" name="leftyear" value="" required="required"></input>
                     </div>
                 </div>
-                
+               
                 
                 <div style="width: 100%;height: 23px;"></div>
                 <div style="text-align: center;">
@@ -104,17 +105,16 @@
         <!-- <script type="text/javascript" src="/public/js/validator_zh_liver.js"></script> -->
         <script>
          //计算日期
-		  $("#saveyear").change(function(event) {
-			// alert($("#saveyear option:selected").val())
-			var d1=new Date($('#signingtime').val());  
-         var d2=new Date(d1); 
-         d2.setFullYear(d2.getFullYear()+parseInt($("#saveyear").val())); 
-         d2.setDate(d2.getDate()-parseInt($("#saveyear").val())); 
+		$("#saveyear").change(function(event) {
+        let d1=new Date($('#signingtime').val());  
+        let d2=new Date(d1); 
+        d2.setFullYear(d2.getFullYear()+parseInt($("#saveyear option:selected").val())); 
+        d2.setDate(d2.getDate()-parseInt($("#saveyear option:selected").val())); 
 		let d3=d2
 		let datetime=d3-d1
-		let days=datetime/(1000 * 3600 * 24)
-		alert(days)
-		$('#leftyear').val(days)
+		let leftdays=datetime/(1000 * 3600 * 24)
+		// alert(days)
+		$('#leftyear').val(leftdays)
 		  })
 
        //提交数据
@@ -124,17 +124,15 @@
                 $(this).css('background-color', "#e0e0e0")
                 let data = {}
                 data.constractnum = $("constractnum").val()
-                data.username = $("#username").val()
-                data.tel = $("#tel").val()
-                data.status = $("#status option:selected").val()
-                data.mval = $("#mval").val()
-                data.chance = $("#chance").val()
-                data.age = $("#age").val()
-                data.sex = $("#sex option:selected").val()
-                data.created = $("#created").val()
-                data.recdate = $("#recdate").val()
-                console.info(data.created)
-                $.post("admin/liver/addreport", data, function(result) {
+                data.clientname = $("#clientname").val()
+                data.signingtime = $("#signingtime").val()
+                data.saveyear = $("#saveyear option:selected").val()
+                data.cell = $("#cell").val()
+                data.savestatus = $("#savestatus").val()
+                data.location = $("#location").val()
+                data.leftyear = $("#leftyear").val()
+                console.info(data)
+                $.post("admin/user/center/update", data, function(result) {
                     if(result=="fail-store-unexist"){
                         alert("库存不存在此条码")
                         oThis.attr('disabled', false)
