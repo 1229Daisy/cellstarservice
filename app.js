@@ -27,10 +27,11 @@ const os = require('os')
 let platform = os.platform()
 const { Console } = require('console');
 const { parse } = require('path');
-let accessKeyId = ""
-let secretAccessKey = ""
-const appid = "" //开发者的appid
-const appsecret = ""//开发者的appsecret 登入小程序公共平台内查看
+
+let accessKeyId = "LTAI5tCfY3LXs6TPg8H3eUVx"
+let secretAccessKey = "YmRSa7qAaSphVglMlfcDGsmlaX9pO9"
+const appid = "wxbf96208a281796fd" //开发者的appid
+const appsecret = "a9c951c0557ada4ef5ca91b7a04a821f"//开发者的appsecret 登入小程序公共平台内查看
 
 
 let smsClient = new SMSClient({
@@ -64,7 +65,7 @@ let options = {
 
 let stdout = fs.createWriteStream(__dirname + '/access.log', options);
 let stderr = fs.createWriteStream(__dirname + '/access.log', options);
-// let console = new Console({ stdout: stdout, stderr: stderr });
+let console = new Console({ stdout: stdout, stderr: stderr });
 
 
 
@@ -98,8 +99,9 @@ mongoose.connect("mongodb://localhost:27017/cellstar", { useNewUrlParser: true, 
 
 
 
-//3.根据规则创建集合实例User表
+//1.根据规则创建集合实例User表
 let User = mongoose.model('User', new mongoose.Schema({
+    created:{ type: String, trim: true },
     clientname:{ type: String, trim: true },
     phone: { type: String, trim: true },
     password: { type: String, trim: true },
@@ -113,7 +115,7 @@ let User = mongoose.model('User', new mongoose.Schema({
     validity:{ type: String, trim: true },
 }))
 User.createCollection()
-//3.根据规则创建集合实例Reserve表
+//2.根据规则创建集合实例Reserve表
 let Reserve = mongoose.model('Reserve', new mongoose.Schema({
     clientname:{ type: String, trim: true },
     reservedate: { type: String, trim: true },
@@ -122,6 +124,17 @@ let Reserve = mongoose.model('Reserve', new mongoose.Schema({
     
 }))
 Reserve.createCollection()
+//3.根据规则创建集合实例Report表
+let Report = mongoose.model('Report', new mongoose.Schema({
+    phone:{ type: String, trim: true },
+    physical_exam: { type: String, trim: true },
+    immunity: { type: String, trim: true },
+    cellsave:{ type: String, trim: true },
+    celltest:{ type: String, trim: true },
+    inventory:{ type: String, trim: true },
+}))
+Report.createCollection()
+
 let connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -206,11 +219,6 @@ app.post("/admin/user/search", (req, res) => {
     let page = parseInt(req.body.page)-1;//page当前页
     let row = parseInt(req.body.rows);//页面最多几条
     let sql={}
-    if (req.body.phone) {
-        if (!sql.hasOwnProperty("phone")) {sql.phone = {} }
-        sql.phone.$regex = new RegExp(req.body.phone)
-    }
-    
     if (req.body.clientname) {
         if (!sql.hasOwnProperty("clientname")) {sql.clientname = {} }
         sql.clientname.$regex = new RegExp(req.body.clientname)
@@ -224,7 +232,7 @@ app.post("/admin/user/search", (req, res) => {
                 data.total = total
                 data.rows = rows 
                 res.json(data)
-           
+           console.info(data)
             
         }).sort({ "_id": -1 }).skip(row * page).limit(row)
     })
@@ -253,6 +261,11 @@ app.post("/admin/reserve/message", (req, res) => {
     //添加个人中心信息app.all接受get跟post请求
     app.all('/admin/add/client/message', (req, res) => {
         res.render('back/member-usercenter-form')
+    })
+
+    //添加客户报告app.all接受get跟post请求
+    app.all('/admin/upload/client/report', (req, res) => {
+        res.render('back/member-upload-form')
     })
 
 //小程序用户注册信息并返回状态

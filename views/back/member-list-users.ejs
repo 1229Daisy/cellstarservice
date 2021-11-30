@@ -60,10 +60,10 @@
 </style>
 
 <body>
-	<div id="tb" style=" height: auto;background-color: #e5efff;padding: 30px 30px;">
-        <!-- <input  id="txtphone" placeholder="电话号码:" value="" style="width: 180px;height: 30px;border:1px solid #95b8e7;border-radius: 5px;padding-left:5px;"/> 
+	<div id="tb" style=" height: auto;background-color: #e5efff;padding: 30px 60px;">
+        <!-- <input  id="txtphone" placeholder="电话号码:" value="" style="width: 180px;height: 30px;border:1px solid #95b8e7;border-radius: 5px;padding-left:5px;"/>  -->
         <input  id="txtname" placeholder="姓名:" value="" style="width: 180px;height: 30px;border:1px solid #95b8e7;border-radius: 5px;padding-left:5px;margin-right: 50px;"/>
-        <span  iconCls="icon-search" style="float: right;" class="easyui-linkbutton" plain="false" onclick="search()">Search</span> -->
+        <span  iconCls="icon-search"  class="easyui-linkbutton" plain="false" onclick="search()">Search</span>
         
 		<!-- 签约时间:<input style="border: 1px solid #e0e0e0;" type="date" id="signingtime" name="signingtime" value=""  ></input>
                     
@@ -136,17 +136,18 @@
             },
             columns:[[
             { field:'ck',checkbox:true,align: 'center',width:100,},
-            { field:'clientname',title:"用户名" ,align: 'center',width:100,},
+			{ field:'created',title:"注册日期" ,align: 'center',width:100,},
+            { field:'clientname',title:"姓名" ,align: 'center',width:100,},
             { field:'phone',title:"手机号" ,align: 'center',width:100,},
             { field:'password',title:"密码" ,align: 'center',width:100,},
 			{ field:'client',title:"个人中心" ,align: 'center',width:100,
             formatter: function(value, row, index) {
-                    return `<a id="detail" style="text-decoration:underline" onClick="member_add('Detail information','/admin/add/client/message','10002')" title="Detail">个人中心</a>`
+                    return `<a href="javascript:; id="detail" style="text-decoration:underline" onClick="member_add('Detail information','/admin/add/client/message','800')" title="Detail">添加信息</a>`
                 }
         },
 			{ field:'upload',title:"上传报告" ,align: 'center',width:60,
             formatter: function(value, row, index) {
-                    return `<a href="javascript:;" name="opera" class="easyui-linkbutton" sampleid="${row.sampleid}" obid="${row._id}" onclick="confirm(this)"></a>`
+                    return `<a href="javascript:;" name='upload' class="easyui-linkbutton"  onclick="member_add('上传报告','/admin/upload/client/report','','510')">上传报告</a>`
                               
                 },
         },
@@ -157,10 +158,10 @@
      })
            //查询
      function search(){
-          console.info($("#txtphone").val())
+
             $('#userbox').datagrid("load",{
-                tel :$("#txtphone").val(),
-                username:$("#txtname").val(),
+                // tel :$("#txtphone").val(),
+                clientname:$("#txtname").val(),
                
           })
           }
