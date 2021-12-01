@@ -61,11 +61,11 @@
                     <div class="wrap">
                         <label>储存年限:</label>
                         <select id="saveyear" style="margin-left: 500PX; height: auto;width: 80px;">
-                            <option   <%=usercenter.saveyear?'selected':''%> >请选择</option>
-						    <option  <%=usercenter.saveyear=='1'?'selected':''%>>1年</option>
-                            <option   <%=usercenter.saveyear=='5'?'selected':''%>>5年</option>
-                            <option   <%=usercenter.saveyear=='10'?'selected':''%>>10年</option>
-                            <option   <%=usercenter.saveyear=='20'?'selected':''%>>20年</option>
+                            <option   <%=usercenter.saveyear?'':'selected'%> >请选择</option>
+						    <option  <%=usercenter.saveyear=='1年'?'selected':''%>>1年</option>
+                            <option   <%=usercenter.saveyear=='5年'?'selected':''%>>5年</option>
+                            <option   <%=usercenter.saveyear=='10年'?'selected':''%>>10年</option>
+                            <option   <%=usercenter.saveyear=='20年'?'selected':''%>>20年</option>
                          </select>
                         <!-- <input type="number" id="sex" name="sex" value placeholder="请输入" required="required"></input> -->
                     </div>
@@ -110,20 +110,20 @@
         </form>
         <!-- <script type="text/javascript" src="/public/js/validator_zh_liver.js"></script> -->
         <script>
-         //计算日期
-		  $("#saveyear").change(function(event) {
-			// alert($("#saveyear option:selected").val())
-
-		var startday=new Date($('#signingtime').val());  
-         var end=new Date(startday);// 
-         end.setFullYear(end.getFullYear()+parseInt($("#saveyear").val())); 
-         end.setDate(end.getDate()-parseInt($("#saveyear").val())); 
+         //日期倒计时
+		$("#saveyear").change(function(event) {
+        setInterval(function () {
+        let startday=new Date($('#signingtime').val());  
+        let end=new Date(startday);// 
+         end.setFullYear(end.getFullYear()+parseInt($("#saveyear option:selected").val())); //将年限转换为日期
+         end.setDate(end.getDate()-parseInt($("#saveyear option:selected").val())); 
         //  alert(d2)
 		let endday=end
-		let datetime=endday.getTime()-startday.getTime();
-		let days=datetime/(1000 * 3600 * 24)
-		alert(days)
-		$('#leftyear').val(days)
+        let nowday = new Date();
+         let time =endday.getTime() - nowday.getTime();
+         let day = parseInt(time/(1000 * 3600 * 24))
+        $('#leftyear').val(day)
+              }, 1000);
 		  })
 
        //提交数据
@@ -132,7 +132,7 @@
                 $(this).attr('disabled', true)
                 $(this).css('background-color', "#e0e0e0")
                 let data = {}
-                data.constractnum = $("constractnum").val()
+                data.constractnum = $("#constractnum").val()
                 data.clientname = $("#clientname").val()
                 data.phone = $("#phone").val()
                 data.signingtime = $("#signingtime").val()

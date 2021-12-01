@@ -9,7 +9,7 @@ var mongoose = require('mongoose');
 var bodyParser = require("body-parser");
 var path = require('path');
 var request = require('request');
-var mysql = require('mysql');
+// var mysql = require('mysql');
 var fs = require('fs');
 var log4js = require('log4js');
 const child = require('child_process')
@@ -134,16 +134,16 @@ let Report = mongoose.model('Report', new mongoose.Schema({
 }))
 Report.createCollection()
 
-let connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'hdreportdb',
+// let connection = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'root',
+//     database: 'hdreportdb',
 
-});
+// });
 let accessurl = []
     //链接mysql数据库后，启动http,要先获取到数据才进入http
-connection.connect(function(err) {
+
     accessurl.push("/admin/epihpv/epihpvreport")
     accessurl.push("/admin/loginview")
     accessurl.push("/admin/epihpv/hpvinserval")
@@ -162,18 +162,13 @@ connection.connect(function(err) {
     accessurl.push("/admin/generic/client/sms")
     accessurl.push("/admin/liver/client/sms")
     accessurl.push("/admin/epiage/client/sms")
-    if (err) {
-        return console.error('error: ' + err.message);
-    } else {
-        //访问http协议
-        //https协议
+   
 	https.createServer({ key: fs.readFileSync("./bainuo.beijingepidial.com.key"), cert: fs.readFileSync("./bainuo.beijingepidial.com.pem") }, app).listen(443, () => {
             console.log('Server listening on port 443!')
         });
-    }
+ 
 
-    console.log('Connected to the MySQL server.');
-});
+
 
 
 //登录拦截器，必须放在静态资源声明之后、路由导航之前(中间件)
@@ -269,7 +264,7 @@ app.post("/admin/user/updatestatus", (req, res) => {
 })
 //个人中心信息表单的保存与更新
 app.post("/admin/user/center/update", async (req, res)=> {
-    // console.info(req.body)
+    console.info(req.body)
   
     let usercenter={}
     usercenter.constractnum= req.body.constractnum
@@ -284,20 +279,24 @@ app.post("/admin/user/center/update", async (req, res)=> {
     await res.send("success")
 
 });
-    //添加个人中心信息app.all接受get跟post请求
-    app.all('/admin/add/client/message', (req, res) => {
-    console.info(req.query.id+"#")
-    User.findOne({_id:req.query.id}, function(err, usercenter) {
-        console.info(usercenter)
-        res.render('back/member-usercenter-form', { "usercenter": usercenter }) //把数据传递给客户端页面
-    })
-    })
-
-    //添加客户报告app.all接受get跟post请求
-    app.all('/admin/upload/client/report', (req, res) => {
-        res.render('back/member-upload-form')
-    })
-
+//添加个人中心信息app.all接受get跟post请求
+app.all('/admin/add/client/message', (req, res) => {
+User.findOne({_id:req.query.id}, function(err, usercenter) {
+    console.info(usercenter)
+    res.render('back/member-usercenter-form', { "usercenter": usercenter }) //把数据传递给客户端页面
+})
+})
+//添加客户报告app.all接受get跟post请求
+app.all('/admin/upload/client/report', (req, res) => {
+    res.render('back/member-upload-form')
+})
+//小程序首页信息展示
+app.post("/client/index/message", (req, res) => {
+    User.findOne({ clientname: req.body.clientname, phone: req.body.phone }, function(e, data) {
+         if (e) console.info(e)
+         res.send(data)
+     })
+ })
 //小程序用户注册信息并返回状态
 app.post("/admin/minicellstar/adduser", function(req, res) {
     console.info("/admin/epiage/adduser:" + req.body)
@@ -363,9 +362,10 @@ app.post("/client/epiage/barcodes", (req, res) => {
 
 //接受小程序端登录页面传过来的用户名跟密码
 app.post("/client/user/login", (req, res) => {
+    // res.json({ "status": "success" })
     console.info(req.body.phone)
     console.info(req.body.password)
-    User.findOne({ "phone": req.body.phone, "password": req.body.password }, function(err, result) {
+    User.findOne({ "phone": req.body.phone," password": req.body.password }, function(err, result) {
         if (err) console.info(err)
         if (!result) {
             res.json({ "status": "error" })
