@@ -64,8 +64,28 @@
                             <a href="<%=report.immunity%>">查看</a>    
                         <%}%>
                     </form>
-                </div>
-                
+                </div> 
+                 <script>
+                                        $("#uploadimmunity").click(function () {
+                                           if($('#immunity').val()){
+                                               let files = $('#immunity').prop('files');
+                                               let data = new FormData();
+                                               data.append('phone', <%=phone%>)
+                                               data.append('file', files[0])
+                                               $.ajax({
+                                               type: 'POST',
+                                               url: "admin/report/upload/immunity",
+                                               data: data,
+                                               cache: false,
+                                               processData: false,
+                                               contentType: false,
+                                               complete: function (ret) {
+                                                   window.location.reload()
+                                               }
+                                           });
+                                       }
+                                       })
+                                       </script>
                 <p class="grey-line"></p>
                 <div class="pwrap">
                     <form name="cellsaveform" method="post" action="admin/report/upload/cellsave" enctype="multipart/form-data">

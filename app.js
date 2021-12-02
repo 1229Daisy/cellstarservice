@@ -36,11 +36,10 @@ const os = require('os')
 let platform = os.platform()
 const { Console } = require('console');
 const { parse } = require('path');
-let accessKeyId = "LTAI5tCfY3LXs6TPg8H3eUVx"
-let secretAccessKey = "YmRSa7qAaSphVglMlfcDGsmlaX9pO9"
-const appid = "wxbf96208a281796fd" //开发者的appid
-const appsecret = "a9c951c0557ada4ef5ca91b7a04a821f"//开发者的appsecret 登入小程序公共平台内查看
-
+let accessKeyId = ""
+let secretAccessKey = ""
+const appid = "" //开发者的appid
+const appsecret = ""//开发者的appsecret 登入小程序公共平台内查看
 
 let smsClient = new SMSClient({
     accessKeyId: accessKeyId,
@@ -73,7 +72,7 @@ let options = {
 
 let stdout = fs.createWriteStream(__dirname + '/access.log', options);
 let stderr = fs.createWriteStream(__dirname + '/access.log', options);
-//let console = new Console({ stdout: stdout, stderr: stderr });
+let console = new Console({ stdout: stdout, stderr: stderr });
 
 app.use(session({
     secret: "weird sheep",
@@ -262,15 +261,13 @@ User.findOne({_id:req.query.id}, function(err, usercenter) {
     res.render('back/member-usercenter-form', { "usercenter": usercenter }) //把数据传递给客户端页面
 })
 })
-//添加客户报告app.all接受get跟post请求
-app.all('/admin/upload/client/report', (req, res) => {
-    res.render('back/member-upload-form')
-})
+
 //小程序首页信息展示
 app.post("/client/index/message", (req, res) => {
-    User.findOne({ clientname: req.body.clientname, phone: req.body.phone }, function(e, data) {
+    User.findOne({ password: req.body.password, phone: req.body.phone }, function(e, data) {
          if (e) console.info(e)
          res.send(data)
+         console.info(data+"$$$$$$$$$$$")
      })
  })
     //添加个人中心信息app.all接受get跟post请求
@@ -357,13 +354,55 @@ app.post("/client/index/message", (req, res) => {
             else{res.send("success")}
          })
     })
+    //小程序查看报告
+    app.post("/client/check/report", (req, res) => {
+        console.info(req.body.phone)
+        Report.findOne({phone: req.body.phone}, function(e, data) {
+            if (e) console.info(e)
+            console.info(data+"&&&&")
+            res.send(data)
+        })
+    })
+
 //小程序用户注册信息并返回状态
-app.post("/admin/minicellstar/adduser", function(req, res) {
-    console.info("/admin/epiage/adduser:" + req.body)
+app.post("/client/cellstar/adduser", function(req, res) {
+    console.info("/client/cellstar/adduser:" + req.body)
         //保存生物学年龄的用户数据表到saveformEpiage数据
     User.findOne({ "phone": req.body.phone }, function(err, result) {
         if (!result) {
             new User(req.body).save((err, data) => {
+                if (err) console.info(err)
+                res.json({ "status": "success" })
+            })
+        } else {
+            res.json({ "status": "fail" })
+        }
+    })
+});
+//保存小程序用户预约信息并返回状态
+app.post("/client/cellstar/reserveform", function(req, res) {
+    console.info("/client/cellstar/reserveform:" + req.body)
+        //保存生物学年龄的用户数据表到saveformEpiage数据
+        let booking={}
+        booking.clientname=req.body.clientname
+        booking.reservedate=req.body.reservedate
+        if(req.body.item=='0'){
+            booking.item='体检'
+        }else if(req.body.item=='1'){
+            booking.item='免疫力评估'
+        }else if(req.body.item=='2'){
+            booking.item='干细胞干预'
+        }else if(req.body.item=='3'){
+            booking.item='免疫细胞干预'
+        }else if(req.body.item=='4'){
+            booking.item='续存'
+        }else if(req.body.item=='5'){
+            booking.item='DNA甲基化早筛'
+        }
+        booking.usedate=req.body.usedate
+    Reserve.findOne({ "phone": req.body.phone }, function(err, result) {
+        if (!result) {
+            new Reserve(booking).save((err, data) => {
                 if (err) console.info(err)
                 res.json({ "status": "success" })
             })
@@ -383,8 +422,10 @@ app.post('/client/user/sms', (req, res) => {
         // 开始发送短信
     smsClient.sendSMS({
         PhoneNumbers: phone,
-        "SignName": "细胞之星",
-        "TemplateCode": "SMS_228847051",
+        "SignName": "赛斯达",
+        "TemplateCode": "SMS_228838279",
+        // "SignName": "Epidial",
+        // "TemplateCode": "SMS_159965409",
         "TemplateParam": `{"code":'${code}'}`, // 短信模板变量对应的实际值，JSON格式
     }).then(result => {
         console.log("result", result)
@@ -402,10 +443,9 @@ app.post('/client/user/sms', (req, res) => {
 
 //接受小程序端登录页面传过来的用户名跟密码
 app.post("/client/user/login", (req, res) => {
-    // res.json({ "status": "success" })
-    console.info(req.body.phone)
-    console.info(req.body.password)
-    User.findOne({ "phone": req.body.phone," password": req.body.password }, function(err, result) {
+    console.info(req.body.phone+req.body.password+"*********")
+    User.findOne({ phone: req.body.phone,password: req.body.password }, function(err, result) {
+        console.info(result+"*")
         if (err) console.info(err)
         if (!result) {
             res.json({ "status": "error" })
@@ -420,6 +460,15 @@ app.post("/client/user/finduser", (req, res) => {
         User.findOne({ "phone": req.body.phone }, function(e, data) {
             if (e) console.info(e)
             console.info(data)
+            res.send(data)
+        })
+    })
+//小程序showname
+    app.post("/client/username/show", (req, res) => {
+        console.info(req.body.phone)
+        User.findOne({ phone: req.body.phone,password: req.body.password}, function(e, data) {
+            if (e) console.info(e)
+            console.info(data+"^^")
             res.send(data)
         })
     })
@@ -448,7 +497,7 @@ app.post("/client/user/resetpwd", (req, res) => {
 
 
 //接受微信小程序端传过来的appid,secret,code返回openid给小程序
-app.get("/bainuo/mini/login", (req, res) => {
+app.get("/cellstar/mini/login", (req, res) => {
     const code = req.query.code //拿到传过来的code
         //调用 auth.code2Session接口，换取用户唯一标识 OpenID 和 会话密钥 session_key
     const url = `https://api.weixin.qq.com/sns/jscode2session?appid=${appid}&secret=${appsecret}&js_code=${code}&grant_type=authorization_code`
@@ -501,6 +550,15 @@ app.get("/admin/user/reserve", (req, res) => {
         res.render('back/member-list-reserve') //把数据传递给客户端页面
     })
 
+})
+//更新信息页面删除一条数据
+app.post("/admin/user/del", (req, res) => {
+    // console.log("删除的id是： " + req.body.id)
+    User.deleteOne({ _id: req.body.id }, function(err, result) {
+        if (err) console.info(err)
+        res.send("success")
+        
+    })
 })
 
 module.exports = app;

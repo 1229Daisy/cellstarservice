@@ -121,7 +121,9 @@
             toolbar:"#tb",
             onLoadSuccess:function(data){
             $("a[name='upload']").linkbutton({text:'上传报告',plain:false});
+			$("a[name='opera']").linkbutton({text:'删除',plain:false});
             },
+			
             columns:[[
             { field:'ck',checkbox:true,align: 'center',width:100,},
 			{ field:'created',title:"注册日期" ,align: 'center',width:100,},
@@ -151,6 +153,12 @@
                     }
 
                 
+        },
+		{ field:'delete',title:"删除" ,align: 'center',width:80,
+            formatter: function(value, row, index) {
+                    return `<a href="javascript:;" name="opera" class="easyui-linkbutton" sampleid="${row.sampleid}" oid="${row._id}" onclick="confirm(this)"></a>`
+                              
+                },
         },
             
             ]],
@@ -183,28 +191,27 @@
 		  
 		
          
-
-		//询问弹窗
-		function confirm(obj) {
-
-			hsycms.confirm('confirm', 'Are you sure to delete?',
-				function (res) {
-					hsycms.success('success', '点击了确定');
-					var vdata = {}
-					//获取该条数据的数据库id
-					vdata.id = $(obj).attr("obid")
-					console.info(vdata.id)
-					$.post("admin/users/deleteone", vdata, function (data) {
-						if (data == "success") {
-							$("#userbox").datagrid('reload');
-						}
-					})
-				},
-				function (res) {
-					hsycms.error('error', '点击了取消');
-				},
-			)
-		}
+ // //询问弹窗
+ function confirm(obj) {
+            hsycms.confirm('confirm', '确定要删除吗?',
+                function(res) {
+                    hsycms.success('success', '点击了确定');
+                    var vdata = {}
+                        //获取该条数据的数据库id
+                    vdata.id = $(obj).attr("oid")
+                    console.info(vdata.id + "后台获取的数据库id")
+                    $.post("admin/user/del", vdata, function(data) {
+                        if (data == "success") {
+                            // location.replace(location.href)
+                            $("#userbox").datagrid('reload');
+                        }
+                    })
+                },
+                function(res) {
+                    hsycms.error('error', '点击了取消');
+                },
+            )
+        }
 		//操作成功调用 
 		function success() {
 			hsycms.success('success', '操作成功', function () { console.log('操作成功关闭后'); }, 1800)
