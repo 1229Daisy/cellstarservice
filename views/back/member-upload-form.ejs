@@ -12,143 +12,163 @@
     <script type="text/javascript" src="public/js/jquery-3.6.0.min.js"></script>
     <!-- <script type="text/javascript" src="public/js/getidinfo.js"></script> -->
     <script type="text/javascript" src="public/js/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="https://bainuo.beijingepidial.com/public/js/My97DatePicker/4.8/WdatePicker.js"></script>
-
 </head>
 
 <body>
     <div id="container">
-        <div id="header">
-            <div id="title">细胞之星个人中心信息登记表</div>
-            <div id="title-sub1">(填表前请查看重要提示)</div>
-            <div id="title-sub2">以下为客户信息，请认真填写</div>
+        <div >
+            <div id="title">细胞之星报告上传</div>
         </div>
-        <form class="userform" id="userform" name="userform" method="POST">
-            <input type="hidden" whichOpenid="openid">
-            <input type="hidden" whichid="dbid">
             <div id="content">
                 <p class="grey-line"></p>
                 <div class="pwrap">
-                    <div class="wrap">
-                        <label for="constractnum">合同编号:</label>
-                        <input style="border: 1px solid #e0e0e0;" type="text" id="constractnum" name="constractnum" value="" placeholder="公司服务人员填写" required="required"></input>
-                    </div>
+                    <form name="physicalform" method="post" action="admin/report/upload/physical" enctype="multipart/form-data">
+                        &nbsp;&nbsp;<input type="file" name="file" name="physical" id="physical" style="display:none;" onChange="document.physicalform.path.value=this.value">
+                        <input name="path" style="width: 250px;height: 28px;border:1px solid #95b8e7;border-radius: 5px;" readonly/>
+                        <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" value="请选择.PDF体检报告" onclick="document.physicalform.physical.click()">
+                        <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" id='uploadphysical' value="上传" />
+                        <% if(report && report.physical){%>
+                         <a href="<%=report.physical%>">查看</a>    
+                        <%}%>
+                    </form>
                 </div>
+                <script>
+                    $("#uploadphysical").click(function () {
+                       if($('#physical').val()){
+                           let files = $('#physical').prop('files');
+                           let data = new FormData();
+                           data.append('phone', <%=phone%>)
+                           data.append('file', files[0])
+                           $.ajax({
+                           type: 'POST',
+                           url: "admin/report/upload/physical",
+                           data: data,
+                           cache: false,
+                           processData: false,
+                           contentType: false,
+                           complete: function (ret) {
+                               window.location.reload()
+                           }
+                       });
+                   }
+                   })
+                   </script>
                 <p class="grey-line"></p>
                 <div class="pwrap">
-                    <div class="wrap">
-                        </span>客户姓名:</label>
-                        <input style="border: 1px solid #e0e0e0;" type="text" id="clientname" name="clientname" value placeholder="请输入" required="required"></input>
-                    </div>
+                    <form name="immunityform" method="post" action="admin/report/upload/immunity" enctype="multipart/form-data">
+                        &nbsp;&nbsp;<input type="file" name="file" name="immunity" id="immunity" style="display:none;" onChange="document.immunityform.path.value=this.value">
+                        <input name="path" style="width: 250px;height: 28px;border:1px solid #95b8e7;border-radius: 5px;" readonly/>
+                        <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" value="请选择.PDF免疫力评估" onclick="document.immunityform.immunity.click()">
+                        <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" id='uploadimmunity' value="上传" />
+                        <% if(report && report.immunity){%>
+                            <a href="<%=report.immunity%>">查看</a>    
+                        <%}%>
+                    </form>
                 </div>
                 
                 <p class="grey-line"></p>
                 <div class="pwrap">
-                    <div class="wrap">
-                        <label>签约时间:</label>
-                        <input style="border: 1px solid #e0e0e0;" type="text" id="signingtime" name="signingtime" value="" onClick="WdatePicker()" readonly="readonly"></input>
-                        
-                    </div>
-                </div>
-                <p class="grey-line"></p>
-                <div class="pwrap">
-                    <div class="wrap">
-                        <label>储存年限:</label>
-                        <select id="saveyear" style="margin-left: 500PX; height: auto;width: 80px;">
-                            <option  selected value="">请选择</option>
-						    <option  value="1">1年</option>
-                            <option  value="5">5年</option>
-                            <option  value="10">10年</option>
-                            <option  value="20">20年</option>
-                         </select>
-                        <!-- <input type="number" id="sex" name="sex" value placeholder="请输入" required="required"></input> -->
-                    </div>
+                    <form name="cellsaveform" method="post" action="admin/report/upload/cellsave" enctype="multipart/form-data">
+                        &nbsp;&nbsp;<input type="file" name="file" name="cellsave" id="cellsave" style="display:none;" onChange="document.cellsaveform.path.value=this.value">
+                        <input name="path" style="width: 250px;height: 28px;border:1px solid #95b8e7;border-radius: 5px;" readonly/>
+                        <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" value="请选择.PDF细胞存储报告" onclick="document.cellsaveform.cellsave.click()">
+                        <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" id='uploadcellsave' value="上传" />
+                        <% if(report && report.cellsave){%>
+                            <a href="<%=report.cellsave%>">查看</a>    
+                        <%}%>
+                    </form>
                 </div>
 
+                <script>
+                    $("#uploadcellsave").click(function () {
+                       if($('#cellsave').val()){
+                           let files = $('#cellsave').prop('files');
+                           let data = new FormData();
+                           data.append('phone', <%=phone%>)
+                           data.append('file', files[0])
+                           $.ajax({
+                           type: 'POST',
+                           url: "admin/report/upload/cellsave",
+                           data: data,
+                           cache: false,
+                           processData: false,
+                           contentType: false,
+                           complete: function (ret) {
+                               window.location.reload()
+                           }
+                       });
+                   }
+                   })
+                   </script>
                 <p class="grey-line"></p>
                 <div class="pwrap">
-                    <div class="wrap">
-                        </span>储存细胞:</label>
-                        <input style="border: 1px solid #e0e0e0;" type="text" id="cell" name="cell" value="" placeholder="请输入" required="required"></input>
-                    </div>
+                    <form name="celltestform" method="post" action="admin/report/upload/celltest" enctype="multipart/form-data">
+                        &nbsp;&nbsp;<input type="file" name="file" name="celltest" id="celltest" style="display:none;" onChange="document.celltestform.path.value=this.value">
+                        <input name="path" style="width: 250px;height: 28px;border:1px solid #95b8e7;border-radius: 5px;" readonly/>
+                        <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" value="请选择.PDF细胞质检报告" onclick="document.celltestform.celltest.click()">
+                        <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" id='uploadcelltest' value="上传" />
+                        <% if(report && report.celltest){%>
+                            <a href="<%=report.celltest%>">查看</a>    
+                        <%}%>
+                    </form>
                 </div>
+                <script>
+                    $("#uploadcelltest").click(function () {
+                       if($('#celltest').val()){
+                           let files = $('#celltest').prop('files');
+                           let data = new FormData();
+                           data.append('phone', <%=phone%>)
+                           data.append('file', files[0])
+                           $.ajax({
+                           type: 'POST',
+                           url: "admin/report/upload/celltest",
+                           data: data,
+                           cache: false,
+                           processData: false,
+                           contentType: false,
+                           complete: function (ret) {
+                               window.location.reload()
+                           }
+                       });
+                   }
+                   })
+                   </script>
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <form name="inventoryform" method="post" action="admin/liver/upload/batch/excel/result" enctype="multipart/form-data">
+                        &nbsp;&nbsp;<input type="file" name="file" name="inventory" id="inventory" style="display:none;" onChange="document.inventoryform.path.value=this.value">
+                        <input name="path" style="width: 250px;height: 28px;border:1px solid #95b8e7;border-radius: 5px;" readonly/>
+                        <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" value="请选择.PD省库查询报告" onclick="document.inventoryform.inventory.click()">
+                        <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" id='uploadinventory' value="上传" />
+                        <% if(report && report.inventory){%>
+                            <a href="<%=report.inventory%>">查看</a>    
+                        <%}%>
+                    </form>
+                </div>
+                <script>
+                    $("#uploadinventory").click(function () {
+                       if($('#inventory').val()){
+                           let files = $('#inventory').prop('files');
+                           let data = new FormData();
+                           data.append('phone', <%=phone%>)
+                           data.append('file', files[0])
+                           $.ajax({
+                           type: 'POST',
+                           url: "admin/report/upload/inventory",
+                           data: data,
+                           cache: false,
+                           processData: false,
+                           contentType: false,
+                           complete: function (ret) {
+                               window.location.reload()
+                           }
+                       });
+                   }
+                   })
+                   </script>
                 
-                <p class="grey-line"></p>
-                <div class="pwrap">
-                    <div class="wrap">
-                        <label>储存状态:</label>
-                        <input style="border: 1px solid #e0e0e0;" type="text" id="savestatus" name="savestatus" value="" placeholder="请输入" required="required"></input>
-                    </div>
-                </div>
-                <p class="grey-line"></p>
-                <div class="pwrap">
-                    <div class="wrap">
-                        <label>储存地点:</label>
-                        <input style="border: 1px solid #e0e0e0;" type="text" id="location" name="location" value="" placeholder="请输入" required="required"></input>
-                    </div>
-                </div>
-                <p class="grey-line"></p>
-                <div class="pwrap">
-                    <div class="wrap">
-                        <label>剩余年限:</label>
-                        <input style="border: 1px solid #e0e0e0;" type="text" id="leftyear" name="leftyear" value="" required="required"></input>
-                    </div>
-                </div>
-               
-                
-                <div style="width: 100%;height: 23px;"></div>
-                <div style="text-align: center;">
-                    <input id="submit" type="button" style="display: block;" value="提交">
-                </div>
-                <div style="width: 100%;height: 100px;"></div>
-        </form>
         <!-- <script type="text/javascript" src="/public/js/validator_zh_liver.js"></script> -->
-        <script>
-         //计算日期
-		$("#saveyear").change(function(event) {
-        let d1=new Date($('#signingtime').val());  
-        let d2=new Date(d1); 
-        d2.setFullYear(d2.getFullYear()+parseInt($("#saveyear option:selected").val())); 
-        d2.setDate(d2.getDate()-parseInt($("#saveyear option:selected").val())); 
-		let d3=d2
-		let datetime=d3-d1
-		let leftdays=datetime/(1000 * 3600 * 24)
-		// alert(days)
-		$('#leftyear').val(leftdays)
-		  })
-
-       //提交数据
-            $("#submit").click(function() {
-                let oThis=$(this)
-                $(this).attr('disabled', true)
-                $(this).css('background-color', "#e0e0e0")
-                let data = {}
-                data.constractnum = $("constractnum").val()
-                data.clientname = $("#clientname").val()
-                data.signingtime = $("#signingtime").val()
-                data.saveyear = $("#saveyear option:selected").val()
-                data.cell = $("#cell").val()
-                data.savestatus = $("#savestatus").val()
-                data.location = $("#location").val()
-                data.leftyear = $("#leftyear").val()
-                console.info(data)
-                $.post("admin/user/center/update", data, function(result) {
-                    if(result=="fail-store-unexist"){
-                        alert("库存不存在此条码")
-                        oThis.attr('disabled', false)
-                        oThis.css('background-color', "#1a88c7")
-                    }else if(result=="fail-report-exist"){
-                        alert("该条码已添加过，请更换条码")
-                        oThis.attr('disabled', false)
-                        oThis.css('background-color', "#1a88c7")
-                    }else{
-                        parent.window.location.reload();
-                    }
-
-                })
-
-            })
-        </script>
+        
 
 </body>
 

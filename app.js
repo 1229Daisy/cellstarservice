@@ -9,7 +9,6 @@ var mongoose = require('mongoose');
 var bodyParser = require("body-parser");
 var path = require('path');
 var request = require('request');
-// var mysql = require('mysql');
 var fs = require('fs');
 var log4js = require('log4js');
 const child = require('child_process')
@@ -20,7 +19,17 @@ var http = require('http');
 const formidable = require('formidable');
 const multer = require('multer')
 var readline = require('readline');
-app.use(multer({ dest: './tmp/' }).any())
+app.use(multer({ storage:  multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, "public/upload");
+    },
+    filename: function (req, file, cb) {
+        let fileFormat = (file.originalname).split(".");
+        cb(null,  Date.now() + "." + fileFormat[fileFormat.length - 1]);
+
+    }
+  })}).any())
+
     //阿里云短信接口调用
 const SMSClient = require('@alicloud/sms-sdk');
 const os = require('os')
@@ -64,10 +73,7 @@ let options = {
 
 let stdout = fs.createWriteStream(__dirname + '/access.log', options);
 let stderr = fs.createWriteStream(__dirname + '/access.log', options);
-let console = new Console({ stdout: stdout, stderr: stderr });
-
-
-
+//let console = new Console({ stdout: stdout, stderr: stderr });
 
 app.use(session({
     secret: "weird sheep",
@@ -80,14 +86,14 @@ app.use(session({
 //设置views的目录,__dirname全局变量表示当前执行脚本所在的目录
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs'); //设置渲染引擎
-app.set('host', "https://bainuo.beijingepidial.com")
+app.set('host', "https://app.cell-stars.com")
 app.use("/public", express.static(path.join(__dirname, 'public')));
 app.use("/BQvnRcT01J.txt", express.static(path.join(__dirname, '/BQvnRcT01J.txt')));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 //设置全局的变量url供模板ejs引用
 //app.locals会在整个生命周期中起作用；而res.locals只会有当前请求中起作用
-app.locals["url"] = "https://bainuo.beijingepidial.com"
+app.locals["url"] = "https://app.cell-stars.com"
 
    
 mongoose.connect("mongodb://localhost:27017/cellstar", { useNewUrlParser: true, useUnifiedTopology: true }, function(err, db) {
@@ -126,50 +132,20 @@ Reserve.createCollection()
 //3.根据规则创建集合实例Report表
 let Report = mongoose.model('Report', new mongoose.Schema({
     phone:{ type: String, trim: true },
-    physical_exam: { type: String, trim: true },
-    immunity: { type: String, trim: true },
-    cellsave:{ type: String, trim: true },
-    celltest:{ type: String, trim: true },
-    inventory:{ type: String, trim: true },
+    physical: { type: String, trim: true }, //体检报告
+    immunity: { type: String, trim: true },//免疫力评估
+    cellsave:{ type: String, trim: true },//细胞存储
+    celltest:{ type: String, trim: true },//细胞质检
+    inventory:{ type: String, trim: true },//省库查询
 }))
 Report.createCollection()
 
-// let connection = mysql.createConnection({
-//     host: 'localhost',
-//     user: 'root',
-//     password: 'root',
-//     database: 'hdreportdb',
-
-// });
 let accessurl = []
-    //链接mysql数据库后，启动http,要先获取到数据才进入http
-
-    accessurl.push("/admin/epihpv/epihpvreport")
+https.createServer({ key: fs.readFileSync("./cell-stars_com.key"), cert: fs.readFileSync("./cell-stars_com.pem") }, app).listen(443, () => {
+    console.log('Server listening on port 443!')
+        //链接mysql数据库后，启动http,要先获取到数据才进入http
     accessurl.push("/admin/loginview")
-    accessurl.push("/admin/epihpv/hpvinserval")
-    accessurl.push("/admin/epihpv/inserval")
-    accessurl.push("/admin/epihpv/chechpval")
-    accessurl.push("/admin/liver/build/liver/pdf")
-    accessurl.push("/admin/epiliver/checkliverval")
-    accessurl.push("/admin/liver/liverhtml")
-    accessurl.push("/admin/epiage/html")
-    accessurl.push("/admin/epiage/report")
-    accessurl.push("/admin/epiage/adduser")
-    accessurl.push("/admin/liver/report")
-    accessurl.push("/admin/generic/report")
-    accessurl.push("/admin/hpv/report")
-    accessurl.push("/admin/hpv/buildliverpdf")
-    accessurl.push("/admin/generic/client/sms")
-    accessurl.push("/admin/liver/client/sms")
-    accessurl.push("/admin/epiage/client/sms")
-   
-	https.createServer({ key: fs.readFileSync("./bainuo.beijingepidial.com.key"), cert: fs.readFileSync("./bainuo.beijingepidial.com.pem") }, app).listen(443, () => {
-            console.log('Server listening on port 443!')
-        });
- 
-
-
-
+});
 
 //登录拦截器，必须放在静态资源声明之后、路由导航之前(中间件)
 app.use(function(req, res, next) {
@@ -297,6 +273,90 @@ app.post("/client/index/message", (req, res) => {
          res.send(data)
      })
  })
+    //添加个人中心信息app.all接受get跟post请求
+    app.all('/admin/add/client/message', (req, res) => {
+    console.info(req.query.id+"#")
+    User.findOne({_id:req.query.id}, function(err, usercenter) {
+        console.info(usercenter)
+        res.render('back/member-usercenter-form', { "usercenter": usercenter }) //把数据传递给客户端页面
+    })
+    })
+
+    //添加客户报告app.all接受get跟post请求
+    app.all('/admin/upload/client/report', (req, res) => {
+        let phone=req.query.phone
+        Report.findOne({phone:phone},function(err,report){
+            if(err){console.info(err)}
+            else{
+                res.render('back/member-upload-form',{phone:phone,report:report})
+            }
+            
+        })
+       
+    })
+    app.post("/admin/report/upload/physical",async (req, res)=>{
+        let phone=req.body.phone
+        let filename = req.files[0].path
+        console.info(filename)
+        let dbdata=await Report.findOne({phone:phone});
+        let dbreport=dbdata?dbdata:{};
+        dbreport.physical=filename;
+        Report.findOneAndUpdate({phone:phone},dbreport,{ upsert: true }, function(err) {
+            if(err){console.info(err)}
+            else{res.send("success")}
+         })
+    });
+
+    app.post("/admin/report/upload/immunity",async (req, res)=>{
+        let phone=req.body.phone
+        let filename = req.files[0].path
+        console.info(filename)
+        let dbdata=await Report.findOne({phone:phone});
+        let dbreport=dbdata?dbdata:{};
+        dbreport.immunity=filename;
+        Report.findOneAndUpdate({phone:phone},dbreport,{ upsert: true }, function(err) {
+            if(err){console.info(err)}
+            else{res.send("success")}
+         })
+    });
+
+    app.post("/admin/report/upload/cellsave",async (req, res)=>{
+        let phone=req.body.phone
+        let filename = req.files[0].path
+        console.info(filename)
+        let dbdata=await Report.findOne({phone:phone});
+        let dbreport=dbdata?dbdata:{};
+        dbreport.cellsave=filename;
+        Report.findOneAndUpdate({phone:phone},dbreport,{ upsert: true }, function(err) {
+            if(err){console.info(err)}
+            else{res.send("success")}
+         })
+    });
+    app.post("/admin/report/upload/celltest",async (req, res)=>{
+        let phone=req.body.phone
+        let filename = req.files[0].path
+        console.info(filename)
+        let dbdata=await Report.findOne({phone:phone});
+        let dbreport=dbdata?dbdata:{};
+        dbreport.celltest=filename;
+        Report.findOneAndUpdate({phone:phone},dbreport,{ upsert: true }, function(err) {
+            if(err){console.info(err)}
+            else{res.send("success")}
+         })
+    });
+
+    app.post("/admin/report/upload/inventory",async (req, res)=>{
+        let phone=req.body.phone
+        let filename = req.files[0].path
+        console.info(filename)
+        let dbdata=await Report.findOne({phone:phone});
+        let dbreport=dbdata?dbdata:{};
+        dbreport.inventory=filename;
+        Report.findOneAndUpdate({phone:phone},dbreport,{ upsert: true }, function(err) {
+            if(err){console.info(err)}
+            else{res.send("success")}
+         })
+    })
 //小程序用户注册信息并返回状态
 app.post("/admin/minicellstar/adduser", function(req, res) {
     console.info("/admin/epiage/adduser:" + req.body)
@@ -313,14 +373,6 @@ app.post("/admin/minicellstar/adduser", function(req, res) {
     })
 });
 
-//肝癌前端页面加载进用户表页面时onload方法查找用户用户信息
-app.post("/client/generic/finduser", (req, res) => {
-    //{ sampleid: 'zzz', tel: '17329920456' }
-    Genericuser.findOne({ sampleid: req.body.sampleid, tel: req.body.tel }, function(e, data) {
-        if (e) console.info(e)
-        res.send(data)
-    })
-})
 
 //小程序端用户注册发送验证码
 app.post('/client/user/sms', (req, res) => {
@@ -331,8 +383,8 @@ app.post('/client/user/sms', (req, res) => {
         // 开始发送短信
     smsClient.sendSMS({
         PhoneNumbers: phone,
-        "SignName": "Epidial",
-        "TemplateCode": "SMS_159965409",
+        "SignName": "细胞之星",
+        "TemplateCode": "SMS_228847051",
         "TemplateParam": `{"code":'${code}'}`, // 短信模板变量对应的实际值，JSON格式
     }).then(result => {
         console.log("result", result)
@@ -346,18 +398,6 @@ app.post('/client/user/sms', (req, res) => {
     })
 })
 
-
-
-//生物学年龄客户端一打开客户端onload方法就根据传过来的手机号去查询该手机号下面的所有barcode及状态
-app.post("/client/epiage/barcodes", (req, res) => {
-    console.info(req.body.tel)
-    Epiage.find(req.body, { sampleid: 1, status: 1}, function(err, epiage) {
-        if (err) console.info(err)
-        console.info("生物学历史barcode")
-        console.info(epiage)
-        res.send(epiage)
-    })
-})
 
 
 //接受小程序端登录页面传过来的用户名跟密码
@@ -404,20 +444,6 @@ app.post("/client/user/resetpwd", (req, res) => {
         })
     })
 
-
-
-
-//宫颈癌微信小程序页面请求数据库加载报告页面手动输入的数据
-app.post("/admin/epihpv/hpvinserval", (req, res) => {
-    // console.info(req.body.barcode + "/admin/epihpv/hpvinserval")
-    connection.query("select samplesta,deliverdoc,deliverdoctel,barcode from epihpvrep where barcode=?", [req.body.barcode], (err, results, fields) => {
-        if (err) {
-            logger.error(err);
-        } else {
-            res.send(results)
-        }
-    })
-})
 
 
 

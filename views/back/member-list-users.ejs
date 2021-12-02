@@ -135,7 +135,7 @@
         },
 			{ field:'upload',title:"上传报告" ,align: 'center',width:100,
             formatter: function(value, row, index) {
-                    return `<a href="javascript:;" name='upload' class="easyui-linkbutton"  onclick="member_add('上传报告','/admin/upload/client/report','','510')">上传报告</a>`
+                    return `<a href="javascript:;" name='upload' class="easyui-linkbutton"  onclick="member_add('上传报告','/admin/upload/client/report?phone=${row.phone}','','510')">上传报告</a>`
                               
                 },
         },
