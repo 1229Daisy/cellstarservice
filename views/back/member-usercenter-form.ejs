@@ -140,7 +140,7 @@
                 data.cell = $("#cell").val()
                 data.savestatus = $("#savestatus").val()
                 data.location = $("#location").val()
-                data.leftyear = $("#leftyear").val()
+                data.leftyear = $("#leftyear").val()+"天"
                 console.info(data)
                 $.post("admin/user/center/update", data, function(result) {
                     if(result=="success"){

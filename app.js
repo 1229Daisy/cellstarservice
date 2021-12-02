@@ -455,6 +455,7 @@ app.post("/client/user/login", (req, res) => {
         }
     })
 })
+//小程序重设密码
 app.post("/client/user/finduser", (req, res) => {
         console.info(req.body.phone)
         User.findOne({ "phone": req.body.phone }, function(e, data) {
@@ -472,7 +473,7 @@ app.post("/client/user/finduser", (req, res) => {
             res.send(data)
         })
     })
-    //接受小程序端登录页面传过来的用户名跟密码
+    //接受小程序端登录页面传过来的用户名跟密码 重设密码
 app.post("/client/user/resetpwd", (req, res) => {
         console.info(req.body.phone)
         console.info(req.body.password)
