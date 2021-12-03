@@ -121,10 +121,12 @@ let User = mongoose.model('User', new mongoose.Schema({
 User.createCollection()
 //2.根据规则创建集合实例Reserve表
 let Reserve = mongoose.model('Reserve', new mongoose.Schema({
+    phone:{ type: String, trim: true },
     clientname:{ type: String, trim: true },
     reservedate: { type: String, trim: true },
     item: { type: String, trim: true },
     usedate:{ type: String, trim: true },
+    status:{ type: String, trim: true },
     
 }))
 Reserve.createCollection()
@@ -371,8 +373,11 @@ app.post("/client/cellstar/adduser", function(req, res) {
     User.findOne({ "phone": req.body.phone }, function(err, result) {
         if (!result) {
             new User(req.body).save((err, data) => {
-                if (err) console.info(err)
-                res.json({ "status": "success" })
+                new Reserve(req.body).save((err, data) => {
+                    if (err) console.info(err)
+                    res.json({ "status": "success" })
+                })
+               
             })
         } else {
             res.json({ "status": "fail" })
@@ -401,8 +406,8 @@ app.post("/client/cellstar/reserveform", function(req, res) {
         }
         booking.usedate=req.body.usedate
     Reserve.findOne({ "phone": req.body.phone }, function(err, result) {
-        if (!result) {
-            new Reserve(booking).save((err, data) => {
+        if (result) {
+            Reserve.updateOne({ "phone": req.body.phone },{ $set: booking},(err, data) => {
                 if (err) console.info(err)
                 res.json({ "status": "success" })
             })
