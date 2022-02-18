@@ -113,10 +113,11 @@
          //日期倒计时
 		$("#saveyear").change(function(event) {
         setInterval(function () {
-        let startday=new Date($('#signingtime').val());  
-        let end=new Date(startday);// 
+           console.info($("#saveyear option:selected").val().replace(/年/,''))
+        // let startday=new Date($('#signingtime').val());  
+        let end=new Date(startday);//根据签约时间及年限算出到期日期
          end.setFullYear(end.getFullYear()+parseInt($("#saveyear option:selected").val())); //将年限转换为日期
-         end.setDate(end.getDate()-parseInt($("#saveyear option:selected").val())); 
+         end.setDate(end.getDate()-parseInt($("#saveyear option:selected").val().replace(/年/,''))); 
         //  alert(d2)
 		let endday=end
         let nowday = new Date();
@@ -125,7 +126,13 @@
         $('#leftyear').val(day)
               }, 1000);
 		  })
-
+// $(function(){
+//     let endday=new Date($('#signingtime').val()).getTime()+(1000*60*60*24*365*parseInt($("#saveyear option:selected").val().replace(/年/,'')))
+//     let nowday = new Date();
+//          let time =endday - nowday.getTime();
+//          let day = parseInt(time/(1000 * 3600 * 24))
+//         $('#leftyear').val(day)            
+// })
        //提交数据
             $("#submit").click(function() {
                 let oThis=$(this)

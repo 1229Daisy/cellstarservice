@@ -38,8 +38,8 @@ const { Console } = require('console');
 const { parse } = require('path');
 let accessKeyId = ""
 let secretAccessKey = ""
-const appid = "" //开发者的appid
-const appsecret = ""//开发者的appsecret 登入小程序公共平台内查看
+const appid = ""
+const appsecret = ""
 
 let smsClient = new SMSClient({
     accessKeyId: accessKeyId,

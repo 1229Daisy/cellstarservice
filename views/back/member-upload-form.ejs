@@ -86,12 +86,47 @@
                                        }
                                        })
                                        </script>
+<!-- -------------------------------------------------------------------- -->
+                <!-- 细胞储存和质检（文字）调换过来 ，小程序把这两个弄混了-->
+                <p class="grey-line"></p>
+                <div class="pwrap">
+                    <form name="celltestform" method="post" action="admin/report/upload/celltest" enctype="multipart/form-data">
+                        &nbsp;&nbsp;<input type="file" name="file" name="celltest" id="celltest" style="display:none;" onChange="document.celltestform.path.value=this.value">
+                        <input name="path" style="width: 250px;height: 28px;border:1px solid #95b8e7;border-radius: 5px;" readonly/>
+                        <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" value="请选择.PDF细胞储存报告" onclick="document.celltestform.celltest.click()">
+                        <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" id='uploadcelltest' value="上传" />
+                        <% if(report && report.celltest){%>
+                            <a href="<%=report.celltest%>">查看</a>    
+                        <%}%>
+                    </form>
+                </div>
+                <script>
+                    $("#uploadcelltest").click(function () {
+                       if($('#celltest').val()){
+                           let files = $('#celltest').prop('files');
+                           let data = new FormData();
+                           data.append('phone', <%=phone%>)
+                           data.append('file', files[0])
+                           $.ajax({
+                           type: 'POST',
+                           url: "admin/report/upload/celltest",
+                           data: data,
+                           cache: false,
+                           processData: false,
+                           contentType: false,
+                           complete: function (ret) {
+                               window.location.reload()
+                           }
+                       });
+                   }
+                   })
+                   </script>
                 <p class="grey-line"></p>
                 <div class="pwrap">
                     <form name="cellsaveform" method="post" action="admin/report/upload/cellsave" enctype="multipart/form-data">
                         &nbsp;&nbsp;<input type="file" name="file" name="cellsave" id="cellsave" style="display:none;" onChange="document.cellsaveform.path.value=this.value">
                         <input name="path" style="width: 250px;height: 28px;border:1px solid #95b8e7;border-radius: 5px;" readonly/>
-                        <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" value="请选择.PDF细胞存储报告" onclick="document.cellsaveform.cellsave.click()">
+                        <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" value="请选择.PDF细胞质检报告" onclick="document.cellsaveform.cellsave.click()">
                         <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" id='uploadcellsave' value="上传" />
                         <% if(report && report.cellsave){%>
                             <a href="<%=report.cellsave%>">查看</a>    
@@ -120,39 +155,7 @@
                    }
                    })
                    </script>
-                <p class="grey-line"></p>
-                <div class="pwrap">
-                    <form name="celltestform" method="post" action="admin/report/upload/celltest" enctype="multipart/form-data">
-                        &nbsp;&nbsp;<input type="file" name="file" name="celltest" id="celltest" style="display:none;" onChange="document.celltestform.path.value=this.value">
-                        <input name="path" style="width: 250px;height: 28px;border:1px solid #95b8e7;border-radius: 5px;" readonly/>
-                        <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" value="请选择.PDF细胞质检报告" onclick="document.celltestform.celltest.click()">
-                        <input type="button" class="easyui-linkbutton" style="padding: 5px 8px;" id='uploadcelltest' value="上传" />
-                        <% if(report && report.celltest){%>
-                            <a href="<%=report.celltest%>">查看</a>    
-                        <%}%>
-                    </form>
-                </div>
-                <script>
-                    $("#uploadcelltest").click(function () {
-                       if($('#celltest').val()){
-                           let files = $('#celltest').prop('files');
-                           let data = new FormData();
-                           data.append('phone', <%=phone%>)
-                           data.append('file', files[0])
-                           $.ajax({
-                           type: 'POST',
-                           url: "admin/report/upload/celltest",
-                           data: data,
-                           cache: false,
-                           processData: false,
-                           contentType: false,
-                           complete: function (ret) {
-                               window.location.reload()
-                           }
-                       });
-                   }
-                   })
-                   </script>
+<!-- ------------------------------------------------------------------- -->
                 <p class="grey-line"></p>
                 <div class="pwrap">
                     <form name="inventoryform" method="post" action="admin/liver/upload/batch/excel/result" enctype="multipart/form-data">
